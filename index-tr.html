@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVR Hesaplayıcı - Excel Benzeri Tablo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <main class="main-content">
+            <!-- Kontrol Paneli -->
+            <div class="card control-panel">
+                <div class="control-buttons">
+                    <button id="addRow" class="btn-control">
+                        <i class="fas fa-plus"></i>
+                        Madde Ekle
+                    </button>
+                    <button id="removeRow" class="btn-control btn-remove">
+                        <i class="fas fa-minus"></i>
+                        Madde Sil
+                    </button>
+                    <button id="addColumn" class="btn-control">
+                        <i class="fas fa-plus"></i>
+                        Uzman Ekle
+                    </button>
+                    <button id="removeColumn" class="btn-control btn-remove">
+                        <i class="fas fa-minus"></i>
+                        Uzman Sil
+                    </button>
+                    <button id="clearTable" class="btn-clear">
+                        <i class="fas fa-trash"></i>
+                        Tabloyu Temizle
+                    </button>
+                    <button id="pasteData" class="btn-paste">
+                        <i class="fas fa-paste"></i>
+                        Excel'den Yapıştır
+                    </button>
+                    <button id="copyData" class="btn-copy">
+                        <i class="fas fa-copy"></i>
+                        Excel'e Kopyala
+                    </button>
+                </div>
+                
+                <!-- Model Seçimi -->
+                <div class="model-selection">
+                    <label for="evaluationModel" class="model-label">
+                        <i class="fas fa-cogs"></i>
+                        Değerlendirme Modeli:
+                    </label>
+                    <select id="evaluationModel" class="model-select">
+                        <option value="strict">Sert Model (1→1, 2,3→0)</option>
+                        <option value="lenient">Rahat Model (1,2→1, 3→0)</option>
+                    </select>
+                    <div class="model-info">
+                        <div class="model-desc" id="modelDescription">
+                            <strong>Sert Model:</strong> Sadece 1 değeri "gerekli" olarak kabul edilir. 2 ve 3 değerleri "gerekli değil" olarak değerlendirilir.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ana Tablo -->
+            <div class="card table-card">
+                <div class="table-container">
+                    <table id="cvrTable" class="excel-table">
+                        <thead>
+                            <tr>
+                                <th class="row-header">Madde</th>
+                                <th class="expert-header" colspan="0">Uzmanlar</th>
+                                <th class="result-header">CVR</th>
+                                <th class="result-header">I-CVI</th>
+                            </tr>
+                            <tr>
+                                <th class="row-header">#</th>
+                                <!-- Uzman sütunları JavaScript ile eklenecek -->
+                                <th class="result-header">Değer</th>
+                                <th class="result-header">Değer</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Satırlar JavaScript ile eklenecek -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- CVI Özet Bölümü -->
+                <div class="cvi-summary">
+                    <div class="summary-row">
+                        <div class="summary-item">
+                            <span class="summary-label">CVI (İçerik Geçerliliği İndeksi):</span>
+                            <span class="summary-value" id="cviValue">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama):</span>
+                            <span class="summary-value" id="scviAveValue">-</span>
+                        </div>
+                    </div>
+                    <div class="summary-row">
+                        <div class="summary-item">
+                            <span class="summary-label">S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma):</span>
+                            <span class="summary-value" id="scviUAValue">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Açıklamalar Bölümü -->
+            <div class="card explanations-card">
+                <h3 class="explanations-title">
+                    <i class="fas fa-info-circle"></i>
+                    Hesaplama Açıklamaları
+                </h3>
+                
+                <!-- CVR Açıklaması -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion('cvr-accordion')">
+                        <h4>CVR (İçerik Geçerliliği Oranı)</h4>
+                        <i class="fas fa-chevron-down accordion-icon" id="cvr-accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="cvr-accordion">
+                        <div class="formula-display">
+                            <div class="math-formula">CVR = (ne - N/2) / (N/2)</div>
+                            <p><strong>ne:</strong> Maddeyi "gerekli" olarak değerlendiren uzman sayısı</p>
+                            <p><strong>N:</strong> Toplam uzman sayısı</p>
+                        </div>
+                        
+                        <h5>Lawshe'nin Minimum CVR Değerleri:</h5>
+                        <table class="min-cvr-table">
+                            <thead>
+                                <tr>
+                                    <th>Uzman Sayısı</th>
+                                    <th>Minimum CVR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>5</td><td>0.99</td></tr>
+                                <tr><td>6</td><td>0.99</td></tr>
+                                <tr><td>7</td><td>0.99</td></tr>
+                                <tr><td>8</td><td>0.75</td></tr>
+                                <tr><td>9</td><td>0.78</td></tr>
+                                <tr><td>10</td><td>0.62</td></tr>
+                                <tr><td>11</td><td>0.59</td></tr>
+                                <tr><td>12</td><td>0.56</td></tr>
+                                <tr><td>13</td><td>0.54</td></tr>
+                                <tr><td>14</td><td>0.51</td></tr>
+                                <tr><td>15</td><td>0.49</td></tr>
+                                <tr><td>20</td><td>0.42</td></tr>
+                                <tr><td>25</td><td>0.37</td></tr>
+                                <tr><td>30</td><td>0.33</td></tr>
+                                <tr><td>35</td><td>0.31</td></tr>
+                                <tr><td>40</td><td>0.29</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="source-reference">
+                            <strong>Kaynak:</strong> Lawshe, C. H. (1975). A quantitative approach to content validity. Personnel Psychology, 28(4), 563-575.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- I-CVI Açıklaması -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion('icvi-accordion')">
+                        <h4>I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi)</h4>
+                        <i class="fas fa-chevron-down accordion-icon" id="icvi-accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="icvi-accordion">
+                        <div class="formula-display">
+                            <div class="math-formula">I-CVI = Maddeyi "gerekli" olarak değerlendiren uzman sayısı / Toplam uzman sayısı</div>
+                        </div>
+                        
+                        <h5>Değerlendirme Kriterleri:</h5>
+                        <ul>
+                            <li><strong>1-2 Uzman:</strong> I-CVI = 1.0 olmalı (yeşil)</li>
+                            <li><strong>3+ Uzman:</strong> 
+                                <ul>
+                                    <li>I-CVI ≥ 0.78: Geçerli (yeşil)</li>
+                                    <li>I-CVI 0.70-0.78: Revizyon gerekli (turuncu)</li>
+                                    <li>I-CVI < 0.70: Elimine edilmeli (kırmızı)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <p><strong>Not:</strong> Değerler 0 ile 1 arasında değişebilir. Hesaplanan I-CVI değeri 0.79 veya daha yüksek, maddelerin geçerli olduğunu gösterir. 0.70 ile 0.79 arası, maddenin revizyon gerektirdiğini gösterir. 0.70'den düşük değerler, maddelerin elimine edilmesi gerektiğini önerir. Beşten fazla uzmanla, I-CVI için kabul edilebilir değer 0.78'dir.</p>
+                        
+                        <div class="source-reference">
+                            <strong>Kaynaklar:</strong><br>
+                            Lynn MR. Determination and quantification of content validity. Nurs Res. 1986;35(6):382–5. doi: 10.1097/00006199-198611000-00017.<br>
+                            Polit DF, Beck CT. The content validity index: are you sure you know what's being reported? Critique and recommendations. Res Nurs Health. 2006;29(5):489–97. doi: 10.1002/nur.20147.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CVI Açıklaması -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion('cvi-accordion')">
+                        <h4>CVI (İçerik Geçerliliği İndeksi)</h4>
+                        <i class="fas fa-chevron-down accordion-icon" id="cvi-accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="cvi-accordion">
+                        <div class="formula-display">
+                            <div class="math-formula">CVI = Tüm CVR değerlerinin ortalaması</div>
+                        </div>
+                        
+                        <h5>Kabul Edilebilir CVI Değerleri:</h5>
+                        <table class="min-cvr-table">
+                            <thead>
+                                <tr>
+                                    <th>Uzman Sayısı</th>
+                                    <th>Kabul Edilebilir CVI Değerleri</th>
+                                    <th>Öneri Kaynağı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2</td><td>En az 0.8</td><td>Davis (1992)</td></tr>
+                                <tr><td>3-5</td><td>1 olmalı</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
+                                <tr><td>En az 6</td><td>En az 0.83</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
+                                <tr><td>6-8</td><td>En az 0.83</td><td>Lynn (1986)</td></tr>
+                                <tr><td>En az 9</td><td>En az 0.78</td><td>Lynn (1986)</td></tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="source-reference">
+                            <strong>Kaynaklar:</strong><br>
+                            Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
+                            Lynn, M. R. (1986). Determination and quantification of content validity. Nursing Research, 35(6), 382-385.<br>
+                            Polit, D. F., & Beck, C. T. (2006). The content validity index: are you sure you know what's being reported? Research in Nursing & Health, 29(5), 489-497.<br>
+                            Polit, D. F., Beck, C. T., & Owen, S. V. (2007). Is the CVI an acceptable indicator of content validity? Appraisal and recommendations. Research in Nursing & Health, 30(4), 459-467.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S-CVI/Ave Açıklaması -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion('scvi-ave-accordion')">
+                        <h4>S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama)</h4>
+                        <i class="fas fa-chevron-down accordion-icon" id="scvi-ave-accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="scvi-ave-accordion">
+                        <div class="formula-display">
+                            <div class="math-formula">S-CVI/Ave = Tüm I-CVI değerlerinin ortalaması</div>
+                        </div>
+                        
+                        <h5>Geçerlilik Kriterleri:</h5>
+                        <ul>
+                            <li><strong>Mükemmel İçerik Geçerliliği:</strong> S-CVI/Ave ≥ 0.90</li>
+                            <li><strong>Geçersiz:</strong> S-CVI/Ave < 0.90</li>
+                        </ul>
+                        
+                        <p><strong>Not:</strong> S-CVI'nin geçerliliğini belirlemek için araştırmacılar hala CVI değeri ≥ 0.8 kullanmaktadır. S-CVI ≥ 0.8 ise kategori Geçerli, S-CVI < 0.78 ise kategori Geçersizdir.</p>
+                        
+                        <div class="source-reference">
+                            <strong>Kaynaklar:</strong><br>
+                            Waltz, C. F., Strickland, O. L., & Lenz, E. R. (2005). Measurement in nursing and health research. Springer Publishing Company.<br>
+                            Shi, J., Mo, X., & Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S-CVI/UA Açıklaması -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion('scvi-ua-accordion')">
+                        <h4>S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma)</h4>
+                        <i class="fas fa-chevron-down accordion-icon" id="scvi-ua-accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="scvi-ua-accordion">
+                        <div class="formula-display">
+                            <div class="math-formula">S-CVI/UA = Evrensel Anlaşma Olan Maddeler / Toplam Madde</div>
+                        </div>
+                        
+                        <h5>Geçerlilik Kriterleri:</h5>
+                        <ul>
+                            <li><strong>Mükemmel İçerik Geçerliliği:</strong> S-CVI/UA ≥ 0.80</li>
+                            <li><strong>Geçersiz:</strong> S-CVI/UA < 0.80</li>
+                        </ul>
+                        
+                        <p><strong>Not:</strong> S-CVI/UA ve S-CVI/Ave farklı formüllere sahip ölçek düzeyinde CVI'lerdir. Araştırmacılar, mükemmel içerik geçerliliğine sahip bir ölçeğin 0.78 veya daha yüksek I-CVI'lerden ve sırasıyla 0.8 ve 0.9 veya daha yüksek S-CVI/UA ve S-CVI/Ave'den oluşması gerektiğini önerir.</p>
+                        
+                        <div class="source-reference">
+                            <strong>Kaynaklar:</strong><br>
+                            Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
+                            Shi, J., Mo, X., & Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hesaplama Süreci -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion('process-accordion')">
+                        <h4>Hesaplama Süreci</h4>
+                        <i class="fas fa-chevron-down accordion-icon" id="process-accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="process-accordion">
+                        <ol>
+                            <li><strong>Veri Girişi:</strong> Uzmanlar her maddeyi 0, 1, 2 veya 3 olarak değerlendirir</li>
+                            <li><strong>Model Seçimi:</strong> Sert veya Rahat model seçilir</li>
+                            <li><strong>İkili Dönüşüm:</strong> Seçilen modele göre değerler 0 veya 1'e dönüştürülür</li>
+                            <li><strong>CVR Hesaplama:</strong> Her madde için CVR hesaplanır</li>
+                            <li><strong>I-CVI Hesaplama:</strong> Her madde için I-CVI hesaplanır</li>
+                            <li><strong>CVI Hesaplama:</strong> Tüm CVR değerlerinin ortalaması</li>
+                            <li><strong>S-CVI/Ave Hesaplama:</strong> Tüm I-CVI değerlerinin ortalaması</li>
+                            <li><strong>S-CVI/UA Hesaplama:</strong> Evrensel anlaşma olan maddelerin oranı</li>
+                            <li><strong>Renk Kodlama:</strong> Sonuçlar eşik değerlere göre renklendirilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
