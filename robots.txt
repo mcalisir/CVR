@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://github.com/mcalisir/CVR/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow specific files
+Disallow: /README.md
+Disallow: /README-TR.md
+Disallow: /CONTRIBUTING.md
+Disallow: /LICENSE
+Disallow: /.gitignore
+Disallow: /sitemap.xml
+Disallow: /robots.txt

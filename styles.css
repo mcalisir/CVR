@@ -943,14 +943,14 @@ body {
 }
 
 .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    display: none;
     background: white;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
 }
 
-.accordion-item.active .accordion-content {
-    max-height: 2000px;
+.accordion-content.show {
+    display: block;
 }
 
 .accordion-content ul,

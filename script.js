@@ -959,11 +959,11 @@ function toggleAccordion(id) {
     const content = document.getElementById(id);
     const icon = document.getElementById(id + '-icon');
     
-    if (content.style.display === 'block') {
-        content.style.display = 'none';
+    if (content.classList.contains('show')) {
+        content.classList.remove('show');
         icon.style.transform = 'rotate(0deg)';
     } else {
-        content.style.display = 'block';
+        content.classList.add('show');
         icon.style.transform = 'rotate(180deg)';
     }
 }
