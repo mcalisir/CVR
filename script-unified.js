@@ -5,6 +5,47 @@ let tableData = {
     data: []
 };
 let currentModel = 'strict'; // 'strict' or 'lenient'
+let currentLanguage = 'tr'; // 'tr' or 'en'
+
+// Language-specific texts
+const texts = {
+    tr: {
+        modelDescriptions: {
+            strict: '<strong>Sert Model:</strong> Sadece 1 değeri "gerekli" olarak kabul edilir. 2 ve 3 değerleri "gerekli değil" olarak değerlendirilir.',
+            lenient: '<strong>Rahat Model:</strong> 1 ve 2 değerleri "gerekli" olarak kabul edilir. Sadece 3 değeri "gerekli değil" olarak değerlendirilir.'
+        },
+        confirmClear: 'Tüm tabloyu temizlemek istediğinizden emin misiniz?',
+        placeholder: '0, 1, 2 veya 3',
+        expertHeader: 'Uzmanlar',
+        expertHeaderWithCount: 'Uzmanlar ({count})',
+        addItem: 'Madde Ekle',
+        removeItem: 'Madde Sil',
+        addExpert: 'Uzman Ekle',
+        removeExpert: 'Uzman Sil',
+        clearTable: 'Tabloyu Temizle',
+        pasteFromExcel: 'Excel\'den Yapıştır',
+        copyToExcel: 'Excel\'e Kopyala',
+        expert: 'Uzman'
+    },
+    en: {
+        modelDescriptions: {
+            strict: '<strong>Strict Model:</strong> Only value 1 is considered "relevant". Values 2 and 3 are evaluated as "not relevant".',
+            lenient: '<strong>Lenient Model:</strong> Values 1 and 2 are considered "relevant". Only value 3 is evaluated as "not relevant".'
+        },
+        confirmClear: 'Are you sure you want to clear the entire table?',
+        placeholder: '0, 1, 2 or 3',
+        expertHeader: 'Experts',
+        expertHeaderWithCount: 'Experts ({count})',
+        addItem: 'Add Item',
+        removeItem: 'Remove Item',
+        addExpert: 'Add Expert',
+        removeExpert: 'Remove Expert',
+        clearTable: 'Clear Table',
+        pasteFromExcel: 'Paste from Excel',
+        copyToExcel: 'Copy to Excel',
+        expert: 'Expert'
+    }
+};
 
 // Lawshe's minimum CVR values
 const minCVRValues = {
@@ -42,10 +83,9 @@ function convertValueToBinary(value) {
 // Update model description
 function updateModelDescription() {
     const modelDesc = document.getElementById('modelDescription');
-    if (currentModel === 'strict') {
-        modelDesc.innerHTML = '<strong>Strict Model:</strong> Only value 1 is considered "relevant". Values 2 and 3 are evaluated as "not relevant".';
-    } else if (currentModel === 'lenient') {
-        modelDesc.innerHTML = '<strong>Lenient Model:</strong> Values 1 and 2 are considered "relevant". Only value 3 is evaluated as "not relevant".';
+    if (modelDesc) {
+        const text = texts[currentLanguage].modelDescriptions[currentModel];
+        modelDesc.innerHTML = text;
     }
 }
 
@@ -188,11 +228,8 @@ function createTable() {
     const tableBody = document.getElementById('tableBody');
     tableBody.innerHTML = '';
     
-    // Initialize with 5 rows if no data
-    if (tableData.rows === 0) {
-        tableData.rows = 5;
-        tableData.data = Array(5).fill().map(() => Array(tableData.columns).fill(''));
-    }
+    // Don't initialize with default rows - start with empty table
+    // User can add rows manually or paste from Excel
     
     for (let i = 0; i < tableData.rows; i++) {
         const row = document.createElement('tr');
@@ -205,7 +242,7 @@ function createTable() {
             cell.contentEditable = 'true';
             cell.dataset.row = i;
             cell.dataset.col = j;
-            cell.setAttribute('data-placeholder', '0, 1, 2 or 3');
+            cell.setAttribute('data-placeholder', texts[currentLanguage].placeholder);
             cell.textContent = tableData.data[i] ? (tableData.data[i][j] || '') : '';
             
             // Add event listeners
@@ -259,14 +296,14 @@ function updateTableHeaders() {
     // Mevcut uzman başlıklarını temizle
     const existingExpertHeaders = headerRow.querySelectorAll('.expert-header');
     existingExpertHeaders.forEach(header => {
-        if (header.textContent.startsWith('E')) {
+        if (header.textContent.startsWith(texts[currentLanguage].expert)) {
             header.remove();
         }
     });
     
     if (tableData.columns > 0) {
         expertHeader.setAttribute('colspan', tableData.columns);
-        expertHeader.textContent = `Experts (${tableData.columns})`;
+        expertHeader.textContent = texts[currentLanguage].expertHeaderWithCount.replace('{count}', tableData.columns);
         
         // Uzman başlıklarını ekle
         const resultHeaders = headerRow.querySelectorAll('.result-header');
@@ -274,12 +311,12 @@ function updateTableHeaders() {
         for (let i = 1; i <= tableData.columns; i++) {
             const th = document.createElement('th');
             th.className = 'expert-header';
-            th.textContent = `Expert ${i}`;
+            th.textContent = `${texts[currentLanguage].expert} ${i}`;
             headerRow.insertBefore(th, resultHeaders[0]);
         }
     } else {
         expertHeader.setAttribute('colspan', '0');
-        expertHeader.textContent = 'Experts';
+        expertHeader.textContent = texts[currentLanguage].expertHeader;
     }
 }
 
@@ -389,21 +426,21 @@ function updateCVI() {
 
 // Clear table
 function clearTable() {
-    tableData = {
-        rows: 0,
-        columns: 0,
-        data: []
-    };
-    updateTableHeaders();
-    createTable();
-    calculateAllCVRs();
-    updateCVI();
-    updateButtonStates();
+    if (confirm(texts[currentLanguage].confirmClear)) {
+        tableData.rows = 0;
+        tableData.columns = 0;
+        tableData.data = [];
+        updateTableHeaders();
+        createTable();
+        calculateAllCVRs();
+        updateCVI();
+        updateButtonStates();
+    }
 }
 
 // Paste from Excel
 function pasteFromExcel() {
-    const data = prompt('Paste your data from Excel (tab-separated):');
+    const data = prompt(texts[currentLanguage].pasteFromExcel + ':');
     if (!data) return;
     
     const lines = data.trim().split('\n');
@@ -440,7 +477,7 @@ function copyToExcel() {
     // Add headers
     csvContent += 'Item,';
     for (let i = 1; i <= tableData.columns; i++) {
-        csvContent += `Expert ${i},`;
+        csvContent += `${texts[currentLanguage].expert} ${i},`;
     }
     csvContent += 'CVR,I-CVI\n';
     
@@ -480,54 +517,66 @@ function updateButtonStates() {
 
 // Toggle accordion
 function toggleAccordion(id) {
-    const content = document.getElementById(id);
+    const content = document.getElementById(id + '-content');
     const icon = document.getElementById(id + '-icon');
     
-    if (content.classList.contains('show')) {
-        content.classList.remove('show');
-        icon.style.transform = 'rotate(0deg)';
-    } else {
-        content.classList.add('show');
-        icon.style.transform = 'rotate(180deg)';
+    if (content && icon) {
+        if (content.classList.contains('show')) {
+            content.classList.remove('show');
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            content.classList.add('show');
+            icon.style.transform = 'rotate(180deg)';
+        }
     }
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize table
+// Add row
+function addRow() {
+    tableData.rows++;
+    tableData.data.push(Array(tableData.columns).fill(''));
     createTable();
     calculateAllCVRs();
     updateCVI();
     updateButtonStates();
-    
-    // Add event listeners
-    document.getElementById('addRow').addEventListener('click', function() {
-        tableData.rows++;
-        tableData.data.push(Array(tableData.columns).fill(''));
+}
+
+// Remove row
+function removeRow() {
+    if (tableData.rows > 1) {
+        tableData.rows--;
+        tableData.data.pop();
         createTable();
         calculateAllCVRs();
         updateCVI();
         updateButtonStates();
-    });
-    
-    document.getElementById('removeRow').addEventListener('click', function() {
-        if (tableData.rows > 1) {
-            tableData.rows--;
-            tableData.data.pop();
-            createTable();
-            calculateAllCVRs();
-            updateCVI();
-            updateButtonStates();
+    }
+}
+
+// Add column
+function addColumn() {
+    tableData.columns++;
+    for (let i = 0; i < tableData.rows; i++) {
+        if (!tableData.data[i]) {
+            tableData.data[i] = Array(tableData.columns).fill('');
+        } else {
+            tableData.data[i].push('');
         }
-    });
-    
-    document.getElementById('addColumn').addEventListener('click', function() {
-        tableData.columns++;
+    }
+    updateTableHeaders();
+    createTable();
+    calculateAllCVRs();
+    updateCVI();
+    updateButtonStates();
+}
+
+// Remove column
+function removeColumn() {
+    if (tableData.columns > 1) {
+        tableData.columns--;
         for (let i = 0; i < tableData.rows; i++) {
-            if (!tableData.data[i]) {
-                tableData.data[i] = Array(tableData.columns).fill('');
-            } else {
-                tableData.data[i].push('');
+            if (tableData.data[i]) {
+                tableData.data[i].pop();
             }
         }
         updateTableHeaders();
@@ -535,24 +584,26 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateAllCVRs();
         updateCVI();
         updateButtonStates();
-    });
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Detect language from HTML lang attribute
+    const htmlLang = document.documentElement.lang;
+    currentLanguage = htmlLang === 'en' ? 'en' : 'tr';
     
-    document.getElementById('removeColumn').addEventListener('click', function() {
-        if (tableData.columns > 1) {
-            tableData.columns--;
-            for (let i = 0; i < tableData.rows; i++) {
-                if (tableData.data[i]) {
-                    tableData.data[i].pop();
-                }
-            }
-            updateTableHeaders();
-            createTable();
-            calculateAllCVRs();
-            updateCVI();
-            updateButtonStates();
-        }
-    });
+    // Initialize table
+    createTable();
+    calculateAllCVRs();
+    updateCVI();
+    updateButtonStates();
     
+    // Add event listeners
+    document.getElementById('addRow').addEventListener('click', addRow);
+    document.getElementById('removeRow').addEventListener('click', removeRow);
+    document.getElementById('addColumn').addEventListener('click', addColumn);
+    document.getElementById('removeColumn').addEventListener('click', removeColumn);
     document.getElementById('clearTable').addEventListener('click', clearTable);
     document.getElementById('pasteData').addEventListener('click', pasteFromExcel);
     document.getElementById('copyData').addEventListener('click', copyToExcel);

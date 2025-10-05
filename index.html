@@ -62,13 +62,45 @@
 </head>
 <body>
     <div class="container">
-        <!-- Language Selection -->
-        <div class="language-selector">
-            <a href="index.html" class="lang-btn active">🇹🇷 Türkçe</a>
-            <a href="index-en.html" class="lang-btn">🇺🇸 English</a>
-        </div>
+        <!-- Ana Başlık -->
+        <header class="main-header">
+            <h1>Kapsam Geçerliliği Hesaplama Aracı</h1>
+            
+            <!-- Language Selection and Instructions -->
+            <div class="header-controls">
+                <div class="language-selector">
+                    <a href="index.html" class="lang-btn active">🇹🇷 Türkçe</a>
+                    <a href="index-en.html" class="lang-btn">🇺🇸 English</a>
+                </div>
+                
+                <div class="instructions-section">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion('instructions')">
+                            <h3>📋 Kullanım Talimatları</h3>
+                            <i class="fas fa-chevron-down accordion-icon" id="instructions-icon"></i>
+                        </div>
+                        <div class="accordion-content" id="instructions-content">
+                            <div class="instructions-content">
+                                <p><strong>1. Uzman ve Madde Sayısını Belirleyin:</strong> "Uzman Ekle" ve "Madde Ekle" butonlarını kullanın.</p>
+                                <p><strong>2. Veri Girişi:</strong> Her hücreye 0, 1, 2 veya 3 değerlerinden birini girin:</p>
+                                <ul>
+                                    <li><strong>0:</strong> Tamamen geçersiz</li>
+                                    <li><strong>1:</strong> Geçerli (Sert Model'de sadece 1 geçerli sayılır)</li>
+                                    <li><strong>2:</strong> Kısmen geçerli (Rahat Model'de 1 ve 2 geçerli sayılır)</li>
+                                    <li><strong>3:</strong> Geçersiz</li>
+                                </ul>
+                                <p><strong>3. Model Seçimi:</strong> Değerlendirme modelinizi seçin (Sert veya Rahat Model)</p>
+                                <p><strong>4. Hesaplamalar:</strong> Veriler otomatik olarak hesaplanır ve renk kodlanır</p>
+                                <p><strong>5. Excel Entegrasyonu:</strong> "Excel'den Yapıştır" ile veri içe aktarın veya "Excel'e Kopyala" ile sonuçları dışa aktarın</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <main class="main-content">
+
             <!-- Kontrol Paneli -->
             <div class="card control-panel">
                 <div class="control-buttons">
@@ -134,6 +166,8 @@
                             <tr>
                                 <th class="row-header">#</th>
                                 <!-- Uzman sütunları JavaScript ile eklenecek -->
+                                <th class="result-header">Değer</th>
+                                <th class="result-header">Değer</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
@@ -153,8 +187,6 @@
                             <span class="summary-label">S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama):</span>
                             <span class="summary-value" id="scviAveValue">-</span>
                         </div>
-                    </div>
-                    <div class="summary-row">
                         <div class="summary-item">
                             <span class="summary-label">S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma):</span>
                             <span class="summary-value" id="scviUAValue">-</span>
@@ -176,7 +208,7 @@
                         <h4>CVR (İçerik Geçerliliği Oranı)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="cvr-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="cvr-accordion">
+                    <div class="accordion-content" id="cvr-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">CVR = (ne - N/2) / (N/2)</div>
                             <p><strong>ne:</strong> Maddeyi "gerekli" olarak değerlendiren uzman sayısı</p>
@@ -223,7 +255,7 @@
                         <h4>I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="icvi-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="icvi-accordion">
+                    <div class="accordion-content" id="icvi-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">I-CVI = Maddeyi "gerekli" olarak değerlendiren uzman sayısı / Toplam uzman sayısı</div>
                         </div>
@@ -256,7 +288,7 @@
                         <h4>CVI (İçerik Geçerliliği İndeksi)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="cvi-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="cvi-accordion">
+                    <div class="accordion-content" id="cvi-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">CVI = Tüm CVR değerlerinin ortalaması</div>
                         </div>
@@ -295,7 +327,7 @@
                         <h4>S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="scvi-ave-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="scvi-ave-accordion">
+                    <div class="accordion-content" id="scvi-ave-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">S-CVI/Ave = Tüm I-CVI değerlerinin ortalaması</div>
                         </div>
@@ -322,7 +354,7 @@
                         <h4>S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="scvi-ua-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="scvi-ua-accordion">
+                    <div class="accordion-content" id="scvi-ua-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">S-CVI/UA = Evrensel Anlaşma Olan Maddeler / Toplam Madde</div>
                         </div>
@@ -343,30 +375,19 @@
                     </div>
                 </div>
 
-                <!-- Hesaplama Süreci -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('process-accordion')">
-                        <h4>Hesaplama Süreci</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="process-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="process-accordion">
-                        <ol>
-                            <li><strong>Veri Girişi:</strong> Uzmanlar her maddeyi 0, 1, 2 veya 3 olarak değerlendirir</li>
-                            <li><strong>Model Seçimi:</strong> Sert veya Rahat model seçilir</li>
-                            <li><strong>İkili Dönüşüm:</strong> Seçilen modele göre değerler 0 veya 1'e dönüştürülür</li>
-                            <li><strong>CVR Hesaplama:</strong> Her madde için CVR hesaplanır</li>
-                            <li><strong>I-CVI Hesaplama:</strong> Her madde için I-CVI hesaplanır</li>
-                            <li><strong>CVI Hesaplama:</strong> Tüm CVR değerlerinin ortalaması</li>
-                            <li><strong>S-CVI/Ave Hesaplama:</strong> Tüm I-CVI değerlerinin ortalaması</li>
-                            <li><strong>S-CVI/UA Hesaplama:</strong> Evrensel anlaşma olan maddelerin oranı</li>
-                            <li><strong>Renk Kodlama:</strong> Sonuçlar eşik değerlere göre renklendirilir</li>
-                        </ol>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script-unified.js"></script>
+    
+    <!-- Footer Bilgilendirme -->
+    <footer class="footer-info">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 - mcalisir tarafından geliştirilmiştir. MIT License ile lisanslanmıştır. https://github.com/mcalisir/CVR - mcalisir52@gmail.com</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

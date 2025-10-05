@@ -62,13 +62,45 @@
 </head>
 <body>
     <div class="container">
-        <!-- Language Selection -->
-        <div class="language-selector">
-            <a href="index.html" class="lang-btn">🇹🇷 Türkçe</a>
-            <a href="index-en.html" class="lang-btn active">🇺🇸 English</a>
-        </div>
+        <!-- Main Header -->
+        <header class="main-header">
+            <h1>Content Validity Calculator</h1>
+            
+            <!-- Language Selection and Instructions -->
+            <div class="header-controls">
+                <div class="language-selector">
+                    <a href="index.html" class="lang-btn">🇹🇷 Türkçe</a>
+                    <a href="index-en.html" class="lang-btn active">🇺🇸 English</a>
+                </div>
+                
+                <div class="instructions-section">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion('instructions')">
+                            <h3>📋 Usage Instructions</h3>
+                            <i class="fas fa-chevron-down accordion-icon" id="instructions-icon"></i>
+                        </div>
+                        <div class="accordion-content" id="instructions-content">
+                            <div class="instructions-content">
+                                <p><strong>1. Set Number of Experts and Items:</strong> Use "Add Expert" and "Add Item" buttons.</p>
+                                <p><strong>2. Data Entry:</strong> Enter one of the values 0, 1, 2, or 3 in each cell:</p>
+                                <ul>
+                                    <li><strong>0:</strong> Completely invalid</li>
+                                    <li><strong>1:</strong> Valid (Only 1 is considered valid in Strict Model)</li>
+                                    <li><strong>2:</strong> Partially valid (Both 1 and 2 are considered valid in Lenient Model)</li>
+                                    <li><strong>3:</strong> Invalid</li>
+                                </ul>
+                                <p><strong>3. Model Selection:</strong> Choose your evaluation model (Strict or Lenient Model)</p>
+                                <p><strong>4. Calculations:</strong> Data is automatically calculated and color-coded</p>
+                                <p><strong>5. Excel Integration:</strong> Import data with "Paste from Excel" or export results with "Copy to Excel"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <main class="main-content">
+
             <!-- Control Panel -->
             <div class="card control-panel">
                 <div class="control-buttons">
@@ -134,6 +166,8 @@
                             <tr>
                                 <th class="row-header">#</th>
                                 <!-- Expert columns will be added by JavaScript -->
+                                <th class="result-header">Value</th>
+                                <th class="result-header">Value</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
@@ -153,8 +187,6 @@
                             <span class="summary-label">S-CVI/Ave (Scale-level CVI/Average):</span>
                             <span class="summary-value" id="scviAveValue">-</span>
                         </div>
-                    </div>
-                    <div class="summary-row">
                         <div class="summary-item">
                             <span class="summary-label">S-CVI/UA (Scale-level CVI/Universal Agreement):</span>
                             <span class="summary-value" id="scviUAValue">-</span>
@@ -176,7 +208,7 @@
                         <h4>CVR (Content Validity Ratio)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="cvr-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="cvr-accordion">
+                    <div class="accordion-content" id="cvr-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">CVR = (ne - N/2) / (N/2)</div>
                             <p><strong>ne:</strong> Number of experts rating the item as "relevant"</p>
@@ -223,7 +255,7 @@
                         <h4>I-CVI (Item-level Content Validity Index)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="icvi-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="icvi-accordion">
+                    <div class="accordion-content" id="icvi-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">I-CVI = Number of experts rating item as relevant / Total number of experts</div>
                         </div>
@@ -256,7 +288,7 @@
                         <h4>CVI (Content Validity Index)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="cvi-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="cvi-accordion">
+                    <div class="accordion-content" id="cvi-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">CVI = Average of all CVR values</div>
                         </div>
@@ -295,7 +327,7 @@
                         <h4>S-CVI/Ave (Scale-level CVI/Average)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="scvi-ave-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="scvi-ave-accordion">
+                    <div class="accordion-content" id="scvi-ave-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">S-CVI/Ave = Average of all I-CVI values</div>
                         </div>
@@ -322,7 +354,7 @@
                         <h4>S-CVI/UA (Scale-level CVI/Universal Agreement)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="scvi-ua-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="scvi-ua-accordion">
+                    <div class="accordion-content" id="scvi-ua-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">S-CVI/UA = Items with Universal Agreement / Total Items</div>
                         </div>
@@ -343,30 +375,19 @@
                     </div>
                 </div>
 
-                <!-- Calculation Process -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('process-accordion')">
-                        <h4>Calculation Process</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="process-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="process-accordion">
-                        <ol>
-                            <li><strong>Data Entry:</strong> Experts rate each item as 0, 1, 2, or 3</li>
-                            <li><strong>Model Selection:</strong> Choose Strict or Lenient model</li>
-                            <li><strong>Binary Conversion:</strong> Convert values to 0 or 1 based on selected model</li>
-                            <li><strong>CVR Calculation:</strong> Calculate CVR for each item</li>
-                            <li><strong>I-CVI Calculation:</strong> Calculate I-CVI for each item</li>
-                            <li><strong>CVI Calculation:</strong> Average of all CVR values</li>
-                            <li><strong>S-CVI/Ave Calculation:</strong> Average of all I-CVI values</li>
-                            <li><strong>S-CVI/UA Calculation:</strong> Ratio of items with universal agreement</li>
-                            <li><strong>Color Coding:</strong> Results are color-coded based on threshold values</li>
-                        </ol>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
 
-    <script src="script-en.js"></script>
+    <script src="script-unified.js"></script>
+    
+    <!-- Footer Information -->
+    <footer class="footer-info">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Developed by mcalisir. Licensed under MIT License. https://github.com/mcalisir/CVR - mcalisir52@gmail.com</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
