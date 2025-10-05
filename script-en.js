@@ -479,9 +479,9 @@ function updateButtonStates() {
 }
 
 // Toggle accordion
-function toggleAccordion(accordionId) {
-    const content = document.getElementById(accordionId);
-    const icon = document.getElementById(accordionId + '-icon');
+function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById(id + '-icon');
     
     if (content.style.display === 'block') {
         content.style.display = 'none';

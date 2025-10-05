@@ -956,17 +956,15 @@ function loadData() {
 
 // Accordion işlevselliği
 function toggleAccordion(id) {
-    const accordionItem = document.querySelector(`#${id}-content`).closest('.accordion-item');
-    const isActive = accordionItem.classList.contains('active');
+    const content = document.getElementById(id);
+    const icon = document.getElementById(id + '-icon');
     
-    // Tüm accordion'ları kapat
-    document.querySelectorAll('.accordion-item').forEach(item => {
-        item.classList.remove('active');
-    });
-    
-    // Eğer tıklanan accordion kapalıysa aç
-    if (!isActive) {
-        accordionItem.classList.add('active');
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
     }
 }
 
