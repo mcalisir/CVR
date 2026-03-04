@@ -3,67 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CVR Hesaplayıcı - Excel Benzeri Tablo</title>
+    <title>CVR Hesaplayıcı (Türkçe) | İçerik Geçerliliği Oranı, CVI, I-CVI, S-CVI Aracı</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Türkçe CVR hesaplayıcı ile İçerik Geçerliliği Oranı (CVR), I-CVI, CVI, S-CVI/Ave ve S-CVI/UA değerlerini hesaplayın. Ölçek geliştirme çalışmaları için ücretsiz web aracı.">
+    <meta name="keywords" content="CVR hesaplayıcı, içerik geçerliliği oranı, I-CVI, CVI, S-CVI, Lawshe CVR, ölçek geliştirme, araştırma yöntemleri">
+    <meta name="author" content="CVR Calculator">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="Turkish">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CVR Hesaplayıcı (Türkçe) | İçerik Geçerliliği Oranı Aracı">
+    <meta property="og:description" content="CVR, I-CVI, CVI ve S-CVI hesaplarını Türkçe arayüzle yapın. İçerik geçerliliği ve ölçek geliştirme için ücretsiz araç.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mcalisir.github.io/CVR/index-tr.html">
+    <meta property="og:site_name" content="CVR Calculator">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CVR Hesaplayıcı (Türkçe)">
+    <meta name="twitter:description" content="Ücretsiz Türkçe CVR, I-CVI, CVI ve S-CVI hesaplama aracı.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mcalisir.github.io/CVR/index-tr.html">
+    <link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/">
+    <link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/index-tr.html">
+    <link rel="alternate" hreflang="x-default" href="https://mcalisir.github.io/CVR/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CVR Hesaplayıcı",
+        "description": "Excel benzeri arayüzle CVR, I-CVI, CVI ve S-CVI hesaplamaları yapan içerik geçerliliği oranı aracı.",
+        "url": "https://mcalisir.github.io/CVR/index-tr.html",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "applicationCategory": "ResearchApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "CVR Calculator"
+        },
+        "keywords": "CVR, içerik geçerliliği, CVI, I-CVI, S-CVI, Lawshe, araştırma, akademik araçlar"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBWQSEEM55"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZBWQSEEM55');
+    </script>
 </head>
 <body>
     <div class="container">
-
-        <main class="main-content">
-            <!-- Kontrol Paneli -->
-            <div class="card control-panel">
-                <div class="control-buttons">
-                    <button id="addRow" class="btn-control">
-                        <i class="fas fa-plus"></i>
-                        Madde Ekle
-                    </button>
-                    <button id="removeRow" class="btn-control btn-remove">
-                        <i class="fas fa-minus"></i>
-                        Madde Sil
-                    </button>
-                    <button id="addColumn" class="btn-control">
-                        <i class="fas fa-plus"></i>
-                        Uzman Ekle
-                    </button>
-                    <button id="removeColumn" class="btn-control btn-remove">
-                        <i class="fas fa-minus"></i>
-                        Uzman Sil
-                    </button>
-                    <button id="clearTable" class="btn-clear">
-                        <i class="fas fa-trash"></i>
-                        Tabloyu Temizle
-                    </button>
-                    <button id="pasteData" class="btn-paste">
-                        <i class="fas fa-paste"></i>
-                        Excel'den Yapıştır
-                    </button>
-                    <button id="copyData" class="btn-copy">
-                        <i class="fas fa-copy"></i>
-                        Excel'e Kopyala
-                    </button>
-                </div>
-                
-                <!-- Model Seçimi -->
-                <div class="model-selection">
-                    <label for="evaluationModel" class="model-label">
-                        <i class="fas fa-cogs"></i>
-                        Değerlendirme Modeli:
-                    </label>
-                    <select id="evaluationModel" class="model-select">
-                        <option value="strict">Sert Model (1→1, 2,3→0)</option>
-                        <option value="lenient">Rahat Model (1,2→1, 3→0)</option>
-                    </select>
-                    <div class="model-info">
-                        <div class="model-desc" id="modelDescription">
-                            <strong>Sert Model:</strong> Sadece 1 değeri "gerekli" olarak kabul edilir. 2 ve 3 değerleri "gerekli değil" olarak değerlendirilir.
-                        </div>
-                    </div>
+        <!-- Main Header -->
+        <header class="main-header compact-header">
+            <div class="topbar">
+                <h1>CVR Hesaplayıcı</h1>
+                <div class="language-selector">
+                    <a href="index-tr.html" class="lang-btn active">🇹🇷 Türkçe</a>
+                    <a href="index.html" class="lang-btn">🇺🇸 English</a>
                 </div>
             </div>
+        </header>
 
-            <!-- Ana Tablo -->
+        <main class="main-content">
+            <div class="workspace-layout">
+                <aside class="workspace-sidebar">
+                    <!-- Control Panel (Primary) -->
+                    <div class="card control-panel">
+                        <p class="quick-tip-line"><strong>Kullanım:</strong> Madde/uzman ekleyin, hücrelere 0-1-2-3 girin, modeli seçin, sonra Excel'e kopyalayın veya Excel'den yapıştırın.</p>
+                        <div class="control-buttons">
+                            <button id="addRow" class="btn-control">
+                                <i class="fas fa-plus"></i>
+                                Madde Ekle
+                            </button>
+                            <button id="removeRow" class="btn-control btn-remove">
+                                <i class="fas fa-minus"></i>
+                                Madde Sil
+                            </button>
+                            <button id="addColumn" class="btn-control">
+                                <i class="fas fa-plus"></i>
+                                Uzman Ekle
+                            </button>
+                            <button id="removeColumn" class="btn-control btn-remove">
+                                <i class="fas fa-minus"></i>
+                                Uzman Sil
+                            </button>
+                            <button id="clearTable" class="btn-clear">
+                                <i class="fas fa-trash"></i>
+                                Tabloyu Temizle
+                            </button>
+                            <button id="pasteData" class="btn-paste">
+                                <i class="fas fa-paste"></i>
+                                Excel'den Yapıştır
+                            </button>
+                            <button id="copyData" class="btn-copy">
+                                <i class="fas fa-copy"></i>
+                                Excel'e Kopyala
+                            </button>
+                        </div>
+                        
+                        <!-- Model Selection -->
+                        <div class="model-selection">
+                            <label for="evaluationModel" class="model-label">
+                                <i class="fas fa-cogs"></i>
+                                Değerlendirme Modeli:
+                            </label>
+                            <select id="evaluationModel" class="model-select">
+                                <option value="strict">Sert Model (1→1, 2,3→0)</option>
+                                <option value="lenient">Rahat Model (1,2→1, 3→0)</option>
+                            </select>
+                            <div class="model-info">
+                                <div class="model-desc" id="modelDescription">
+                                    <strong>Sert Model:</strong> Sadece 1 değeri "gerekli" kabul edilir. 2 ve 3 değerleri "gerekli değil" sayılır.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Guide (Secondary) -->
+                    <div class="card quick-guide-card">
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion('instructions')">
+                                <h3>Nasıl Kullanılır</h3>
+                                <i class="fas fa-chevron-down accordion-icon" id="instructions-icon"></i>
+                            </div>
+                            <div class="accordion-content" id="instructions-content">
+                                <div class="instructions-content">
+                                    <p><strong>1. Uzman ve madde ekleyin:</strong> Yukarıdaki butonları kullanın.</p>
+                                    <p><strong>2. Puanları girin:</strong> Her hücreye 0, 1, 2 veya 3 girin.</p>
+                                    <ul>
+                                        <li><strong>0:</strong> Tamamen geçersiz</li>
+                                        <li><strong>1:</strong> Gerekli</li>
+                                        <li><strong>2:</strong> Kısmen gerekli (Rahat model)</li>
+                                        <li><strong>3:</strong> Gerekli değil</li>
+                                    </ul>
+                                    <p><strong>3. Model seçin:</strong> Sert veya Rahat.</p>
+                                    <p><strong>4. Yapıştır/Kopyala:</strong> Excel'den içe aktarın veya sonuçları dışa aktarın.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="workspace-main">
+
+            <!-- Main Table -->
             <div class="card table-card">
                 <div class="table-container">
                     <table id="cvrTable" class="excel-table">
@@ -76,18 +184,18 @@
                             </tr>
                             <tr>
                                 <th class="row-header">#</th>
-                                <!-- Uzman sütunları JavaScript ile eklenecek -->
-                                <th class="result-header">Değer</th>
-                                <th class="result-header">Değer</th>
+                                <!-- Expert columns will be added by JavaScript -->
+                                <th class="result-header">Value</th>
+                                <th class="result-header">Value</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                            <!-- Satırlar JavaScript ile eklenecek -->
+                            <!-- Rows will be added by JavaScript -->
                         </tbody>
                     </table>
                 </div>
                 
-                <!-- CVI Özet Bölümü -->
+                <!-- CVI Summary Section -->
                 <div class="cvi-summary">
                     <div class="summary-row">
                         <div class="summary-item">
@@ -98,8 +206,6 @@
                             <span class="summary-label">S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama):</span>
                             <span class="summary-value" id="scviAveValue">-</span>
                         </div>
-                    </div>
-                    <div class="summary-row">
                         <div class="summary-item">
                             <span class="summary-label">S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma):</span>
                             <span class="summary-value" id="scviUAValue">-</span>
@@ -108,31 +214,31 @@
                 </div>
             </div>
 
-            <!-- Açıklamalar Bölümü -->
+            <!-- Explanations Section -->
             <div class="card explanations-card">
                 <h3 class="explanations-title">
                     <i class="fas fa-info-circle"></i>
                     Hesaplama Açıklamaları
                 </h3>
                 
-                <!-- CVR Açıklaması -->
+                <!-- CVR Explanation -->
                 <div class="accordion">
                     <div class="accordion-header" onclick="toggleAccordion('cvr-accordion')">
-                        <h4>CVR (İçerik Geçerliliği Oranı)</h4>
+                        <h4>CVR (Content Validity Ratio)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="cvr-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="cvr-accordion">
+                    <div class="accordion-content" id="cvr-accordion-content">
                         <div class="formula-display">
                             <div class="math-formula">CVR = (ne - N/2) / (N/2)</div>
-                            <p><strong>ne:</strong> Maddeyi "gerekli" olarak değerlendiren uzman sayısı</p>
-                            <p><strong>N:</strong> Toplam uzman sayısı</p>
+                            <p><strong>ne:</strong> Number of experts rating the item as "relevant"</p>
+                            <p><strong>N:</strong> Total number of experts</p>
                         </div>
                         
-                        <h5>Lawshe'nin Minimum CVR Değerleri:</h5>
+                        <h5>Lawshe's Minimum CVR Values:</h5>
                         <table class="min-cvr-table">
                             <thead>
                                 <tr>
-                                    <th>Uzman Sayısı</th>
+                                    <th>Number of Experts</th>
                                     <th>Minimum CVR</th>
                                 </tr>
                             </thead>
@@ -157,75 +263,75 @@
                         </table>
                         
                         <div class="source-reference">
-                            <strong>Kaynak:</strong> Lawshe, C. H. (1975). A quantitative approach to content validity. Personnel Psychology, 28(4), 563-575.
+                            <strong>Source:</strong> Lawshe, C. H. (1975). A quantitative approach to content validity. Personnel Psychology, 28(4), 563-575.
                         </div>
                     </div>
                 </div>
 
-                <!-- I-CVI Açıklaması -->
+                <!-- I-CVI Explanation -->
                 <div class="accordion">
                     <div class="accordion-header" onclick="toggleAccordion('icvi-accordion')">
-                        <h4>I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi)</h4>
+                        <h4>I-CVI (Item-level Content Validity Index)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="icvi-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="icvi-accordion">
+                    <div class="accordion-content" id="icvi-accordion-content">
                         <div class="formula-display">
-                            <div class="math-formula">I-CVI = Maddeyi "gerekli" olarak değerlendiren uzman sayısı / Toplam uzman sayısı</div>
+                            <div class="math-formula">I-CVI = Number of experts rating item as relevant / Total number of experts</div>
                         </div>
                         
-                        <h5>Değerlendirme Kriterleri:</h5>
+                        <h5>Evaluation Criteria:</h5>
                         <ul>
-                            <li><strong>1-2 Uzman:</strong> I-CVI = 1.0 olmalı (yeşil)</li>
-                            <li><strong>3+ Uzman:</strong> 
+                            <li><strong>1-2 Experts:</strong> I-CVI must be 1.0 (green)</li>
+                            <li><strong>3+ Experts:</strong> 
                                 <ul>
-                                    <li>I-CVI ≥ 0.78: Geçerli (yeşil)</li>
-                                    <li>I-CVI 0.70-0.78: Revizyon gerekli (turuncu)</li>
-                                    <li>I-CVI < 0.70: Elimine edilmeli (kırmızı)</li>
+                                    <li>I-CVI ≥ 0.78: Valid (green)</li>
+                                    <li>I-CVI 0.70-0.78: Needs revision (orange)</li>
+                                    <li>I-CVI < 0.70: Should be eliminated (red)</li>
                                 </ul>
                             </li>
                         </ul>
                         
-                        <p><strong>Not:</strong> Değerler 0 ile 1 arasında değişebilir. Hesaplanan I-CVI değeri 0.79 veya daha yüksek, maddelerin geçerli olduğunu gösterir. 0.70 ile 0.79 arası, maddenin revizyon gerektirdiğini gösterir. 0.70'den düşük değerler, maddelerin elimine edilmesi gerektiğini önerir. Beşten fazla uzmanla, I-CVI için kabul edilebilir değer 0.78'dir.</p>
+                        <p><strong>Note:</strong> Values can range from 0 to 1. The calculated I-CVI of 0.79 or more indicates the items are relevant, and 0.70 to 0.79 indicates the item needs revisions. In contrast, less than 0.70 suggests that items need to be eliminated. With more than five experts, the acceptable value for I-CVI is 0.78.</p>
                         
                         <div class="source-reference">
-                            <strong>Kaynaklar:</strong><br>
+                            <strong>Sources:</strong><br>
                             Lynn MR. Determination and quantification of content validity. Nurs Res. 1986;35(6):382–5. doi: 10.1097/00006199-198611000-00017.<br>
                             Polit DF, Beck CT. The content validity index: are you sure you know what's being reported? Critique and recommendations. Res Nurs Health. 2006;29(5):489–97. doi: 10.1002/nur.20147.
                         </div>
                     </div>
                 </div>
 
-                <!-- CVI Açıklaması -->
+                <!-- CVI Explanation -->
                 <div class="accordion">
                     <div class="accordion-header" onclick="toggleAccordion('cvi-accordion')">
-                        <h4>CVI (İçerik Geçerliliği İndeksi)</h4>
+                        <h4>CVI (Content Validity Index)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="cvi-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="cvi-accordion">
+                    <div class="accordion-content" id="cvi-accordion-content">
                         <div class="formula-display">
-                            <div class="math-formula">CVI = Tüm CVR değerlerinin ortalaması</div>
+                            <div class="math-formula">CVI = Average of all CVR values</div>
                         </div>
                         
-                        <h5>Kabul Edilebilir CVI Değerleri:</h5>
+                        <h5>Acceptable CVI Values:</h5>
                         <table class="min-cvr-table">
                             <thead>
                                 <tr>
-                                    <th>Uzman Sayısı</th>
-                                    <th>Kabul Edilebilir CVI Değerleri</th>
-                                    <th>Öneri Kaynağı</th>
+                                    <th>Number of Experts</th>
+                                    <th>Acceptable CVI Values</th>
+                                    <th>Source of Recommendation</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>2</td><td>En az 0.8</td><td>Davis (1992)</td></tr>
-                                <tr><td>3-5</td><td>1 olmalı</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
-                                <tr><td>En az 6</td><td>En az 0.83</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
-                                <tr><td>6-8</td><td>En az 0.83</td><td>Lynn (1986)</td></tr>
-                                <tr><td>En az 9</td><td>En az 0.78</td><td>Lynn (1986)</td></tr>
+                                <tr><td>2</td><td>At least 0.8</td><td>Davis (1992)</td></tr>
+                                <tr><td>3-5</td><td>Should be 1</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
+                                <tr><td>At least 6</td><td>At least 0.83</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
+                                <tr><td>6-8</td><td>At least 0.83</td><td>Lynn (1986)</td></tr>
+                                <tr><td>At least 9</td><td>At least 0.78</td><td>Lynn (1986)</td></tr>
                             </tbody>
                         </table>
                         
                         <div class="source-reference">
-                            <strong>Kaynaklar:</strong><br>
+                            <strong>Sources:</strong><br>
                             Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
                             Lynn, M. R. (1986). Determination and quantification of content validity. Nursing Research, 35(6), 382-385.<br>
                             Polit, D. F., & Beck, C. T. (2006). The content validity index: are you sure you know what's being reported? Research in Nursing & Health, 29(5), 489-497.<br>
@@ -234,84 +340,75 @@
                     </div>
                 </div>
 
-                <!-- S-CVI/Ave Açıklaması -->
+                <!-- S-CVI/Ave Explanation -->
                 <div class="accordion">
                     <div class="accordion-header" onclick="toggleAccordion('scvi-ave-accordion')">
-                        <h4>S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama)</h4>
+                        <h4>S-CVI/Ave (Scale-level CVI/Average)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="scvi-ave-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="scvi-ave-accordion">
+                    <div class="accordion-content" id="scvi-ave-accordion-content">
                         <div class="formula-display">
-                            <div class="math-formula">S-CVI/Ave = Tüm I-CVI değerlerinin ortalaması</div>
+                            <div class="math-formula">S-CVI/Ave = Average of all I-CVI values</div>
                         </div>
                         
-                        <h5>Geçerlilik Kriterleri:</h5>
+                        <h5>Validity Criteria:</h5>
                         <ul>
-                            <li><strong>Mükemmel İçerik Geçerliliği:</strong> S-CVI/Ave ≥ 0.90</li>
-                            <li><strong>Geçersiz:</strong> S-CVI/Ave < 0.90</li>
+                            <li><strong>Excellent Content Validity:</strong> S-CVI/Ave ≥ 0.90</li>
+                            <li><strong>Invalid:</strong> S-CVI/Ave < 0.90</li>
                         </ul>
                         
-                        <p><strong>Not:</strong> S-CVI'nin geçerliliğini belirlemek için araştırmacılar hala CVI değeri ≥ 0.8 kullanmaktadır. S-CVI ≥ 0.8 ise kategori Geçerli, S-CVI < 0.78 ise kategori Geçersizdir.</p>
+                        <p><strong>Note:</strong> To determine the validity of S-CVI, researchers still use the CVI value ≥ 0.8. So, If S-CVI ≥ 0.8, the category is Valid and if S-CVI < 0.78, the category is Invalid.</p>
                         
                         <div class="source-reference">
-                            <strong>Kaynaklar:</strong><br>
+                            <strong>Sources:</strong><br>
                             Waltz, C. F., Strickland, O. L., & Lenz, E. R. (2005). Measurement in nursing and health research. Springer Publishing Company.<br>
                             Shi, J., Mo, X., & Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
                         </div>
                     </div>
                 </div>
 
-                <!-- S-CVI/UA Açıklaması -->
+                <!-- S-CVI/UA Explanation -->
                 <div class="accordion">
                     <div class="accordion-header" onclick="toggleAccordion('scvi-ua-accordion')">
-                        <h4>S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma)</h4>
+                        <h4>S-CVI/UA (Scale-level CVI/Universal Agreement)</h4>
                         <i class="fas fa-chevron-down accordion-icon" id="scvi-ua-accordion-icon"></i>
                     </div>
-                    <div class="accordion-content" id="scvi-ua-accordion">
+                    <div class="accordion-content" id="scvi-ua-accordion-content">
                         <div class="formula-display">
-                            <div class="math-formula">S-CVI/UA = Evrensel Anlaşma Olan Maddeler / Toplam Madde</div>
+                            <div class="math-formula">S-CVI/UA = Items with Universal Agreement / Total Items</div>
                         </div>
                         
-                        <h5>Geçerlilik Kriterleri:</h5>
+                        <h5>Validity Criteria:</h5>
                         <ul>
-                            <li><strong>Mükemmel İçerik Geçerliliği:</strong> S-CVI/UA ≥ 0.80</li>
-                            <li><strong>Geçersiz:</strong> S-CVI/UA < 0.80</li>
+                            <li><strong>Excellent Content Validity:</strong> S-CVI/UA ≥ 0.80</li>
+                            <li><strong>Invalid:</strong> S-CVI/UA < 0.80</li>
                         </ul>
                         
-                        <p><strong>Not:</strong> S-CVI/UA ve S-CVI/Ave farklı formüllere sahip ölçek düzeyinde CVI'lerdir. Araştırmacılar, mükemmel içerik geçerliliğine sahip bir ölçeğin 0.78 veya daha yüksek I-CVI'lerden ve sırasıyla 0.8 ve 0.9 veya daha yüksek S-CVI/UA ve S-CVI/Ave'den oluşması gerektiğini önerir.</p>
+                        <p><strong>Note:</strong> S-CVI/UA and S-CVI/Ave are both scale level CVI with different formulas. Researchers recommend that a scale with excellent content validity should be composed of I-CVIs of 0.78 or higher and S-CVI/UA and S-CVI/Ave of 0.8 and 0.9 or higher, respectively.</p>
                         
                         <div class="source-reference">
-                            <strong>Kaynaklar:</strong><br>
+                            <strong>Sources:</strong><br>
                             Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
                             Shi, J., Mo, X., & Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
                         </div>
                     </div>
                 </div>
 
-                <!-- Hesaplama Süreci -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('process-accordion')">
-                        <h4>Hesaplama Süreci</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="process-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="process-accordion">
-                        <ol>
-                            <li><strong>Veri Girişi:</strong> Uzmanlar her maddeyi 0, 1, 2 veya 3 olarak değerlendirir</li>
-                            <li><strong>Model Seçimi:</strong> Sert veya Rahat model seçilir</li>
-                            <li><strong>İkili Dönüşüm:</strong> Seçilen modele göre değerler 0 veya 1'e dönüştürülür</li>
-                            <li><strong>CVR Hesaplama:</strong> Her madde için CVR hesaplanır</li>
-                            <li><strong>I-CVI Hesaplama:</strong> Her madde için I-CVI hesaplanır</li>
-                            <li><strong>CVI Hesaplama:</strong> Tüm CVR değerlerinin ortalaması</li>
-                            <li><strong>S-CVI/Ave Hesaplama:</strong> Tüm I-CVI değerlerinin ortalaması</li>
-                            <li><strong>S-CVI/UA Hesaplama:</strong> Evrensel anlaşma olan maddelerin oranı</li>
-                            <li><strong>Renk Kodlama:</strong> Sonuçlar eşik değerlere göre renklendirilir</li>
-                        </ol>
-                    </div>
-                </div>
+            </div>
+                </section>
             </div>
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script-unified.js"></script>
+    
+    <!-- Footer Information -->
+    <footer class="footer-info">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Developed by mcalisir. Licensed under MIT License. https://github.com/mcalisir/CVR - mcalisir52@gmail.com</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
