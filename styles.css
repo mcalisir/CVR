@@ -1200,11 +1200,63 @@ kbd {
     }
 }
 
+/* =========================================================
+   Makaleler / Resources
+   ========================================================= */
+
+.resources-card h2 {
+    margin-bottom: 8px;
+}
+
+.resources-card > p {
+    color: var(--text-2);
+    margin-bottom: 20px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.article-link {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+.article-link:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.article-title {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+
+.article-desc {
+    font-size: 0.85rem;
+    color: var(--text-3);
+    line-height: 1.4;
+}
+
 @media print {
     .site-header,
     .toolbar-card,
     .hint-bar,
     .explanations-card,
+    .resources-card,
     .site-footer,
     .toast,
     .modal-backdrop,
