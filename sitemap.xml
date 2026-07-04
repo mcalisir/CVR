@@ -2,61 +2,101 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://mcalisir.github.io/CVR/</loc>
+        <loc>https://cvrindex.pro/</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/" />
-        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/index-tr.html" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://mcalisir.github.io/CVR/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/index-tr.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cvrindex.pro/" />
     </url>
     <url>
-        <loc>https://mcalisir.github.io/CVR/index-tr.html</loc>
+        <loc>https://cvrindex.pro/index-tr.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/index-tr.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://mcalisir.github.io/CVR/" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/index-tr.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://cvrindex.pro/" />
     </url>
     <url>
-        <loc>https://mcalisir.github.io/CVR/cvr-orani-nedir.html</loc>
+        <loc>https://cvrindex.pro/cvr-orani-nedir.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/cvr-orani-nedir.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-cvr.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/cvr-orani-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-cvr.html" />
     </url>
     <url>
-        <loc>https://mcalisir.github.io/CVR/icvi-nedir.html</loc>
+        <loc>https://cvrindex.pro/icvi-nedir.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/icvi-nedir.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-icvi.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/icvi-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-icvi.html" />
     </url>
     <url>
-        <loc>https://mcalisir.github.io/CVR/cvi-nedir.html</loc>
+        <loc>https://cvrindex.pro/cvi-nedir.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/cvi-nedir.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-cvi.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/cvi-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-cvi.html" />
     </url>
     <url>
-        <loc>https://mcalisir.github.io/CVR/scvi-ave-nedir.html</loc>
+        <loc>https://cvrindex.pro/scvi-ave-nedir.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/scvi-ave-nedir.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-scvi-ave.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/scvi-ave-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-scvi-ave.html" />
     </url>
     <url>
-        <loc>https://mcalisir.github.io/CVR/scvi-ua-nedir.html</loc>
+        <loc>https://cvrindex.pro/scvi-ua-nedir.html</loc>
         <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/scvi-ua-nedir.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-scvi-ua.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/scvi-ua-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-scvi-ua.html" />
+    </url>
+    <url>
+        <loc>https://cvrindex.pro/what-is-cvr.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-cvr.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/cvr-orani-nedir.html" />
+    </url>
+    <url>
+        <loc>https://cvrindex.pro/what-is-icvi.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-icvi.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/icvi-nedir.html" />
+    </url>
+    <url>
+        <loc>https://cvrindex.pro/what-is-cvi.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-cvi.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/cvi-nedir.html" />
+    </url>
+    <url>
+        <loc>https://cvrindex.pro/what-is-scvi-ave.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-scvi-ave.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/scvi-ave-nedir.html" />
+    </url>
+    <url>
+        <loc>https://cvrindex.pro/what-is-scvi-ua.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-scvi-ua.html" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://cvrindex.pro/scvi-ua-nedir.html" />
     </url>
 </urlset>

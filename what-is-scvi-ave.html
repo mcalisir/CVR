@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is S-CVI/Ave? Scale-level CVI Average Formula & 0.90 Threshold</title>
+    <meta name="description" content="S-CVI/Ave (Scale-level CVI/Average): average of all I-CVI values for excellent content validity. Formula, 0.90 threshold, interpretation for scale development.">
+    <meta name="keywords" content="S-CVI/Ave, scale-level CVI, I-CVI average, 0.90 threshold, excellent validity, content validity">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cvrindex.pro/what-is-scvi-ave.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root { --bg: #f3f5f9; --surface: #ffffff; --text: #16213a; --text-2: #4b5768; --accent: #3457d5; --good: #177a3d; --border: #e2e8f0; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: var(--surface); padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08); }
+        h1 { font-size: 2rem; font-weight: 700; }
+        h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; }
+        p { color: var(--text-2); margin-bottom: 16px; }
+        .formula-box { background: #f8f9ff; border: 2px solid var(--accent); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; }
+        .formula-box code { font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: 700; color: var(--accent); }
+        .highlight { background: #f0fdf4; border-left: 4px solid var(--good); padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .nav-links { display: flex; gap: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+        .nav-links a { padding: 10px 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; }
+        .calc-link { background: var(--good); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
+            <h1>What is S-CVI/Ave?</h1>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Scale-level CVI Average: most commonly used scale-level validity indicator</p>
+        </header>
+        <main>
+            <p><strong>S-CVI/Ave (Scale-level Content Validity Index/Average)</strong> is the most reliable and widely used measure of scale-level content validity. It represents the average of all item-level I-CVI values across the entire scale.</p>
+
+            <h2>S-CVI/Ave Formula</h2>
+            <div class="formula-box">
+                <code>S-CVI/Ave = Sum of all I-CVI values / Number of items</code>
+            </div>
+
+            <h2>Validity Threshold</h2>
+            <div class="highlight">
+                <p><strong>S-CVI/Ave ≥ 0.90:</strong> Excellent content validity ✓</p>
+                <p style="margin: 0;">Scale is ready for use without further modifications.</p>
+            </div>
+
+            <div class="highlight" style="background: #fef2f2; border-left-color: #c0392b;">
+                <p><strong>S-CVI/Ave < 0.90:</strong> Insufficient validity</p>
+                <p style="margin: 0;">Items require revision or removal.</p>
+            </div>
+
+            <h2>Why S-CVI/Ave is Preferred</h2>
+            <ul>
+                <li>Captures item-level expert agreement more precisely than CVI</li>
+                <li>Most widely cited in modern research literature</li>
+                <li>Clear, single threshold (0.90) for excellence</li>
+                <li>Recommended by Waltz, Strickland, and Lenz (2005)</li>
+            </ul>
+
+            <h2>References</h2>
+            <p><strong>Waltz, C. F., Strickland, O. L., & Lenz, E. R. (2005).</strong> Measurement in nursing and health research. Springer Publishing Company.</p>
+
+            <div class="nav-links">
+                <a href="/" class="calc-link">← Back to Calculator</a>
+                <a href="/what-is-cvi.html">← What is CVI?</a>
+                <a href="/what-is-scvi-ua.html">What is S-CVI/UA? →</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
