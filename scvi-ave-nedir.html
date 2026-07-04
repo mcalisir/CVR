@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama) Nedir? Formülü ve Eşikleri</title>
 
-    <meta name="description" content="S-CVI/Ave (Scale-level CVI/Average) nedir? Tüm I-CVI değerlerinin ortalaması, formülü, geçerlilik eşikleri (0.90). Ölçek düzeyinde geçerliliğin en güvenilir göstergesi.">
-    <meta name="keywords" content="S-CVI/Ave, scale-level CVI, ölçek geçerliliği, I-CVI ortalaması, formülü, 0.90 eşiği, mükemmel geçerlilik">
+    <meta name="description" content="S-CVI/Ave (Scale-level CVI/Average) nedir? Tüm I-CVI değerlerinin ortalaması, formülü, hesaplama, geçerlilik eşikleri (0.90). Ölçek düzeyinde geçerliliğin en güvenilir göstergesi ve modern araştırmanın altın standardı.">
+    <meta name="keywords" content="S-CVI/Ave, scale-level CVI, ölçek geçerliliği, I-CVI ortalaması, formülü, 0.90 eşiği, mükemmel geçerlilik, içerik geçerliliği, ölçek geliştirme">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mcalisir.github.io/CVR/scvi-ave-nedir.html">
+    <link rel="canonical" href="https://cvrindex.pro/scvi-ave-nedir.html">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -18,7 +18,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama) Nedir?",
-        "url": "https://mcalisir.github.io/CVR/scvi-ave-nedir.html",
+        "url": "https://cvrindex.pro/scvi-ave-nedir.html",
         "datePublished": "2026-07-04",
         "inLanguage": "tr"
     }
@@ -42,7 +42,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--surface);
             padding: 40px;
@@ -51,7 +51,9 @@
         }
         h1 { font-size: 2rem; font-weight: 700; }
         h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; }
+        h3 { font-size: 1.1rem; font-weight: 600; margin-top: 20px; }
         p { color: var(--text-2); margin-bottom: 16px; }
+        li { color: var(--text-2); margin-bottom: 10px; }
         .formula-box {
             background: #f8f9ff;
             border: 2px solid var(--accent);
@@ -73,6 +75,48 @@
             margin: 15px 0;
             border-radius: 4px;
         }
+        .highlight-box strong {
+            color: var(--good);
+        }
+        .example-box {
+            background: #fef2f2;
+            border-left: 4px solid #c0392b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #a05a09;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .info-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        table th, table td {
+            border: 1px solid var(--border);
+            padding: 12px;
+            text-align: center;
+        }
+        table th {
+            background: var(--accent);
+            color: white;
+        }
+        table td:first-child, table th:first-child {
+            text-align: left;
+        }
         .nav-links {
             display: flex;
             gap: 12px;
@@ -90,17 +134,36 @@
             font-weight: 600;
         }
         .calc-link { background: var(--good); }
+        .code-sample {
+            background: #f5f5f5;
+            border-left: 4px solid #888;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
             <h1>S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama) Nedir?</h1>
-            <p style="color: #8b96a8; font-size: 0.9rem;">Tüm I-CVI değerlerinin ortalaması, mükemmel geçerlilik göstergesi, formülü ve eşikleri</p>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Modern araştırmanın altın standardı: tüm I-CVI değerlerinin ortalaması, formülü, hesaplama, geçerlilik eşikleri ve yorumlama rehberi</p>
         </header>
 
         <main>
-            <p><strong>S-CVI/Ave (Scale-level Content Validity Index/Average)</strong>, bütün ölçeğin geçerliliğini değerlendirmek için <strong>tüm maddelerin I-CVI değerlerinin ortalaması</strong>nı alan en güvenilir göstergedir. Araştırmacılar tarafından ölçek düzeyinde geçerliliğin en çok kullanılan ölçütüdür.</p>
+            <p><strong>S-CVI/Ave (Scale-level Content Validity Index/Average)</strong>, bütün ölçeğin içerik geçerliliğini değerlendirmek için <strong>tüm maddelerin I-CVI değerlerinin ortalaması</strong>nı alan ve modern araştırmada en çok tercih edilen, en güvenilir göstergedir. Hemşirelik, eğitim, psikoloji ve davranış bilimleri alanında yayınlanan araştırmalar içinde en yaygın olarak kullanılan ve uzman tarafından tavsiye edilen ölçek düzeyinde geçerlilik metriğidir.</p>
+
+            <p><strong>S-CVI/Ave kullanım alanları:</strong></p>
+            <ul>
+                <li>Hemşirelik ve sağlık hizmetleri ölçeği geliştirme</li>
+                <li>Eğitim değerlendirme enstrümanı doğrulama</li>
+                <li>Psikolojik ve davranışsal ölçüm araçları</li>
+                <li>Örgütsel ve yönetim araştırmaları</li>
+                <li>Uzman tabanlı enstrüman doğrulaması gereken her alan</li>
+            </ul>
 
             <h2>S-CVI/Ave Formülü</h2>
 
@@ -108,39 +171,193 @@
                 <code>S-CVI/Ave = Tüm I-CVI değerlerinin toplamı / Madde sayısı</code>
             </div>
 
-            <p>Örneğin, bir ölçeğin 8 maddesinin I-CVI değerleri:</p>
-            <p>1.0, 0.83, 0.67, 0.67, 0.17, 1.0, 1.0, 0.83</p>
-            <p><strong>S-CVI/Ave = (1.0 + 0.83 + 0.67 + 0.67 + 0.17 + 1.0 + 1.0 + 0.83) / 8 = 0.604</strong></p>
+            <h3>Adım Adım Hesaplama (3 Adım)</h3>
+            <p><strong>Adım 1:</strong> Her madde için I-CVI'yi hesapla (I-CVI formülü: maddeyi gerekli olarak belirten uzmanlar / toplam uzman sayısı)</p>
+            <p><strong>Adım 2:</strong> Tüm I-CVI değerlerini topla</p>
+            <p><strong>Adım 3:</strong> Toplam madde sayısına böl</p>
 
-            <h2>Geçerlilik Eşikleri</h2>
+            <h3>Örnek Hesaplama</h3>
+            <div class="example-box">
+                <p><strong>Senaryo:</strong> 5 maddelik bir ölçek, 5 uzman tarafından değerlendirildi</p>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>Madde 1: I-CVI = 1.0 (5/5 uzman katılı)</li>
+                    <li>Madde 2: I-CVI = 0.8 (4/5 uzman katılı)</li>
+                    <li>Madde 3: I-CVI = 0.8 (4/5 uzman katılı)</li>
+                    <li>Madde 4: I-CVI = 1.0 (5/5 uzman katılı)</li>
+                    <li>Madde 5: I-CVI = 0.6 (3/5 uzman katılı)</li>
+                </ul>
+                <p style="margin: 10px 0;"><strong>Hesaplama:</strong> S-CVI/Ave = (1.0 + 0.8 + 0.8 + 1.0 + 0.6) / 5 = 4.2 / 5 = <strong>0.84</strong></p>
+            </div>
+
+            <h3>Başka Bir Örnek (8 Maddelik Ölçek)</h3>
+            <div class="example-box">
+                <p><strong>Senaryo:</strong> 8 maddelik bir ölçek, I-CVI değerleri:</p>
+                <p>1.0, 0.83, 0.67, 0.67, 0.17, 1.0, 1.0, 0.83</p>
+                <p><strong>Hesaplama:</strong> (1.0 + 0.83 + 0.67 + 0.67 + 0.17 + 1.0 + 1.0 + 0.83) / 8 = 6.17 / 8 = <strong>0.77</strong></p>
+                <p style="margin: 10px 0; font-size: 0.95rem;"><em>Not: 0.77 eşiğinin altında olduğu için Madde 5 (I-CVI = 0.17) ve diğer düşük puanlı maddeler revize edilmeli veya çıkarılmalıdır.</em></p>
+            </div>
+
+            <h2>Geçerlilik Eşikleri ve Yorumlama</h2>
 
             <div class="highlight-box">
-                <p><strong>S-CVI/Ave ≥ 0.90:</strong> <span style="background: #dcfce7; padding: 2px 8px; border-radius: 3px; color: var(--good);">Mükemmel Geçerlilik</span></p>
-                <p style="margin: 0;">Ölçek yüksek düzeyde geçerli; güvenle kullanılabilir.</p>
+                <p><strong>S-CVI/Ave ≥ 0.90:</strong> Mükemmel Geçerlilik ✓</p>
+                <p style="margin: 0; font-size: 0.95rem;">Ölçek yüksek düzeyde geçerli; güvenle kullanılabilir. Doğrudan pilot test ve güvenirlik analizine geçebilirsiniz.</p>
             </div>
 
-            <div class="highlight-box" style="background: #fef2f2; border-left-color: #c0392b;">
-                <p><strong>S-CVI/Ave &lt; 0.90:</strong> <span style="background: #fef2f2; padding: 2px 8px; border-radius: 3px; color: #c0392b;">Yetersiz Geçerlilik</span></p>
-                <p style="margin: 0;">Ölçek maddeleri revize edilmeli veya çıkarılmalıdır.</p>
+            <div class="info-box">
+                <p><strong>S-CVI/Ave 0.80–0.89:</strong> Kabul Edilebilir Geçerlilik (Kısmi Revizyon Önerilir)</p>
+                <p style="margin: 0; font-size: 0.95rem;">Maddeler arasında bazı farklılıklar var. I-CVI < 0.80 olan maddeler revize edilmeli veya isteğe bağlı olarak ikinci bir uzman incelemesi yapılabilir.</p>
             </div>
 
-            <h2>CVI ile Farkı Nedir?</h2>
+            <div class="warning-box">
+                <p><strong>S-CVI/Ave < 0.80:</strong> Yetersiz Geçerlilik</p>
+                <p style="margin: 0; font-size: 0.95rem;">Ölçek kapsamlı revizyon gerektirir. I-CVI < 0.70 olan maddeler silinmeli veya önemli ölçüde düzeltilmeli, sonra başka bir uzman paneli incelemesi yapılmalıdır.</p>
+            </div>
+
+            <h2>Neden S-CVI/Ave Tercih Edilir?</h2>
 
             <ul>
-                <li><strong>S-CVI/Ave:</strong> Tüm I-CVI'lerin ortalaması — her maddenin uzman anlaşması ağırlıklı</li>
-                <li><strong>CVI:</strong> Tüm CVR'lerin ortalaması — Lawshe eşikleri ağırlıklı</li>
+                <li><strong>Hassas ölçüm:</strong> I-CVI değerlerini kullandığı için CVR'den daha kolay yorumlanır</li>
+                <li><strong>Endüstri standardı:</strong> Yayınlanan araştırmalarda en çok alıntı yapılan metrik (özellikle hemşirelik, eğitim, psikoloji)</li>
+                <li><strong>Açık eşik:</strong> 0.90 gibi basit, yuvarlak bir sayı ile iletişimi kolaydır</li>
+                <li><strong>Uzman tarafından tavsiye edildi:</strong> Waltz, Strickland, Lenz, Polit ve Beck tarafından desteklenmiştir</li>
+                <li><strong>Katılık ve uygulanabilirlik dengesi:</strong> CVI'den daha katı ancak iyi hazırlanmış maddelerle ulaşılabilir</li>
+                <li><strong>Madde düzeyinde görünürlük:</strong> Hangi maddelerin genel skoru etkilediğini görebilirsiniz</li>
             </ul>
 
-            <p>S-CVI/Ave, CVI'den daha hassas bir göstergedir ve modern araştırmada daha çok tercih edilir.</p>
+            <h2>S-CVI/Ave vs Diğer Metrikler</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metrik</th>
+                        <th>Ölçtüğü Şey</th>
+                        <th>Eşik Değer</th>
+                        <th>Kullanım Alanı</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CVR</strong></td>
+                        <td>Madde düzeyinde (bireysel maddeler)</td>
+                        <td>N'ye göre değişir</td>
+                        <td>İlk eleme</td>
+                        <td>Eski yöntem</td>
+                    </tr>
+                    <tr>
+                        <td><strong>I-CVI</strong></td>
+                        <td>Madde düzeyinde (bireysel maddeler)</td>
+                        <td>0.78–1.0</td>
+                        <td>Detaylı madde incelemesi</td>
+                        <td>Güncel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CVI</strong></td>
+                        <td>Ölçek düzeyinde (CVR ortalaması)</td>
+                        <td>0.78–1.0</td>
+                        <td>Hızlı özet</td>
+                        <td>Eski yöntem</td>
+                    </tr>
+                    <tr>
+                        <td><strong>S-CVI/Ave</strong></td>
+                        <td>Ölçek düzeyinde (I-CVI ortalaması)</td>
+                        <td>≥ 0.90</td>
+                        <td>Birincil geçerlilik skoru</td>
+                        <td><strong>Güncel standart</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>S-CVI/UA</strong></td>
+                        <td>Ölçek düzeyinde (oy birliği)</td>
+                        <td>≥ 0.80</td>
+                        <td>Katı standart</td>
+                        <td>Ek metrik</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>S-CVI/Ave vs CVI Farkı Nedir?</h2>
+
+            <ul>
+                <li><strong>S-CVI/Ave:</strong> Tüm I-CVI'lerin ortalaması — her maddenin uzman anlaşması ağırlıklı, daha hassas, modern standart</li>
+                <li><strong>CVI:</strong> Tüm CVR'lerin ortalaması — Lawshe eşikleri ağırlıklı, eski yöntem, daha az tercih edilir</li>
+            </ul>
+
+            <p><strong>Sonuç:</strong> S-CVI/Ave, CVI'den daha hassas bir göstergedir ve modern araştırmada neredeyse evrensel olarak tercih edilmektedir. Yeni ölçek geliştirme projelerinizde S-CVI/Ave'yi kullanmalısınız.</p>
+
+            <h2>Pratik Rehberlik: Puanlar Ne Anlama Gelir?</h2>
+
+            <h3>Eğer S-CVI/Ave = 0.95 ise</h3>
+            <p>✓ <strong>Mükemmel!</strong> Ölçeğiniz olağanüstü içerik geçerliliğine sahiptir. Doğrudan pilot test ve güvenirlik analizine geçin.</p>
+
+            <h3>Eğer S-CVI/Ave = 0.88 ise</h3>
+            <p>⚠ <strong>İyi, ancak iyileştirilebilir.</strong> I-CVI < 0.80 olan maddeler gözden geçirin, onları revize etmeyi düşünün ve isteğe bağlı olarak ikinci bir uzman incelemesi yapabilirsiniz.</p>
+
+            <h3>Eğer S-CVI/Ave = 0.75 ise</h3>
+            <p>✗ <strong>Çalışmaya ihtiyaç var.</strong> I-CVI < 0.70 olan maddeler silin veya önemli ölçüde revize edin, sonra devam etmeden önce başka bir uzman paneli incelemesi yapın.</p>
+
+            <h2>Araştırma Yazısında Nasıl Rapor Edilir?</h2>
+
+            <div class="code-sample">
+"Ölçeğin S-CVI/Ave değeri 0.92 olarak bulunmuş, mükemmel içerik geçerliliğini göstermiştir. 20 maddenin 18'i 0.78 veya üzerinde I-CVI elde ederken, 2 madde uzman geri bildirimine dayalı olarak revize edilerek ölçekten çıkarılmıştır."
+            </div>
+
+            <div class="info-box">
+                <p><strong>Alternatif rapor formülasyonu:</strong> "İçerik geçerliğinin değerlendirilmesi amacıyla 5 alan uzmanının görüşleri alınmış, hesaplanan S-CVI/Ave değeri 0.91 (SD = 0.08) ile mükemmel geçerlilik düzeyini göstermiştir."</p>
+            </div>
+
+            <h2>S-CVI/Ave ile S-CVI/UA'nın Birlikte Kullanılması (En İyi Uygulama)</h2>
+
+            <p>En iyi uygulama, her iki metriği de rapor etmektir:</p>
+            <ul>
+                <li><strong>S-CVI/Ave ≥ 0.90:</strong> Güçlü ortalama anlaşmayı gösterir</li>
+                <li><strong>S-CVI/UA ≥ 0.80:</strong> Çoğu maddenin oy birliğine sahip olduğunu gösterir</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Yorum Örneği:</strong> S-CVI/Ave 0.92 ve S-CVI/UA 0.85 demek, uzmanlar genel olarak maddelerin gerekli olduğu konusunda anlaştı ve maddelerin %85'inin mükemmel uzman fikir birliğine sahip olduğu anlamına gelir.</p>
+            </div>
+
+            <p><strong>Dikkat:</strong> S-CVI/UA (Unanimity) oy birliğini ölçer, yani maddelerin kaçı tüm uzmanlar tarafından "gerekli" olarak değerlendirildi. Bu, S-CVI/Ave'den daha katı bir standart olabilir.</p>
+
+            <h2>Ek Bilgiler</h2>
+
+            <h3>Uzman Sayısı Etkisi</h3>
+            <p>I-CVI ve S-CVI/Ave'nin güvenilirliği uzman sayısına bağlıdır. Genel olarak:</p>
+            <ul>
+                <li>3-4 uzman: Minimum (pilot çalışmalar için)</li>
+                <li>5-7 uzman: Standart (çoğu araştırma için yeterli)</li>
+                <li>8+ uzman: Optimal (kapsamlı çalışmalar için)</li>
+            </ul>
+
+            <h3>Madde Çıkarma Kriterleri</h3>
+            <p>Genellikle aşağıdaki kriterlere göre maddeler çıkarılır:</p>
+            <ul>
+                <li>I-CVI < 0.78 (sınırda)</li>
+                <li>I-CVI < 0.67 (açıkça yetersiz)</li>
+                <li>Uzmanlardan gelen niteliksel geri bildirim (maddenin belirsiz, yanlış anlaşılabilir veya kapsam dışı olduğu konusunda anlaşma)</li>
+            </ul>
+
+            <h3>Revizyon Döngüsü</h3>
+            <p>Madde çıkarıldıktan veya revize edildikten sonra:</p>
+            <ol>
+                <li>Güncellenmiş ölçeği aynı veya yeni uzman paneline gösterin</li>
+                <li>Yeni I-CVI ve S-CVI/Ave hesaplayın</li>
+                <li>Hedef 0.90 veya üzerine ulaşılana kadar tekrarlayın</li>
+            </ol>
 
             <h2>Kaynaklar</h2>
 
-            <p><strong>Waltz, C. F., Strickland, O. L., & Lenz, E. R. (2005).</strong> Measurement in nursing and health research. Springer Publishing Company.</p>
+            <p><strong>Waltz, C. F., Strickland, O. L., & Lenz, E. R. (2005).</strong> Measurement in nursing and health research (3rd ed.). Springer Publishing Company.</p>
+            <p><strong>Polit, D. F., & Beck, C. T. (2006).</strong> The content validity index: Are you sure you know what's being reported? <em>Research in Nursing & Health, 29</em>(5), 489-497.</p>
             <p><strong>Shi, J., Mo, X., & Sun, Z. (2012).</strong> Content validity index in scale development. <em>Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37</em>(2), 152-155.</p>
+            <p><strong>Grant, J. S., & Davis, L. L. (1997).</strong> Selection and use of content experts for instrument development. <em>Research in Nursing & Health, 20</em>(3), 269-274.</p>
+            <p><strong>Lawshe, C. H. (1975).</strong> A quantitative approach to content validity. <em>Personnel Psychology, 28</em>(4), 563-575.</p>
 
             <div class="nav-links">
                 <a href="index-tr.html" class="calc-link">← CVR Hesaplayıcı'ya Dön</a>
                 <a href="cvi-nedir.html">← CVI Nedir?</a>
+                <a href="i-cvi-nedir.html">← I-CVI Nedir?</a>
                 <a href="scvi-ua-nedir.html">S-CVI/UA Nedir? →</a>
             </div>
         </main>

@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir? Formülü ve Eşikleri</title>
 
-    <meta name="description" content="I-CVI (Item-level Content Validity Index) nedir, nasıl hesaplanır? Formülü, kabul edilebilir eşikler (1-2 uzman, 3+ uzman), örnekler. Lynn ve Polit & Beck kriterleri.">
-    <meta name="keywords" content="I-CVI, item-level content validity index, madde geçerliliği, uzman anlaşması, formülü, eşik, Lynn, Polit Beck">
+    <meta name="description" content="I-CVI (Item-level Content Validity Index) nedir, nasıl hesaplanır? Formülü, kabul edilebilir eşikler (1-2 uzman, 3+ uzman), uzman anlaşması, praktik örnekler, Lynn ve Polit & Beck kriterleri, ölçek geliştirmede kullanım.">
+    <meta name="keywords" content="I-CVI, item-level content validity index, madde geçerliliği, uzman anlaşması, formülü, eşik, Lynn, Polit Beck, ölçek geliştirme, madde seçme">
     <meta name="author" content="CVR Calculator">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mcalisir.github.io/CVR/icvi-nedir.html">
-    <link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-icvi.html">
+    <link rel="canonical" href="https://cvrindex.pro/icvi-nedir.html">
+    <link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-icvi.html">
 
     <meta property="og:title" content="I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir?">
-    <meta property="og:description" content="I-CVI formülü, kabul eşikleri, Lynn ve Polit criteria. Madde geçerliliği değerlendirmesi.">
+    <meta property="og:description" content="I-CVI formülü, kabul eşikleri, Lynn ve Polit Beck kriterleri, ölçek geliştirmede madde geçerliliği değerlendirmesi.">
     <meta property="og:type" content="article">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir?",
-        "url": "https://mcalisir.github.io/CVR/icvi-nedir.html",
+        "url": "https://cvrindex.pro/icvi-nedir.html",
         "datePublished": "2026-07-04",
         "inLanguage": "tr"
     }
@@ -52,7 +52,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--surface);
             padding: 40px;
@@ -79,9 +79,20 @@
             margin-bottom: 12px;
         }
 
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
         p {
             margin: 0 0 16px 0;
             color: var(--text-2);
+        }
+
+        li {
+            color: var(--text-2);
+            margin-bottom: 10px;
         }
 
         .formula-box {
@@ -147,6 +158,14 @@
             border-radius: 4px;
         }
 
+        .note-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--good);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
         .nav-links {
             display: flex;
             gap: 12px;
@@ -183,93 +202,325 @@
     <div class="container">
         <header>
             <h1>I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir?</h1>
-            <p class="meta">Formülü, Lynn ve Polit & Beck eşikleri, uzman anlaşması</p>
+            <p class="meta">Formülü, Lynn ve Polit & Beck eşikleri, uzman anlaşması, ölçek geliştirmede kullanım</p>
         </header>
 
         <main>
-            <p><strong>I-CVI (Item-level Content Validity Index)</strong>, uzman panelinin belirli bir madde hakkında ne kadar hemfikir olduğunu gösteren bir göstergedir. Maddeyi "gerekli" olarak puanlayan uzmanların oranını temsil eder.</p>
+            <h2>I-CVI Nedir?</h2>
 
-            <h2>I-CVI Formülü</h2>
+            <p><strong>I-CVI (Item-level Content Validity Index)</strong>, uzman panelinin belirli bir madde hakkında ne kadar hemfikir olduğunu gösteren ve 0 ile 1 arasında değişen bir geçerliliğidir. Maddeyi "gerekli" veya "temel" olarak puanlayan uzmanların oranını temsil eder. Ölçek veya enstrüman geliştirme çalışmalarında, her bir maddenin (sorunun) içerik geçerliliğini değerlendirmek için yaygın olarak kullanılan bir yöntemdir.</p>
+
+            <p>I-CVI, özellikle şu nedenlerden dolayı tercih edilir:</p>
+            <ul>
+                <li><strong>Kolay yorumlama:</strong> 0 ile 1 arasında değişir ve doğrudan uzman anlaşmasının oranını gösterir</li>
+                <li><strong>Sezgisel anlaşılabilirlik:</strong> Yüzde (%) cinsinden düşünülebilir (örneğin, 0.80 = %80 uzman anlaşması)</li>
+                <li><strong>İyi geliştirilmiş kriterler:</strong> Lynn (1986) ve Polit & Beck (2006) tarafından önerilen kabul edilebilir eşikler vardır</li>
+                <li><strong>Esneklik:</strong> Küçük panellerden (1-2 uzman) büyük panellere (20+ uzman) kadar çalışır</li>
+                <li><strong>Madde bazlı değerlendirme:</strong> Her maddenin kendi geçerliliğini bağımsız olarak değerlendirebilirsiniz</li>
+            </ul>
+
+            <h2>Ölçek Geliştirmede I-CVI'nin Yeri ve Amacı</h2>
+
+            <p>Yeni bir ölçek veya anketi geliştirirken, temel adımlardan biri <strong>içerik geçerliliğini</strong> sağlamaktır. İçerik geçerliliği, ölçeğin ölçmek istediği yapıyı tam ve uygun şekilde temsil edip etmediğini gösterir.</p>
+
+            <p>Bu süreçte I-CVI'nin rolleri:</p>
+            <ul>
+                <li><strong>Madde filtreleme:</strong> Düşük puan alan maddeleri tanımlamak ve revizyona tabi tutmak</li>
+                <li><strong>Uzman fikir birliğini ölçmek:</strong> Maddeyi değerlendirmiş uzmanların ne kadarı aynı fikirdedir?</li>
+                <li><strong>Nitel feedback ile birlikte kullanmak:</strong> Genellikle uzmanlar puanlama ile birlikte yazılı yorumlar yaparlar</li>
+                <li><strong>Ölçeği daraltmak:</strong> Yüksek I-CVI değerine sahip maddeler tutulur, düşük olanlar çıkarılır veya iyileştirilir</li>
+                <li><strong>İstatistiksel raporlamada:</strong> Yayınlanan araştırmada içerik geçerliliğinin kanıtı olarak kullanılır</li>
+            </ul>
+
+            <h2>I-CVI Formülü ve Temel Hesaplama</h2>
 
             <div class="formula-box">
                 <code>I-CVI = Maddeyi "gerekli" puanlayan uzman sayısı / Toplam uzman sayısı</code>
             </div>
 
-            <p>Sonuç 0 ile 1 arasında değişir. Örneğin, 10 uzmanın 8'i bir maddeyi gerekli derse, I-CVI = 8/10 = 0.80 olur.</p>
+            <h3>Formül Açıklaması</h3>
 
-            <h2>Kabul Edilebilir I-CVI Eşikleri</h2>
+            <p><strong>Payda (Üst kısım):</strong> Bir maddeyi "temel", "gerekli" veya "uygun" olarak değerlendiren uzmanların sayısı. Uzmanlar tipik olarak 3-4 kategorili bir skala kullanırlar:</p>
+            <ul>
+                <li>1 = Gerekli / Temel (This is what we count)</li>
+                <li>2 = Faydalı fakat gerekli değil</li>
+                <li>3 = Gerekli değil / İlişkisiz</li>
+            </ul>
 
-            <p>I-CVI'nin kabul edilebilir olup olmadığı, uzman sayısına bağlıdır. Lynn (1986) ve Polit & Beck (2006) tarafından önerilen eşikler:</p>
+            <p><strong>Payda (Alt kısım):</strong> Maddeyi değerlendirmiş <strong>tüm uzmanların toplam sayısı</strong>. Hesaplamada hiçbir uzman dışlanmaz.</p>
 
-            <div class="criteria-box">
-                <h3 style="margin: 0 0 10px 0;">1-2 Uzman İçin</h3>
-                <p><strong>I-CVI = 1.0 olmalıdır</strong> <span class="color-badge green">Geçerli</span></p>
-                <p style="margin: 0;">Yani, her iki uzman da maddeyi mutlaka gerekli saymalıdır.</p>
-            </div>
+            <p><strong>Sonuç (0 ile 1 arasında):</strong> Madde için uzman anlaşmasının oranı. Örneğin:</p>
+            <ul>
+                <li>I-CVI = 1.0 → %100 (tüm uzmanlar "gerekli" dedi)</li>
+                <li>I-CVI = 0.80 → %80 (uzmanların %80'i "gerekli" dedi)</li>
+                <li>I-CVI = 0.50 → %50 (uzmanların yarısı "gerekli" dedi)</li>
+                <li>I-CVI = 0.0 → %0 (hiç kimse "gerekli" demedive)</li>
+            </ul>
 
-            <div class="criteria-box">
-                <h3 style="margin: 0 0 10px 0;">3 ve Üzeri Uzman İçin</h3>
-                <ul style="margin: 10px 0 0 0;">
-                    <li><strong>I-CVI ≥ 0.78:</strong> <span class="color-badge green">Geçerli</span> — Madde tutulabilir</li>
-                    <li><strong>0.70 ≤ I-CVI &lt; 0.78:</strong> <span class="color-badge orange">Revizyon Gerekli</span> — Madde iyileştirilmeli</li>
-                    <li><strong>I-CVI &lt; 0.70:</strong> <span class="color-badge red">Geçersiz</span> — Madde çıkarılmalı</li>
-                </ul>
-            </div>
+            <h2>Kabul Edilebilir I-CVI Eşikleri (Lynn ve Polit & Beck)</h2>
 
-            <h2>Örnek Hesaplamalar</h2>
-
-            <div class="example-box">
-                <h3 style="margin: 0 0 10px 0; color: var(--good);">Örnek 1: 6 Uzman</h3>
-                <p><strong>Puanlar:</strong> 5 uzman "Gerekli", 1 uzman "Gerekli değil"</p>
-                <p><strong>Hesaplama:</strong> I-CVI = 5 / 6 = 0.833</p>
-                <p><strong>Sonuç:</strong> <span class="color-badge green">Geçerli</span> (0.833 ≥ 0.78)</p>
-            </div>
-
-            <div class="example-box">
-                <h3 style="margin: 0 0 10px 0; color: var(--good);">Örnek 2: 8 Uzman</h3>
-                <p><strong>Puanlar:</strong> 6 uzman "Gerekli", 2 uzman "Gerekli değil"</p>
-                <p><strong>Hesaplama:</strong> I-CVI = 6 / 8 = 0.75</p>
-                <p><strong>Sonuç:</strong> <span class="color-badge orange">Revizyon Gerekli</span> (0.70 ≤ 0.75 &lt; 0.78)</p>
-            </div>
-
-            <h2>CVR ile Farkı Nedir?</h2>
+            <p>I-CVI'nin kabul edilebilir olup olmadığı, başvurulan kaynağa ve <strong>uzman panel boyutuna</strong> bağlıdır. En yaygın kabul gören eşikler Lynn (1986) ve Polit & Beck (2006) tarafından önerilen standartlardır:</p>
 
             <table>
                 <thead>
                     <tr>
-                        <th>Kriter</th>
-                        <th>I-CVI</th>
-                        <th>CVR</th>
+                        <th>Uzman Sayısı</th>
+                        <th>Kriterium</th>
+                        <th>Durum</th>
+                        <th>İşlem</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Hesaplama</strong></td>
+                        <td><strong>1 Uzman</strong></td>
+                        <td>I-CVI = 1.0</td>
+                        <td><span class="color-badge green">Geçerli</span></td>
+                        <td>Madde tutulabilir</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2 Uzman</strong></td>
+                        <td>I-CVI = 1.0</td>
+                        <td><span class="color-badge green">Geçerli</span></td>
+                        <td>Madde tutulabilir (tam anlaşma gerekli)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3+ Uzman</strong></td>
+                        <td>I-CVI ≥ 0.78</td>
+                        <td><span class="color-badge green">Geçerli</span></td>
+                        <td>Madde tutulabilir</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3+ Uzman</strong></td>
+                        <td>0.70 ≤ I-CVI &lt; 0.78</td>
+                        <td><span class="color-badge orange">Şüpheli</span></td>
+                        <td>Madde revizyon gerekli veya ek veri topla</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3+ Uzman</strong></td>
+                        <td>I-CVI &lt; 0.70</td>
+                        <td><span class="color-badge red">Geçersiz</span></td>
+                        <td>Madde çıkarılmalı veya önemli oranda iyileştirilmeli</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Bu Eşikler Neden Bu Değerlerde?</h3>
+
+            <p><strong>1-2 uzman ile I-CVI = 1.0 gerekliliği:</strong> Panel çok küçük olduğundan, tam anlaşma gereklidir. Bir uzman "gerekli değil" derse, %50 anlaşma elde edersiniz, bu çok düşüktür.</p>
+
+            <p><strong>3+ uzman ile I-CVI ≥ 0.78 eşiği:</strong> Araştırmalar gösteriyor ki, uzmanların %78'i bir maddeyi "gerekli" olarak değerlendirdiyse, bu madde ilerleyen psikometrik testlerde (pilot, faktör analizi, vb.) başarıyla doğrulanma olasılığı yüksektir. Bu eşik istatistiksel anlamlılık ve pratik geçerliliğin dengeli bir noktasıdır.</p>
+
+            <p><strong>0.70-0.78 gri alan:</strong> Bu aralıkta maddeler hemen çıkarılmaz. Genellikle uzmanlardan alınan yazılı geri bildirimleri dikkate alarak madde iyileştirilir ve gerekirse ikinci tur değerlendirmeye sunulur.</p>
+
+            <h2>Detaylı Örnek Hesaplamalar</h2>
+
+            <h3>Örnek 1: Hemşirelik Yetkinlik Ölçeği (5 Uzman)</h3>
+
+            <div class="example-box">
+                <p><strong>Durum:</strong> Bir hemşirelik kurulu, hasta bakımı konusunda bir yetkinlik değerlendirme maddesini inceliyor. 5 uzman (deneyimli hemşire ve eğitimci) çağrılıyor.</p>
+
+                <p><strong>Uzmanların Puanları:</strong></p>
+                <ul>
+                    <li>Uzman 1: Gerekli</li>
+                    <li>Uzman 2: Gerekli</li>
+                    <li>Uzman 3: Faydalı ama gerekli değil</li>
+                    <li>Uzman 4: Gerekli</li>
+                    <li>Uzman 5: Gerekli</li>
+                </ul>
+
+                <p><strong>Hesaplama:</strong></p>
+                <p style="text-align: center; font-family: 'Courier New', monospace; background: #e8f5e9; padding: 10px; border-radius: 4px;">
+                    I-CVI = 4 / 5 = <strong style="color: var(--good);">0.80</strong>
+                </p>
+
+                <p><strong>Yorumlama:</strong> 5 uzman ile minimum eşik 0.78'dir. Bu maddenin I-CVI'si 0.80 olup, eşiği geçmiştir. <span class="color-badge green">Madde geçerli</span> ve tutulabilir. Uzmanların %80'i "gerekli" demiştir.</p>
+            </div>
+
+            <h3>Örnek 2: Psikolojik Stres Ölçeği (6 Uzman)</h3>
+
+            <div class="example-box">
+                <p><strong>Durum:</strong> Psikolojik stres ölçeğinin bir maddesini 6 klinik psikolog değerlendiriyor.</p>
+
+                <p><strong>Uzmanların Puanları:</strong></p>
+                <ul>
+                    <li>Uzman 1: Gerekli</li>
+                    <li>Uzman 2: Gerekli</li>
+                    <li>Uzman 3: Gerekli</li>
+                    <li>Uzman 4: Gerekli</li>
+                    <li>Uzman 5: Gerekli</li>
+                    <li>Uzman 6: Faydalı ama gerekli değil</li>
+                </ul>
+
+                <p><strong>Hesaplama:</strong></p>
+                <p style="text-align: center; font-family: 'Courier New', monospace; background: #e8f5e9; padding: 10px; border-radius: 4px;">
+                    I-CVI = 5 / 6 = <strong style="color: var(--good);">0.833</strong>
+                </p>
+
+                <p><strong>Yorumlama:</strong> 0.833 ≥ 0.78 olduğundan, <span class="color-badge green">madde geçerli</span> ve tutulabilir. Uzmanların %83.3'ü hemfikirdir.</p>
+            </div>
+
+            <h3>Örnek 3: Öğrenme Stileri Anketi (8 Uzman)</h3>
+
+            <div class="example-box">
+                <p><strong>Durum:</strong> Bir eğitim teknolojisi ölçeğinin bir maddesini 8 öğretmen ve araştırmacı değerlendiriyor.</p>
+
+                <p><strong>Uzmanların Puanları:</strong></p>
+                <ul>
+                    <li>Gerekli: 6 kişi</li>
+                    <li>Faydalı ama gerekli değil: 2 kişi</li>
+                </ul>
+
+                <p><strong>Hesaplama:</strong></p>
+                <p style="text-align: center; font-family: 'Courier New', monospace; background: #fef3cd; padding: 10px; border-radius: 4px;">
+                    I-CVI = 6 / 8 = <strong style="color: var(--warn);">0.75</strong>
+                </p>
+
+                <p><strong>Yorumlama:</strong> 0.70 ≤ 0.75 &lt; 0.78 aralığında olduğundan, <span class="color-badge orange">revizyon gerekli</span>. Madde şüphelidir. Önerilen işlem:</p>
+                <ul>
+                    <li>Uzmanlardan yazılı geri bildirimi incele</li>
+                    <li>Maddeyi iyileştir (daha açık, kısa, uygun yapılı)</li>
+                    <li>Gerekirse ikinci tur değerlendirmeye sun</li>
+                </ul>
+            </div>
+
+            <h3>Örnek 4: Sosyal Beceri Ölçeği (10 Uzman)</h3>
+
+            <div class="example-box">
+                <p><strong>Durum:</strong> Sosyal beceri ölçeğinin bir maddesini 10 sosyal çalışmacı ve psikolog değerlendiriyor.</p>
+
+                <p><strong>Uzmanların Puanları:</strong></p>
+                <ul>
+                    <li>Gerekli: 6 kişi</li>
+                    <li>Faydalı ama gerekli değil: 3 kişi</li>
+                    <li>Gerekli değil: 1 kişi</li>
+                </ul>
+
+                <p><strong>Hesaplama:</strong></p>
+                <p style="text-align: center; font-family: 'Courier New', monospace; background: #ffebee; padding: 10px; border-radius: 4px;">
+                    I-CVI = 6 / 10 = <strong style="color: var(--bad);">0.60</strong>
+                </p>
+
+                <p><strong>Yorumlama:</strong> 0.60 &lt; 0.70 olduğundan, <span class="color-badge red">madde geçersiz</span>. Uzmanların %60'ı "gerekli" demiştir. Önerilen işlem:</p>
+                <ul>
+                    <li>Bu madde çıkarılmalı veya önemli oranda revize edilmeli</li>
+                    <li>Geri bildirimleri dikkate alıp maddeyi tamamen yeniden yaz</li>
+                    <li>Veya farklı bir konsept ile madde geliştir</li>
+                </ul>
+            </div>
+
+            <h2>I-CVI ile CVR'nin Karşılaştırması</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Özellik</th>
+                        <th>I-CVI</th>
+                        <th>CVR (Content Validity Ratio)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Formülü</strong></td>
                         <td>Oran (0-1)</td>
                         <td>Fark-tabanlı (-1 ile +1)</td>
                     </tr>
                     <tr>
                         <td><strong>Yorumlama</strong></td>
-                        <td>Uzman anlaşması yüzdesi</td>
-                        <td>Uzmanlar arasındaki farklılık</td>
+                        <td>Uzman anlaşmasının yüzde oranı</td>
+                        <td>Uzmanlar arasındaki görüş farkı</td>
                     </tr>
                     <tr>
-                        <td><strong>Kullanım</strong></td>
-                        <td>Madde seçme kararında</td>
-                        <td>Madde seçme ve Lawshe tablosu</td>
+                        <td><strong>Anlamı kolay mı?</strong></td>
+                        <td>Çok kolay (sezgisel)</td>
+                        <td>Daha karmaşık (formülü hatırlamak gerekir)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Minimum eşik</strong></td>
+                        <td>Uzman sayısına bağlı (1-2 için 1.0, 3+ için 0.78)</td>
+                        <td>Lawshe tablosu kullanılır (uzman sayısına bağlı)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Koşullu kullanımı</strong></td>
+                        <td>Madde düzeyinde (item-level) değerlendirme</td>
+                        <td>Madde düzeyinde ve ölçek bazlı (CVI)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>En iyi kullanım</strong></td>
+                        <td>Basitlik ve anlaşılabilirlik istendiğinde</td>
+                        <td>İstatistiksel sertifikasyon istendiğinde</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="note-box">
+                <strong>Önemli Not:</strong> Günümüzün araştırmasında, I-CVI giderek daha çok tercih ediliyor çünkü anlaşılması daha kolay ve paydaşlara (öğrenci, hasta, yönetici) açıklanması daha basittir. Bununla birlikte, birçok araştırmacı şeffaflık için hem I-CVI hem de CVR rapor etmeyi tercih ediyor.
+            </div>
+
+            <h2>I-CVI Kullanılması Gereken Durumlar</h2>
+
+            <p>I-CVI'yi tercih etmelisiniz:</p>
+
+            <ul>
+                <li><strong>Yeni ölçek geliştiriyorsanız:</strong> Ölçeğin ilk içerik geçerliliğini test etmek için</li>
+                <li><strong>Mevcut ölçeği diğer dile çeviriyorsanız:</strong> Tercümelerin içerik geçerliliğini doğrulamak için</li>
+                <li><strong>Spesifik popülasyona uyarlanmış ölçek yapıyorsanız:</strong> (ör. yaşlı popülasyonuna uyarlanmış hastalık tarama aracı)</li>
+                <li><strong>Küçük uzman paneli ile çalışıyorsanız:</strong> (1-5 uzman)</li>
+                <li><strong>Sonuçları net ve anlaşılır raporlamak istiyorsanız:</strong> (halk, klinik karar verenler)</li>
+                <li><strong>Hızlı döngüsel iyileştirme yapıyorsanız:</strong> (bir tur değerlendirme, sonra revizyonlar, tekrar değerlendirme)</li>
+            </ul>
+
+            <h2>Sık Yapılan Hatalar ve Kaçınılması Gereken Durumlar</h2>
+
+            <p>I-CVI hesaplanırken dikkat etmeli aşağıdaki hatalardan kaçınmalısınız:</p>
+
+            <ul>
+                <li><strong>Eşik değerini uzman sayısına göre ayarlamamak:</strong> 1-2 uzman ile 0.78 eşiğini kullanmayın; 1.0 kullanın. 3+ uzman için 0.78 eşiğini kullanın.</li>
+                <li><strong>Puan skalasını karıştırmak:</strong> Tüm uzmanların aynı skalayı kullanmasını sağlayın. Örneğin, bazıları 3-noktalı (gerekli/faydalı/gereksiz), bazıları 4-noktalı (tamamen katılıyorum/katılıyorum/katılmıyorum/tamamen katılmıyorum) kullanırlarsa sonuçlar çarpılır.</li>
+                <li><strong>"Faydalı" puanını "Gerekli" olarak saymak:</strong> Sadece "Gerekli" veya "Temel" puanları sayın. "Faydalı ama gerekli değil" puanlarını değil.</li>
+                <li><strong>Çok küçük uzman paneli kullanmak:</strong> Minimum 3-5 uzman olmaz ise sonuçlar güvenilir olmayabilir. En iyi uygulamaya göre 5-20 uzman idealdir.</li>
+                <li><strong>Eksik puanlamayı yok sayarak hesaplamak:</strong> Bir uzman bir maddeyi puanlamadıysa, onu hesaplamaya dahil etmeyin. Örneğin, 10 uzman tarafından çağrıldıysanız fakat 8'i puan verdiyse, 8'i payda olarak kullanın.</li>
+                <li><strong>Yalnızca I-CVI'ye bakıp uzman geri bildirilerini göz ardı etmek:</strong> Sayısal değer önemliyse de, uzmanların yazılı açıklamaları madde iyileştirmesi için çok değerlidir.</li>
+                <li><strong>Bir maddenin geri dönüşü olmayacak kadar düşük I-CVI değerini yükseltmeye çalışmak:</strong> 0.50 gibi çok düşük puanlarsa, maddeyi revizyondan çıkarıp yeniden tasarlamak daha iyi olabilir.</li>
+            </ul>
+
+            <h2>I-CVI'yi İyileştirme Stratejileri</h2>
+
+            <p>Düşük I-CVI değerine sahip maddeleriniz varsa, aşağıdaki stratejiler yardımcı olabilir:</p>
+
+            <ul>
+                <li><strong>Uzman geri bildirilerini incelemek:</strong> Uzmanlar neden "gerekli değil" dediler? Yazılı yorumlar genellikle kesin ipuçları verir (örn. "madde çok karmaşık", "çok uzun", "belirsiz").</li>
+                <li><strong>Madde açıklığını artırmak:</strong> Dil basitleştirin, teknik terimler azaltın, örnekler ekleyin.</li>
+                <li><strong>Madde uzunluğunu düşünmek:</strong> Çok uzun maddeler öğrenenleri yorabilir ve cevap oranını azaltabilir.</li>
+                <li><strong>Hedef popülasyonun dilini kullanmak:</strong> Ölçek üniversite öğrencilerine yönelik ise, akademik dil; okul öncesi eğitimcilerine yönelik ise daha basit dil kullanın.</li>
+                <li><strong>Madde yapısını değiştirmek:</strong> Çoktan seçmeli mi, 5-noktalı Likert mi, evet/hayır mı olmalı? Uzmanlar yapı sorununa işaret edebilir.</li>
+                <li><strong>İkinci tur değerlendirme yapmak:</strong> Revize edilen maddeleri (0.70-0.78 aralığında) yeniden değerlendirtmek yaygın ve önerilen bir uygulamadır.</li>
+            </ul>
+
+            <h2>İstatistiksel Perspektif: Neden Tam 0.78?</h2>
+
+            <p>I-CVI eşiğinin 3 veya daha fazla uzman için 0.78 olması, istatistiksel bir temele dayanır. Polit & Beck'in orijinal çalışmalarında, bu değer <strong>binom dağılımı</strong> kullanılarak hesaplanmıştır. Yani:</p>
+
+            <ul>
+                <li>Tamamen tesadüfi puanlama (örneğin yazı-tura çevirme) olsa bile, %78 anlaşma elde etmenin p &lt; 0.05 ihtimali nedir?</li>
+                <li>Araştırma gösteriyor ki 3+ uzman ile 0.78, bu anlamlılık düzeyini sağlıyor.</li>
+                <li>Bu, maddenin raslantısal olarak değil, gerçek uzman fikri birliğinden ortaya çıktığını gösterir.</li>
+            </ul>
+
+            <p>Basit deyişle: I-CVI ≥ 0.78, uzmanların maddeyi "gerekli" olarak değerlendirmelerinin raslantı olmadığını (istatistiksel olarak anlamlı) gösterir.</p>
 
             <h2>Kaynaklar</h2>
 
             <p><strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.</p>
 
-            <p><strong>Polit, D. F., & Beck, C. T. (2006).</strong> The content validity index: Are you sure you know what's being reported? <em>Research in Nursing & Health, 29</em>(5), 489-497.</p>
+            <p><strong>Polit, D. F., & Beck, C. T. (2006).</strong> The content validity index: Are you sure you know what's being reported? <em>Research in Nursing &amp; Health, 29</em>(5), 489-497.</p>
+
+            <p><strong>Polit, D. F., Beck, C. T., &amp; Owen, S. V. (2007).</strong> Is the CVI an acceptable indicator of content validity? Appraisal and recommendations. <em>Research in Nursing &amp; Health, 30</em>(4), 459-467.</p>
+
+            <p><strong>Lawshe, C. H. (1975).</strong> A quantitative approach to content validity. <em>Personnel Psychology, 28</em>(4), 563-575.</p>
 
             <div class="nav-links">
                 <a href="index-tr.html" class="calc-link">← CVR Hesaplayıcı'ya Dön</a>
-                <a href="cvr-orani-nedir.html">← CVR Nedir?</a>
+                <a href="cvr-orani-nedir.html">← CVR Oranı Nedir?</a>
                 <a href="cvi-nedir.html">CVI Nedir? →</a>
             </div>
         </main>

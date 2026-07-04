@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma) Nedir? Formülü</title>
+    <title>S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma) Nedir? Formülü ve Hesaplaması</title>
 
-    <meta name="description" content="S-CVI/UA (Scale-level CVI/Universal Agreement) nedir? Tüm uzmanların \"gerekli\" dediği maddelerin oranı, formülü, 0.80 eşiği. Evrensel uzlaşma göstergesi.">
-    <meta name="keywords" content="S-CVI/UA, universal agreement, ölçek geçerliliği, evrensel uzlaşma, formülü, 0.80 eşiği">
+    <meta name="description" content="S-CVI/UA (Scale-level CVI/Universal Agreement) detaylı rehber: tüm uzmanların hemfikir olduğu maddelerin oranı, formülü, 0.80 eşiği, S-CVI/Ave ile karşılaştırma, pratik örnekler.">
+    <meta name="keywords" content="S-CVI/UA, evrensel anlaşma, ölçek geçerliliği, uzlaşma göstergesi, formülü, 0.80 eşiği, ölçek geliştirme, I-CVI, S-CVI/Ave">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mcalisir.github.io/CVR/scvi-ua-nedir.html">
+    <link rel="canonical" href="https://cvrindex.pro/scvi-ua-nedir.html">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -18,7 +18,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "S-CVI/UA (Ölçek Düzeyinde CVI/Evrensel Anlaşma) Nedir?",
-        "url": "https://mcalisir.github.io/CVR/scvi-ua-nedir.html",
+        "url": "https://cvrindex.pro/scvi-ua-nedir.html",
         "datePublished": "2026-07-04",
         "inLanguage": "tr"
     }
@@ -32,6 +32,8 @@
             --text-2: #4b5768;
             --accent: #3457d5;
             --good: #177a3d;
+            --warning: #a05a09;
+            --danger: #c0392b;
             --border: #e2e8f0;
         }
         body {
@@ -42,21 +44,24 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--surface);
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08);
         }
-        h1 { font-size: 2rem; font-weight: 700; }
-        h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; }
+        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        h2 { font-size: 1.4rem; font-weight: 700; margin-top: 35px; margin-bottom: 15px; }
+        h3 { font-size: 1.1rem; font-weight: 600; margin-top: 20px; margin-bottom: 12px; }
         p { color: var(--text-2); margin-bottom: 16px; }
+        li { color: var(--text-2); margin-bottom: 10px; margin-left: 20px; }
+        ul, ol { margin: 15px 0; }
         .formula-box {
             background: #f8f9ff;
             border: 2px solid var(--accent);
             border-radius: 8px;
-            padding: 20px;
+            padding: 25px;
             margin: 20px 0;
             text-align: center;
         }
@@ -65,6 +70,13 @@
             font-family: 'Courier New', monospace;
             font-weight: 700;
             color: var(--accent);
+            display: block;
+        }
+        .formula-box .alt {
+            font-size: 1rem;
+            color: var(--text-2);
+            margin-top: 12px;
+            font-weight: normal;
         }
         .highlight-box {
             background: #f0fdf4;
@@ -73,10 +85,58 @@
             margin: 15px 0;
             border-radius: 4px;
         }
+        .highlight-box p { margin: 8px 0; }
+        .highlight-box strong { color: var(--good); }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .warning-box p { margin: 8px 0; }
+        .danger-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .danger-box p { margin: 8px 0; }
+        .example-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .example-box p { margin: 8px 0; color: var(--text-2); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        table th, table td {
+            border: 1px solid var(--border);
+            padding: 12px;
+            text-align: center;
+        }
+        table th {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+        }
+        table td {
+            background: #fafbfc;
+        }
+        table tr:nth-child(odd) td {
+            background: #ffffff;
+        }
         .nav-links {
             display: flex;
             gap: 12px;
-            margin-top: 30px;
+            margin-top: 35px;
             padding-top: 20px;
             border-top: 1px solid var(--border);
             flex-wrap: wrap;
@@ -88,58 +148,263 @@
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
+            transition: opacity 0.2s;
         }
+        .nav-links a:hover { opacity: 0.9; }
         .calc-link { background: var(--good); }
+        .scenario {
+            border: 1px solid var(--border);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 6px;
+            background: #fafbfc;
+        }
+        .scenario strong { color: var(--accent); }
     </style>
 </head>
 <body>
     <div class="container">
         <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
             <h1>S-CVI/UA (Evrensel Anlaşma) Nedir?</h1>
-            <p style="color: #8b96a8; font-size: 0.9rem;">Tüm uzmanların hemfikir olduğu maddelerin oranı, formülü, 0.80 eşiği</p>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Ölçek Düzeyinde CVI/Evrensel Anlaşma: tüm uzmanların hemfikir olduğu maddelerin oranı, formülü, hesaplama ve yorumlama rehberi</p>
         </header>
 
         <main>
-            <p><strong>S-CVI/UA (Scale-level Content Validity Index/Universal Agreement)</strong>, <strong>tüm uzmanların "gerekli" dediği maddelerin oranı</strong>nı gösteren, evrensel uzlaşmayı ölçen bir göstergedir. Katı bir geçerlilik ölçütüdür.</p>
+            <h2>S-CVI/UA Tanımı ve Temel Kavram</h2>
 
-            <h2>S-CVI/UA Formülü</h2>
+            <p><strong>S-CVI/UA (Scale-level Content Validity Index/Universal Agreement)</strong>, bir ölçeğin içerik geçerliliğini değerlendirmek için kullanılan, <strong>tüm uzmanların "gerekli" olarak değerlendirdiği maddelerin oranını</strong> gösteren ve evrensel uzlaşmayı ölçen bir göstergedir. Katı bir geçerlilik ölçütü olarak bilinir.</p>
 
-            <div class="formula-box">
-                <code>S-CVI/UA = Tüm uzmanların hemfikir olduğu madde sayısı / Toplam madde sayısı</code>
-            </div>
-
-            <p>Örneğin, 8 maddenin tümü hakkında, bir madde hariç, tüm 6 uzman hemfikir ise:</p>
-            <p><strong>S-CVI/UA = 7 / 8 = 0.875</strong></p>
-
-            <h2>Geçerlilik Eşikleri</h2>
-
-            <div class="highlight-box">
-                <p><strong>S-CVI/UA ≥ 0.80:</strong> <span style="background: #dcfce7; padding: 2px 8px; border-radius: 3px; color: var(--good);">Mükemmel Geçerlilik</span></p>
-                <p style="margin: 0;">En az %80'i tüm uzmanlar tarafından onaylanmış.</p>
-            </div>
-
-            <div class="highlight-box" style="background: #fef2f2; border-left-color: #c0392b;">
-                <p><strong>S-CVI/UA &lt; 0.80:</strong> <span style="background: #fef2f2; padding: 2px 8px; border-radius: 3px; color: #c0392b;">Yetersiz Geçerlilik</span></p>
-                <p style="margin: 0;">Anlaşmazlığa sebep olan maddeler revizyona muhtaçtır.</p>
-            </div>
-
-            <h2>S-CVI/Ave ile Farkı Nedir?</h2>
-
+            <p>S-CVI/UA kullanımı özellikle aşağıdaki durumlarda faydalıdır:</p>
             <ul>
-                <li><strong>S-CVI/Ave:</strong> Tüm I-CVI'lerin ortalaması — en çok tercih edilen ölçüt</li>
-                <li><strong>S-CVI/UA:</strong> Evrensel anlaşma yüzdesi — daha katı, azınlık görüşleri göz ardı eder</li>
+                <li><strong>Yüksek risqli araçlar:</strong> Sertifika sınavları, güvenlik-kritik değerlendirmeler</li>
+                <li><strong>Uzman konsensüsü:</strong> Büyük önem taşıyan alanlarda konsensüs gerekmektedir</li>
+                <li><strong>Tamamlayıcı ölçüt:</strong> S-CVI/Ave ile birlikte kullanılarak daha katı bir değerlendirme sağlanır</li>
+                <li><strong>Hassas alanlar:</strong> Tıp, eğitim, psikoloji gibi özel alanlarda ölçek geliştirme</li>
+                <li><strong>Uzlaşma analizi:</strong> Hangi maddelerin tam konsensüs aldığını belirlemek gerektiğinde</li>
             </ul>
 
-            <p>Her ikisinin de ≥ 0.80 olması mükemmel geçerliliğin göstergesidir.</p>
+            <h2>S-CVI/UA Formülü ve Hesaplanması</h2>
 
-            <h2>Kaynaklar</h2>
+            <div class="formula-box">
+                <code>S-CVI/UA = (I-CVI = 1.0 olan madde sayısı) / (Toplam madde sayısı)</code>
+                <div class="alt">Basit Türkçe: Tüm uzmanların "gerekli" dediği maddelerin yüzdesi</div>
+            </div>
+
+            <h3>Formülün Anlamı</h3>
+
+            <p><strong>I-CVI = 1.0</strong>, bir madde hakkında <strong>tüm uzmanların</strong> hiçbir istisna olmaksızın "gerekli" (essential) oyu verdiği anlamına gelir. S-CVI/UA, bu tam konsensüse ulaşan maddelerin toplam madde sayısına oranıdır.</p>
+
+            <h3>Pratik Örnek 1: Basit Senaryo</h3>
+
+            <div class="example-box">
+                <p><strong>Senaryo:</strong> 8 maddeli bir ölçek, 6 uzman panel</p>
+                <p><strong>Sonuçlar:</strong></p>
+                <ul>
+                    <li>Madde 1: Tüm 6 uzman "gerekli" → I-CVI = 1.0 ✓</li>
+                    <li>Madde 2: Tüm 6 uzman "gerekli" → I-CVI = 1.0 ✓</li>
+                    <li>Madde 3: 5 uzman "gerekli", 1 "faydalı" → I-CVI = 0.833 ✗</li>
+                    <li>Madde 4: Tüm 6 uzman "gerekli" → I-CVI = 1.0 ✓</li>
+                    <li>Madde 5: 4 uzman "gerekli", 2 "faydalı" → I-CVI = 0.667 ✗</li>
+                    <li>Madde 6: Tüm 6 uzman "gerekli" → I-CVI = 1.0 ✓</li>
+                    <li>Madde 7: Tüm 6 uzman "gerekli" → I-CVI = 1.0 ✓</li>
+                    <li>Madde 8: 5 uzman "gerekli", 1 "faydalı" → I-CVI = 0.833 ✗</li>
+                </ul>
+                <p><strong>Hesaplama:</strong></p>
+                <p>S-CVI/UA = 5 / 8 = <strong>0.625 (%62.5)</strong></p>
+                <p><strong>Yorumlama:</strong> %62.5 oranda konsensüs var. Madde 3, 5, 8 revizyon gerektirir (0.80 eşiğinin altında).</p>
+            </div>
+
+            <h3>Pratik Örnek 2: İyileştirilmiş Senaryo</h3>
+
+            <div class="example-box">
+                <p><strong>Senaryo:</strong> 10 maddeli ölçek, 5 uzman panel</p>
+                <p><strong>Tam konsensüse ulaşan maddeler (I-CVI = 1.0):</strong> Maddeler 1, 2, 3, 4, 7, 8, 9, 10 (8 madde)</p>
+                <p><strong>Kısmi konsensüse sahip maddeler (I-CVI < 1.0):</strong> Maddeler 5, 6 (2 madde)</p>
+                <p><strong>Hesaplama:</strong></p>
+                <p>S-CVI/UA = 8 / 10 = <strong>0.80 (%80)</strong></p>
+                <p><strong>Yorumlama:</strong> Mükemmel geçerlilik! %80 eşiğine tam olarak ulaşılmıştır. Madde 5 ve 6 gözden geçirilebilir, ancak ölçek kullanıma hazırdır.</p>
+            </div>
+
+            <h2>S-CVI/UA Geçerlilik Eşikleri ve Yorumlama</h2>
+
+            <div class="highlight-box">
+                <p><strong>S-CVI/UA ≥ 0.80: Mükemmel Geçerlilik ✓</strong></p>
+                <p>Maddelerin en az %80'i tüm uzmanlar tarafından oy birliği ile onaylanmıştır. Bu, içerik geçerliliğinin güçlü bir göstergesidir ve ölçek ampirik testin hazır durumundadır.</p>
+            </div>
+
+            <div class="warning-box">
+                <p><strong>S-CVI/UA 0.60–0.79: Kabul Edilebilir ancak Mükemmel Değil</strong></p>
+                <p>Bazı maddeler tam konsensüs sağlamamaktadır. Bu maddeler revizyon yapılmalıdır. Ölçek kullanımından önce madde iyileştirmesi tavsiye edilir.</p>
+            </div>
+
+            <div class="danger-box">
+                <p><strong>S-CVI/UA < 0.60: Revizyon Gerekli ✗</strong></p>
+                <p>Maddelerin %40'tan fazlası uzmanlar arasında anlaşmazlık konusudur. Bu durumda ölçek temelden revize edilmeli, madde seçimi gözden geçirilmeli veya uzman paneli iyileştirilmelidir.</p>
+            </div>
+
+            <h2>S-CVI/UA Neden S-CVI/Ave'den Daha Katı?</h2>
+
+            <p>S-CVI/UA ve S-CVI/Ave aynı verileri kullanmasına rağmen, çok farklı sonuçlar verebilir. İşte nedenler:</p>
+
+            <h3>S-CVI/Ave (Ortalama)</h3>
+            <p>Tüm I-CVI değerlerinin basit aritmetik ortalamasıdır. Bir madde 0.833 I-CVI'ye sahipse (yani 5 uzman "gerekli", 1 uzman "faydalı"), bu değer ortalamaya katkıda bulunur.</p>
+
+            <h3>S-CVI/UA (Evrensel Anlaşma)</h3>
+            <p>Sadece I-CVI = 1.0 olan maddeler sayılır. 0.833 I-CVI'ye sahip madde, S-CVI/UA hesaplamasında sayılmaz, çünkü bir uzman hemfikir değildir.</p>
+
+            <h3>Sonuç</h3>
+            <p>S-CVI/UA, azınlık görüşleri tamamen göz ardı eder ve tam konsensüs talep eder. Bu onu daha katı kılar. Yüksek riskli veya kritik alanlarda bu katılık istenebilir.</p>
+
+            <h2>S-CVI/Ave vs S-CVI/UA: Karşılaştırma Tablosu</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ölçüt</th>
+                        <th>Tanım</th>
+                        <th>Eşik Değeri</th>
+                        <th>Odak Noktası</th>
+                        <th>Katılık</th>
+                        <th>Azınlık Görüş</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>S-CVI/Ave</strong></td>
+                        <td>Tüm I-CVI değerlerinin ortalaması</td>
+                        <td>≥ 0.90</td>
+                        <td>Genel uzman hemfikri</td>
+                        <td>Orta</td>
+                        <td>Kısmen hesaba katılır</td>
+                    </tr>
+                    <tr>
+                        <td><strong>S-CVI/UA</strong></td>
+                        <td>I-CVI = 1.0 olan maddelerin yüzdesi</td>
+                        <td>≥ 0.80</td>
+                        <td>Tam konsensüs</td>
+                        <td>Yüksek</td>
+                        <td>Tamamen göz ardı edilir</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Evrensel Anlaşma Paradoksu (Agreement Paradox)</h2>
+
+            <p>İlginç bir durum vardır: Bir madde 0.85 I-CVI'ye sahip olabilir (çok iyi) ancak S-CVI/UA'ya katkıda bulunmaz.</p>
+
+            <h3>Nedir bu "Paradoks"?</h3>
+
+            <p>Bir madde hakkında:</p>
+            <ul>
+                <li><strong>Uzmanların %85'i</strong> "Bu madde gereklidir" der</li>
+                <li><strong>Uzmanların %15'i</strong> "Bu madde faydalıdır ama gerekli değildir" der</li>
+            </ul>
+
+            <p>Bu madde:</p>
+            <ul>
+                <li><strong>S-CVI/Ave'e katkıda bulunur</strong> (0.85 ile yükseltir)</li>
+                <li><strong>S-CVI/UA'ya katkıda bulunmaz</strong> (sadece 1.0 maddeler sayılır)</li>
+            </ul>
+
+            <p>Bu nedenle bazı ölçeklerde S-CVI/Ave yüksek (0.91) ama S-CVI/UA düşük (0.65) olabilir. Bu paradoks, iki ölçütün farklı perspektifler sunduğunu gösterir.</p>
+
+            <h2>Çeşitli Senaryolar ve Yorumlama</h2>
+
+            <div class="scenario">
+                <p><strong>Senaryo 1:</strong> S-CVI/Ave = 0.92, S-CVI/UA = 0.85</p>
+                <p>✓ <strong>Mükemmel durum!</strong> Uzmanlar genel olarak maddelerin gerekli olduğu konusunda hemfikirdir ve %85'i tam konsensüs sağlamıştır. Bu ölçek ampirik testin açık ara hazırdır.</p>
+            </div>
+
+            <div class="scenario">
+                <p><strong>Senaryo 2:</strong> S-CVI/Ave = 0.90, S-CVI/UA = 0.50</p>
+                <p>⚠ <strong>Dikkat gerekli.</strong> Genel anlaşma düzeyine ulaşılmıştır, ancak yarısından fazla madde tam konsensüs sağlamamaktadır. S-CVI/Ave iyidir ama S-CVI/UA düşüktür. Düşük I-CVI'li maddeler mutlaka revize edilmelidir.</p>
+            </div>
+
+            <div class="scenario">
+                <p><strong>Senaryo 3:</strong> S-CVI/Ave = 0.88, S-CVI/UA = 0.90</p>
+                <p>✓ <strong>Sürpriz ama pozitif!</strong> Neredeyse tüm maddeler tam konsensüs aldı, ancak bir-iki madde ortalamayı biraz düşürdü. S-CVI/UA mükemmeldir. Bu maddeler çıkarılabilir veya revize edilebilir.</p>
+            </div>
+
+            <div class="scenario">
+                <p><strong>Senaryo 4:</strong> S-CVI/Ave = 0.85, S-CVI/UA = 0.40</p>
+                <p>✗ <strong>Ciddi sorun.</strong> Ortalama geçerli değildir ve %60'tan fazla madde anlaşmazlık konusudur. Ölçek temelden gözden geçirilmeli. Uzman paneli yeniden seçilip ölçek değiştirilmelidir.</p>
+            </div>
+
+            <h2>S-CVI/UA vs S-CVI/Ave: Hangisini Kullanmalı?</h2>
+
+            <h3>S-CVI/Ave Kullanın (Çoğu Durumda)</h3>
+            <ul>
+                <li>Geleneksel ve yaygın olarak kabul edilen ölçüttür</li>
+                <li>Ölçek geliştirmenin standart uygulamasıdır (çoğu araştırma bunu tercih eder)</li>
+                <li>Ölçek moderate risq seviyesindeyse yeterlidir</li>
+                <li>≥ 0.90 eşik değeri genellikle ulaşılabilirdir</li>
+                <li>Bazı maddelerin kısmi anlaşmazlıkla ilerlemesi kabul edilebilir</li>
+            </ul>
+
+            <h3>S-CVI/UA Kullanın (Özel Durumlarda)</h3>
+            <ul>
+                <li>Yüksek risqli, kritik araçlar geliştiriyorsanız (sertifika sınavları)</li>
+                <li>Tıbbi veya güvenlik-kritik değerlendirmeler yapıyorsanız</li>
+                <li>Tam uzman konsensüsü kritikse</li>
+                <li>S-CVI/Ave'e tamamlayıcı katı ölçüt istiyorsanız</li>
+                <li>Hangi maddelerin tam destek aldığını kesin olarak bilmek istiyorsanız</li>
+            </ul>
+
+            <h2>Her İki Metriği Birleştirerek Kullanmak (En İyi Pratik)</h2>
+
+            <div class="highlight-box">
+                <p><strong>Tavsiye:</strong> Akademik ve profesyonel çalışmalarda, her iki metriği de (<strong>S-CVI/Ave ≥ 0.90 AND S-CVI/UA ≥ 0.80</strong>) birlikte raporlayın.</p>
+                <p>Bu birleşik yaklaşım:</p>
+                <ol>
+                    <li>Güçlü genel uzman hemfikrini (S-CVI/Ave) gösterir</li>
+                    <li>Önemli maddeler üzerinde sağlam konsensüsü (S-CVI/UA) gösterir</li>
+                    <li>Okuyuculara ölçek kalitesi hakkında tam resmi sunar</li>
+                    <li>Bulgularınızın katılığını ve güvenilirliğini artırır</li>
+                </ol>
+            </div>
+
+            <h2>Pratik Yorumlama Rehberi</h2>
+
+            <h3>Eğer S-CVI/UA = 0.90 ise</h3>
+            <p>✓ <strong>Mükemmel!</strong> Maddelerin %90'ı tam konsensüs aldı. Ölçek ampirik testin açık ara hazırdır ve yayın için güçlü bir içerik geçerliliğine sahiptir.</p>
+
+            <h3>Eğer S-CVI/UA = 0.75 ise</h3>
+            <p>⚠ <strong>Kabul edilebilir ama revizyon tavsiye edilir.</strong> Maddelerin %75'i konsensüs sağladı, %25'i revizyon gerektirir. I-CVI < 1.0 olan maddeler gözden geçirilmelidir.</p>
+
+            <h3>Eğer S-CVI/UA = 0.60 ise</h3>
+            <p>⚠ <strong>Sınırda.</strong> Maddelerin %60'ı konsensüs sağlamıştır ancak %40'ı sorunlu. Ölçek kullanılmadan önce maddeleri revize edin ve uzmanlardan tekrar geri bildirim isteyin.</p>
+
+            <h3>Eğer S-CVI/UA = 0.45 ise</h3>
+            <p>✗ <strong>Uygun değildir.</strong> Çoğu madde anlaşmazlık konusudur. Ölçeyi temelden değiştirin, uzman panelini yeniden değerlendirin veya ölçek geliştirme sürecini baştan başlayın.</p>
+
+            <h2>S-CVI/UA Hesaplaması için İşlem Adımları</h2>
+
+            <ol>
+                <li><strong>Uzman panelini oluşturun:</strong> Alanında deneyimli 5-10 uzman seçin</li>
+                <li><strong>Her madde için I-CVI hesaplayın:</strong> "Gerekli" oylarının uzman sayısına oranı</li>
+                <li><strong>I-CVI = 1.0 olan maddeleri sayın:</strong> Tüm uzmanların oy birliği ile onay verdiği maddeler</li>
+                <li><strong>Toplam madde sayısını belirleyin:</strong> Ölçekteki tüm maddeler</li>
+                <li><strong>Formülü uygulayın:</strong> S-CVI/UA = (1.0 olan maddeler) / (toplam maddeler)</li>
+                <li><strong>Sonucu yüzde olarak ifade edin ve eşikle karşılaştırın</strong></li>
+                <li><strong>Rapor edin:</strong> S-CVI/UA'yı ve S-CVI/Ave'i birlikte yazın</li>
+            </ol>
+
+            <h2>Kaynaklar ve İleri Okumalar</h2>
 
             <p><strong>Davis, L. L. (1992).</strong> Instrument review: Getting the most from a panel of experts. <em>Applied Nursing Research, 5</em>(4), 194-197.</p>
+
+            <p><strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.</p>
+
             <p><strong>Shi, J., Mo, X., & Sun, Z. (2012).</strong> Content validity index in scale development. <em>Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37</em>(2), 152-155.</p>
+
+            <p><strong>Polit, D. F., Beck, C. T., & Owen, S. V. (2007).</strong> Is the CVI an acceptable indicator of content validity? Appraisal and recommendations. <em>Research in Nursing & Health, 30</em>(4), 459-467.</p>
+
+            <p><strong>Wilson, F. R., Pan, W., & Schumsky, D. A. (2012).</strong> Recalculation of the critical values for Lawshe's content validity ratio. <em>Measurement and Evaluation in Counseling and Development, 45</em>(3), 197-210.</p>
 
             <div class="nav-links">
                 <a href="index-tr.html" class="calc-link">← CVR Hesaplayıcı'ya Dön</a>
                 <a href="scvi-ave-nedir.html">← S-CVI/Ave Nedir?</a>
+                <a href="i-cvi-nedir.html">← I-CVI Nedir?</a>
             </div>
         </main>
     </div>

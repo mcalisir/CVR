@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CVI (İçerik Geçerliliği İndeksi) Nedir? Formülü ve Eşikleri</title>
+    <title>CVI (İçerik Geçerliliği İndeksi) Nedir? Formülü, Hesaplama ve Eşikleri</title>
 
-    <meta name="description" content="CVI (Content Validity Index) nedir? CVR ortalaması, formülü, uzman sayısına göre eşikler. Davis, Polit & Beck, Lynn kriterleri. Ölçek düzeyinde geçerlilik.">
-    <meta name="keywords" content="CVI, content validity index, geçerlilik indeksi, CVR ortalaması, formülü, eşik, ölçek geçerliliği, Davis, Polit Beck">
+    <meta name="description" content="CVI (Content Validity Index) nedir? Kapsamlı rehber: CVR ortalaması, formülü, adım adım hesaplama örnekleri, uzman sayısına göre eşikler, S-CVI/Ave karşılaştırması, sınırlamalar ve modern alternatifler.">
+    <meta name="keywords" content="CVI, content validity index, geçerlilik indeksi, CVR ortalaması, formülü, eşik, ölçek geçerliliği, Davis, Polit Beck, Lynn, S-CVI/Ave, ölçek değerlendirmesi">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mcalisir.github.io/CVR/cvi-nedir.html">
-    <link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-cvi.html">
+    <link rel="canonical" href="https://cvrindex.pro/cvi-nedir.html">
+    <link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-cvi.html">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -18,10 +18,14 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "CVI (İçerik Geçerliliği İndeksi) Nedir?",
-        "url": "https://mcalisir.github.io/CVR/cvi-nedir.html",
+        "headline": "CVI (İçerik Geçerliliği İndeksi) Nedir? Kapsamlı Rehber",
+        "url": "https://cvrindex.pro/cvi-nedir.html",
         "datePublished": "2026-07-04",
-        "inLanguage": "tr"
+        "inLanguage": "tr",
+        "author": {
+            "@type": "Organization",
+            "name": "CVR İndeksi"
+        }
     }
     </script>
 
@@ -34,6 +38,8 @@
             --accent: #3457d5;
             --good: #177a3d;
             --border: #e2e8f0;
+            --warning: #c0392b;
+            --info: #2980b9;
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -43,7 +49,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--surface);
             padding: 40px;
@@ -52,7 +58,10 @@
         }
         h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
         h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; margin-bottom: 12px; }
+        h3 { font-size: 1.1rem; font-weight: 600; margin-top: 20px; margin-bottom: 10px; }
         p { color: var(--text-2); margin-bottom: 16px; }
+        ul, ol { color: var(--text-2); margin-bottom: 16px; margin-left: 20px; }
+        li { margin-bottom: 10px; }
         .formula-box {
             background: #f8f9ff;
             border: 2px solid var(--accent);
@@ -67,6 +76,27 @@
             font-weight: 700;
             color: var(--accent);
         }
+        .example-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .best-practice-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--good);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid var(--info);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -75,15 +105,28 @@
         }
         table th, table td {
             border: 1px solid var(--border);
-            padding: 10px;
-            text-align: center;
+            padding: 12px;
+            text-align: left;
         }
         table th {
             background: var(--accent);
             color: white;
+            font-weight: 600;
         }
         table tr:nth-child(even) td {
             background: #f8fafc;
+        }
+        .step-number {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 600;
+            margin-right: 10px;
         }
         .nav-links {
             display: flex;
@@ -104,17 +147,31 @@
             font-weight: 600;
         }
         .calc-link { background: var(--good); }
+        .checkmark { color: var(--good); font-weight: 700; }
+        .cross { color: var(--warning); font-weight: 700; }
+        .warning-icon { color: #d97706; font-weight: 700; }
     </style>
 </head>
 <body>
     <div class="container">
         <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
             <h1>CVI (İçerik Geçerliliği İndeksi) Nedir?</h1>
-            <p style="color: #8b96a8; font-size: 0.9rem;">Tüm maddelerin CVR ortalaması, formülü, uzman sayısına göre eşikler</p>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Kapsamlı rehber: Formülü, hesaplama yöntemi, eşikler, sınırlamalar ve modern alternatifler</p>
         </header>
 
         <main>
-            <p><strong>CVI (Content Validity Index)</strong>, ölçekte yer alan <strong>tüm maddelerin CVR değerlerinin ortalaması</strong>nı alarak, bütün ölçeğin geçerliliğini değerlendiren bir göstergedir. Bireysel madde değerlendirmesinden ölçek düzeyinde bir değerlendirmeye geçiş sağlar.</p>
+            <h2>CVI Nedir?</h2>
+
+            <p><strong>CVI (Content Validity Index)</strong>, bir ölçeğin veya veri toplama aracının tüm maddelerinin <strong>CVR değerlerinin ortalaması</strong>nı alarak, bütün ölçeğin geçerliliğini değerlendiren bir göstergedir. Bireysel madde değerlendirmesinden (CVR) ölçek düzeyinde bir değerlendirmeye geçiş sağlar.</p>
+
+            <p>CVI, şu amaçlar için kullanılır:</p>
+            <ul>
+                <li><strong>Hızlı ölçek düzeyinde geçerlilik özeti:</strong> Tüm maddelerin ortalama geçerliliğini tek bir sayıda sunar</li>
+                <li><strong>Farklı ölçekler arası karşılaştırma:</strong> Bir ölçeğin diğerine kıyasla geçerliliğini değerlendirir</li>
+                <li><strong>Anlaşılır sonuç sunumu:</strong> Teknik olmayan kişilere sonuçları açıklayabilir</li>
+                <li><strong>Geçerleme kararı:</strong> Ölçeğin uygulanabilir olup olmadığını belirlemek için hızlı bir karar noktası sağlar</li>
+                <li><strong>Araştırma raporlaması:</strong> Akademik yayınlarda ölçek geçerliliğini belgelemek için</li>
+            </ul>
 
             <h2>CVI Formülü</h2>
 
@@ -122,14 +179,60 @@
                 <code>CVI = Tüm CVR değerlerinin toplamı / Madde sayısı</code>
             </div>
 
-            <p>CVI = (CVR₁ + CVR₂ + CVR₃ + ... + CVRₙ) / n</p>
+            <p>Matematiksel gösterim:</p>
+            <p style="text-align: center; font-family: 'Courier New', monospace; font-weight: 600;">
+                CVI = (CVR₁ + CVR₂ + CVR₃ + ... + CVRₙ) / n
+            </p>
 
-            <p>Örneğin, 5 maddenin CVR değerleri 0.99, 0.80, 0.62, 0.75, 0.90 ise:</p>
-            <p><strong>CVI = (0.99 + 0.80 + 0.62 + 0.75 + 0.90) / 5 = 4.06 / 5 = 0.812</strong></p>
+            <p>Burada:</p>
+            <ul>
+                <li><strong>CVR₁, CVR₂, ..., CVRₙ:</strong> Her bir maddenin İçerik Geçerliliği Oranı</li>
+                <li><strong>n:</strong> Ölçekteki toplam madde sayısı</li>
+            </ul>
+
+            <h2>CVI Nasıl Hesaplanır? (Adım Adım)</h2>
+
+            <p><span class="step-number">1</span><strong>Her madde için CVR hesaplayın</strong> (CVR formülünü kullanarak uzmanların verdikleri puanlardan)</p>
+
+            <p><span class="step-number">2</span><strong>Tüm CVR değerlerini toplayın</strong></p>
+
+            <p><span class="step-number">3</span><strong>Toplam madde sayısına bölün</strong></p>
+
+            <p><span class="step-number">4</span><strong>Sonucu uzman sayısına göre eşikle karşılaştırın</strong></p>
+
+            <h3>Örnek 1: Basit Hesaplama (5 Madde)</h3>
+
+            <div class="example-box">
+                <strong>Senaryo:</strong> 5 maddenin CVR değerleri şu şekildedir:<br><br>
+                Madde 1: CVR = 0.99<br>
+                Madde 2: CVR = 0.80<br>
+                Madde 3: CVR = 0.62<br>
+                Madde 4: CVR = 0.75<br>
+                Madde 5: CVR = 0.90<br><br>
+                <strong>Hesaplama:</strong><br>
+                CVI = (0.99 + 0.80 + 0.62 + 0.75 + 0.90) / 5<br>
+                CVI = 4.06 / 5<br>
+                <strong>CVI = 0.812</strong><br><br>
+                <strong>Sonuç:</strong> Bu ölçek için CVI = 0.812 olarak hesaplanmıştır. Bu değer, 6-8 uzman için eşik olan 0.83'ten biraz düşüktür.
+            </div>
+
+            <h3>Örnek 2: Daha Büyük Ölçek (10 Madde)</h3>
+
+            <div class="example-box">
+                <strong>Senaryo:</strong> 10 maddenin CVR değerleri:<br><br>
+                Madde 1-5: 0.95, 0.92, 0.88, 0.85, 0.80<br>
+                Madde 6-10: 0.78, 0.75, 0.70, 0.68, 0.65<br><br>
+                <strong>Hesaplama:</strong><br>
+                Toplam CVR = 0.95 + 0.92 + 0.88 + 0.85 + 0.80 + 0.78 + 0.75 + 0.70 + 0.68 + 0.65<br>
+                Toplam CVR = 8.16<br>
+                CVI = 8.16 / 10<br>
+                <strong>CVI = 0.816</strong><br><br>
+                <strong>Sonuç:</strong> 9+ uzman için bu ölçek geçerlidir (eşik 0.78).
+            </div>
 
             <h2>Kabul Edilebilir CVI Eşikleri</h2>
 
-            <p>CVI'nin kabul edilebilir olup olmadığı, uzman sayısına göre değişir:</p>
+            <p>CVI'nin kabul edilebilir olup olmadığı, <strong>uzman sayısına göre değişir</strong>. Uzman sayısı az olduğunda, her uzmanın görüşü daha ağırlıklı olduğu için daha yüksek bir eşik gereklidir:</p>
 
             <table>
                 <thead>
@@ -137,46 +240,225 @@
                         <th>Uzman Sayısı</th>
                         <th>Kabul Edilebilir CVI</th>
                         <th>Kaynak</th>
+                        <th>Yorum</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>2</td>
-                        <td>En az 0.80</td>
+                        <td><strong>2</strong></td>
+                        <td><strong>≥ 0.80</strong></td>
                         <td>Davis (1992)</td>
+                        <td>En az uygulanabilir. Her uzmanın görüşü kritik.</td>
                     </tr>
                     <tr>
-                        <td>3-5</td>
-                        <td>1.0 olmalı</td>
+                        <td><strong>3-5</strong></td>
+                        <td><strong>1.0</strong></td>
                         <td>Polit & Beck (2006)</td>
+                        <td>Tam uyum gerekli. Tek bir olumsuz oy başarısızlık.</td>
                     </tr>
                     <tr>
-                        <td>6-8</td>
-                        <td>En az 0.83</td>
+                        <td><strong>6-8</strong></td>
+                        <td><strong>≥ 0.83</strong></td>
                         <td>Lynn (1986)</td>
+                        <td>İyi geçerlilik. İstatistiksel fikir birliği sağlanmış.</td>
                     </tr>
                     <tr>
-                        <td>9+</td>
-                        <td>En az 0.78</td>
+                        <td><strong>9+</strong></td>
+                        <td><strong>≥ 0.78</strong></td>
                         <td>Lynn (1986)</td>
+                        <td>Kabul edilebilir geçerlilik. Geniş panelle daha gevşek kriter.</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h2>CVI'nin Yorumlanması</h2>
+            <h2>Neden Eşikler Değişir?</h2>
+
+            <div class="info-box">
+                <p><strong>Temel İlke:</strong> Uzman sayısı az olduğunda, her uzmanın görüşü daha önemlidir ve bu nedenle daha yüksek bir uyum beklenir.</p>
+            </div>
 
             <ul>
-                <li><strong>CVI ≥ Eşik:</strong> Ölçek geçerli; kullanılabilir</li>
-                <li><strong>CVI &lt; Eşik:</strong> Ölçek geçersiz; maddelerin revize edilmesi veya çıkarılması gerekir</li>
+                <li><strong>2-5 uzman:</strong> Küçük panellerde her karar önemlidir. Örneğin 3 uzmanla, bir madde 2 uzman tarafından onaylandıysa (CVR = 0.33), bu henüz yeterli değildir. Tam uyum (CVR = 1.0) gereklidir.</li>
+                <li><strong>6-8 uzman:</strong> Orta ölçekli panel. Gaz oranı biraz daha gevşetilir. Eşik 0.83 olur, bu da ~5 uzmanın uyumunu gerektirir.</li>
+                <li><strong>9+ uzman:</strong> Büyük panel. İstatistiksel güç artmıştır. Eşik 0.78'e düşer, çünkü daha fazla veriyle fikir birliğine daha kolay ulaşılabilir.</li>
             </ul>
 
-            <p>CVI, ölçeğin genel geçerliliği hakkında hızlı bir fikir verir, ancak bireysel maddelerin değerlendirme sonuçlarını göz ardı eder.</p>
+            <h3>Eşik Seçiminin Mantığı</h3>
+
+            <p>Eşikler, belirli bir üstünlük seviyesi (confidence level) sağlamak için tasarlanmıştır. Örneğin:</p>
+            <ul>
+                <li><strong>3 uzman, CVI = 1.0:</strong> Tüm üç uzman her maddeyi onayladı (şansa bağlı değil)</li>
+                <li><strong>6 uzman, CVI = 0.83:</strong> Ortalama 5 uzman her maddeyi onayladı (1 uzman reddedebilir)</li>
+                <li><strong>10 uzman, CVI = 0.78:</strong> Ortalama 7.8 uzman her maddeyi onayladı (2 uzman reddedebilir)</li>
+            </ul>
+
+            <h2>CVI'nin Yorumlanması</h2>
+
+            <h3 style="margin-top: 15px;"><span class="checkmark">✓</span> CVI ≥ Eşik</h3>
+            <p>Ölçek <strong>geçerlidir</strong> ve uygulamaya hazırdır. Sonraki adımlar (güvenirlik analizi, pilot test, faktör analizi) için devam edilebilir.</p>
+
+            <h3><span class="cross">✗</span> CVI &lt; Eşik</h3>
+            <p>Ölçek <strong>geçersizdir</strong>. Maddelerin revize edilmesi veya çıkarılması gerekir. Uzman paneline geri dönülmesi önerilir.</p>
+
+            <h2>CVI'nin Sınırlamaları ve Modern Alternatifler</h2>
+
+            <h3>CVI'nin Neden Eleştirilir?</h3>
+
+            <p><strong>1. Bilgi Kaybı (Averaging Masking):</strong></p>
+            <div class="example-box">
+                Örneğin, 5 maddenin CVR değerleri: 1.0, 1.0, 1.0, 1.0, 0.20<br>
+                CVI = (1.0 + 1.0 + 1.0 + 1.0 + 0.20) / 5 = <strong>0.84</strong><br><br>
+                Bu CVI (0.84) yeterli görünüyor, ama 5. madde ciddi bir sorundur! CVI ortalama aldığı için bu sorunu gizler.
+            </div>
+
+            <p><strong>2. Bireysel Madde Detayları Eksik:</strong> Hangi maddelerin düşük puan aldığını görmez.</p>
+
+            <p><strong>3. Uzman Tutarsızlığını Göz Ardı Eder:</strong> Farklı uzman desenleri aynı CVI'ye yol açabilir.</p>
+
+            <p><strong>4. Düşük Uzman Sayısında Sorunlu:</strong> 3-5 uzmanla CVI = 1.0 koşulu çok katıdır ve pratik olarak uygulanması zordur.</p>
+
+            <h3>Modern Alternatifler</h3>
+
+            <ul>
+                <li><strong>S-CVI/Ave (Ölçek-Düzey CVI, Ortalama):</strong> I-CVI değerlerinin ortalaması. CVR'nin tersine, her maddenin geçerliliğini bireysel olarak değerlendirir. Eşik ≥ 0.90</li>
+                <li><strong>S-CVI/UA (Universal Agreement):</strong> Tüm uzmanların uyum sağladığı maddelerin yüzdesi. Daha katı bir kriter.</li>
+                <li><strong>Kappa İstatistiği:</strong> Uzmanlar arasındaki uyumu ölçer (şansa bağlı uyumun ötesinde)</li>
+            </ul>
+
+            <div class="best-practice-box">
+                <strong>En İyi Uygulama:</strong> Hem eski araştırmalarla uyum için CVI'yi rapor edin, hem de birincil geçerlilik ölçütü olarak <strong>S-CVI/Ave</strong>'yi kullanın. Bu, hem geriye dönük uyum hem de modern standartları sağlar.
+            </div>
+
+            <h2>CVI vs S-CVI/Ave Karşılaştırması</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metrik</th>
+                        <th>Formülü</th>
+                        <th>Yorumu</th>
+                        <th>Eşik</th>
+                        <th>Modern Kullanım</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CVI</strong></td>
+                        <td>CVR değerlerinin ortalaması</td>
+                        <td>Ölçek geçerliliği (yaklaşık)</td>
+                        <td>0.78-1.0</td>
+                        <td>Tarihi referans/karşılaştırma</td>
+                    </tr>
+                    <tr>
+                        <td><strong>S-CVI/Ave</strong></td>
+                        <td>I-CVI değerlerinin ortalaması</td>
+                        <td>Ölçek geçerliliği (hassas)</td>
+                        <td>≥ 0.90</td>
+                        <td>Şimdiki standart (önerilen)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>S-CVI/UA</strong></td>
+                        <td>% maddeler tüm uzmanların onayında</td>
+                        <td>Tam uyum yüzdesi</td>
+                        <td>≥ 0.80</td>
+                        <td>Ek doğrulama</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Pratik Yorumlama Rehberi</h2>
+
+            <h3>Senaryo 1: CVI = 0.90</h3>
+            <div class="best-practice-box">
+                <p><span class="checkmark">✓ Mükemmel Durum</span></p>
+                <p>Ölçeğiniz <strong>mükemmel</strong> içerik geçerliliğine sahiptir. Sonraki aşamaya (pilot test, güvenirlik analizi, faktör analizi) güvenle geçin.</p>
+                <p><strong>Yapılacak:</strong> Ölçeği uygulamaya hazırlayın. Çeviri geçerlilik (varsa) düşünün.</p>
+            </div>
+
+            <h3>Senaryo 2: CVI = 0.78-0.89</h3>
+            <div class="example-box">
+                <p><span class="warning-icon">⚠ Kabul Edilebilir, Ancak Geliştirme Gerekli</span></p>
+                <p>Ölçeğiniz <strong>kabul edilebilir</strong> geçerliliğe sahiptir, ancak iyileştirme odaklı revizyon yapılabilir.</p>
+                <p><strong>Yapılacak:</strong></p>
+                <ul>
+                    <li>CVR < 0.60 olan maddeleri tanımlayın</li>
+                    <li>Bu maddeleri uzmanlarla gözden geçirin ve revize edin</li>
+                    <li>Opsiyonel: İkinci bir uzman paneli ile yeniden değerlendirin</li>
+                </ul>
+            </div>
+
+            <h3>Senaryo 3: CVI < 0.78</h3>
+            <div class="example-box">
+                <p><span class="cross">✗ Yetersiz Geçerlilik</span></p>
+                <p>Ölçeğiniz <strong>geçerli değildir</strong>. Sonraki aşamaya ilerlememelisiniz.</p>
+                <p><strong>Yapılacak:</strong></p>
+                <ul>
+                    <li>Her maddenin CVR değerini inceleyin</li>
+                    <li>CVR < 0.50 olan maddeleri silin</li>
+                    <li>Kalan maddeleri revize edin (dilbilgisi, anlaşılırlık, kapsam)</li>
+                    <li><strong>Yeni bir uzman paneli ile baştan başlayın</strong></li>
+                </ul>
+            </div>
+
+            <h2>Pratik Uygulama Örneği: Likert Ölçeğinde CVI</h2>
+
+            <p>Diyelim ki <strong>Yaşlılar için Teknoloji Benimseme Ölçeği</strong> geliştiriyorsunuz (6 madde, 5'li Likert):</p>
+
+            <div class="example-box">
+                <strong>Madde 1:</strong> "Tabletleri kullanmak kolaydır."<br>
+                7 uzman: 7 onay → CVR = (7-3.5)/3.5 = 1.0<br><br>
+                <strong>Madde 2:</strong> "Smartphoneler hayatımı iyileştirir."<br>
+                7 uzman: 6 onay, 1 reddedildi → CVR = (6-3.5)/3.5 = 0.71<br><br>
+                <strong>Madde 3:</strong> "Bilgisayarlar çok karmaşıktır."<br>
+                7 uzman: 7 onay → CVR = 1.0<br><br>
+                <strong>Madde 4:</strong> "İnternet güvenliği endişe verici."<br>
+                7 uzman: 5 onay, 2 reddedildi → CVR = (5-3.5)/3.5 = 0.43<br><br>
+                <strong>Madde 5:</strong> "Sosyal medya faydalı bir araçtır."<br>
+                7 uzman: 6 onay, 1 reddedildi → CVR = 0.71<br><br>
+                <strong>Madde 6:</strong> "Mobil ödeme sistemleri güvendir."<br>
+                7 uzman: 7 onay → CVR = 1.0<br><br>
+                <strong>CVI Hesaplaması:</strong><br>
+                CVI = (1.0 + 0.71 + 1.0 + 0.43 + 0.71 + 1.0) / 6<br>
+                CVI = 4.85 / 6 = <strong>0.808</strong><br><br>
+                <strong>Sonuç:</strong> 7 uzmanla eşik 0.78'dir. CVI = 0.808 > 0.78 → Geçerlidir!<br>
+                <strong>İyileştirme:</strong> Madde 4 (CVR = 0.43) revize edilebilir.
+            </div>
+
+            <h2>CVI Hesaplama İçin İpuçları</h2>
+
+            <ul>
+                <li><strong>Doğru CVR Hesaplayın:</strong> CVI, CVR kadar doğru olabilir. Her CVR'yi dikkatle hesapla.</li>
+                <li><strong>Uzman Sayısını Önceden Bildir:</strong> Eşiği belirlemek için kaç uzman olacağını projeye başlamadan önceden belirle.</li>
+                <li><strong>Sadece Geçerli CVR'leri Ekle:</strong> Bazen CVR < 0'ı (olumsuz geçerlilik) hariç tutanlar olsa da, genellikle tümü dahil edilir.</li>
+                <li><strong>S-CVI/Ave ile Karşılaştır:</strong> İmkânsa S-CVI/Ave'yi de hesapla ve raporla.</li>
+                <li><strong>Madde Düzeyinde Analiz Yap:</strong> CVI'ye ek olarak, her maddenin CVR'sine bakarak zayıf noktaları tanımla.</li>
+            </ul>
+
+            <h2>Sık Sorulan Sorular</h2>
+
+            <h3>S: CVI kullanmalı mıyım yoksa S-CVI/Ave mi?</h3>
+            <p><strong>C:</strong> Her ikisini de raporla. Eski araştırmalarla karşılaştırılabilirlik için CVI, ayrıntılı analiz için S-CVI/Ave.</p>
+
+            <h3>S: CVI = 1.0 elde etmek mümkün mü?</h3>
+            <p><strong>C:</strong> Evet, tüm maddelerde CVR = 1.0 olduğunda (tüm uzmanlar uyum sağladığında) mümkündür. Ancak 3-5 uzmanla bu oldukça katı bir koşuldur.</p>
+
+            <h3>S: CVI < 0.60 olan bir maddeyi silmeliyim?</h3>
+            <p><strong>C:</strong> Evet. CVR < 0.60 olan maddelerin geçerliliği sorgulanır. Revizyon veya çıkarılması önerilir.</p>
+
+            <h3>S: Neden bazı kaynaklar farklı eşikler öneriri?</h3>
+            <p><strong>C:</strong> Farklı alanlar (hemşirelik, eğitim, psikoloji) farklı standartlar benimseyebilir. En yaygın olanlar Davis, Lynn ve Polit & Beck'tir.</p>
 
             <h2>Kaynaklar</h2>
 
             <p><strong>Davis, L. L. (1992).</strong> Instrument review: Getting the most from a panel of experts. <em>Applied Nursing Research, 5</em>(4), 194-197.</p>
+
             <p><strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.</p>
+
             <p><strong>Polit, D. F., & Beck, C. T. (2006).</strong> The content validity index: Are you sure you know what's being reported? <em>Research in Nursing & Health, 29</em>(5), 489-497.</p>
+
+            <p><strong>Polit, D. F., Beck, C. T., & Owen, S. V. (2007).</strong> Is the CVI an acceptable indicator of content validity? Appraisal and recommendations. <em>Research in Nursing & Health, 30</em>(4), 459-467.</p>
+
+            <p><strong>Wilson, F. R., Pan, W., & Schumsky, D. A. (2012).</strong> Recalculation of the critical value for Lawshe's content validity ratio. <em>Measurement and Evaluation in Counseling and Development, 45</em>(3), 197-210.</p>
 
             <div class="nav-links">
                 <a href="index-tr.html" class="calc-link">← CVR Hesaplayıcı'ya Dön</a>

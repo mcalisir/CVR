@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CVR (İçerik Geçerliliği Oranı) Nedir? Formülü ve Lawshe Eşikleri</title>
 
-    <meta name="description" content="CVR (Content Validity Ratio) nedir, nasıl hesaplanır? Lawshe'nin formülü, minimum eşikler tablosu, örneklerle açıklama. Ölçek geliştirmede madde geçerliliği değerlendirmesi.">
-    <meta name="keywords" content="CVR, content validity ratio, içerik geçerliliği oranı, Lawshe, formül, eşik, madde geçerliliği, ölçek geliştirme">
+    <meta name="description" content="CVR (Content Validity Ratio) nedir, nasıl hesaplanır? Lawshe'nin formülü, minimum eşikler tablosu, işletme, eğitim ve hemşirelik uygulamaları. Ölçek geliştirmede madde geçerliliği değerlendirmesi.">
+    <meta name="keywords" content="CVR, content validity ratio, içerik geçerliliği oranı, Lawshe, formül, eşik, madde geçerliliği, ölçek geliştirme, uzman paneli, I-CVI, CVI">
     <meta name="author" content="CVR Calculator">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mcalisir.github.io/CVR/cvr-orani-nedir.html">
-    <link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-cvr.html">
-    <link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/cvr-orani-nedir.html">
+    <link rel="canonical" href="https://cvrindex.pro/cvr-orani-nedir.html">
+    <link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-cvr.html">
+    <link rel="alternate" hreflang="tr" href="https://cvrindex.pro/cvr-orani-nedir.html">
 
     <meta property="og:title" content="CVR (İçerik Geçerliliği Oranı) Nedir? Formülü ve Lawshe Eşikleri">
-    <meta property="og:description" content="CVR hesaplama formülü, Lawshe'nin minimum eşikleri tablosu, madde geçerliliği değerlendirmesi. Örneklerle açık anlatım.">
+    <meta property="og:description" content="CVR hesaplama formülü, Lawshe'nin minimum eşikleri tablosu, madde geçerliliği değerlendirmesi. Örneklerle açık anlatım, hemşirelik ve eğitim uygulamaları.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://mcalisir.github.io/CVR/cvr-orani-nedir.html">
+    <meta property="og:url" content="https://cvrindex.pro/cvr-orani-nedir.html">
     <meta property="og:site_name" content="CVR Calculator">
     <meta property="og:locale" content="tr_TR">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CVR Nedir? Lawshe Formülü ve Eşikleri">
-    <meta name="twitter:description" content="İçerik Geçerliliği Oranı (CVR) hesaplama yöntemi, formülü, minimum eşikler ve örnekler.">
+    <meta name="twitter:description" content="İçerik Geçerliliği Oranı (CVR) hesaplama yöntemi, formülü, minimum eşikler, örnekler ve uygulamalar.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,14 +35,14 @@
         "@type": "Article",
         "headline": "CVR (İçerik Geçerliliği Oranı) Nedir? Formülü ve Lawshe Eşikleri",
         "description": "CVR hesaplama formülü, Lawshe'nin minimum eşikleri, madde geçerliliği değerlendirmesi. Örneklerle açık anlatım.",
-        "url": "https://mcalisir.github.io/CVR/cvr-orani-nedir.html",
+        "url": "https://cvrindex.pro/cvr-orani-nedir.html",
         "datePublished": "2026-07-04",
         "dateModified": "2026-07-04",
         "inLanguage": "tr",
         "author": {
             "@type": "Organization",
             "name": "CVR Calculator",
-            "url": "https://mcalisir.github.io/CVR/"
+            "url": "https://cvrindex.pro/"
         },
         "publisher": {
             "@type": "Organization",
@@ -65,6 +65,7 @@
             --accent: #3457d5;
             --good: #177a3d;
             --border: #e2e8f0;
+            --warning: #c0392b;
         }
 
         body {
@@ -76,7 +77,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--surface);
             padding: 40px;
@@ -97,22 +98,40 @@
             line-height: 1.2;
         }
 
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
         .meta {
             color: var(--text-3);
             font-size: 0.9rem;
         }
 
-        h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-top: 30px;
-            margin-bottom: 12px;
-            color: var(--text);
-        }
-
         p {
             margin: 0 0 16px 0;
             color: var(--text-2);
+        }
+
+        ul {
+            margin: 0 0 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            color: var(--text-2);
+            margin-bottom: 10px;
         }
 
         .formula-box {
@@ -139,6 +158,43 @@
             border-radius: 4px;
         }
 
+        .info-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .note-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--good);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box strong {
+            color: #d68910;
+        }
+
+        .reference {
+            background: #f8fafc;
+            border-left: 4px solid var(--border);
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+            color: var(--text-2);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -160,27 +216,6 @@
 
         table tr:nth-child(even) td {
             background: #f8fafc;
-        }
-
-        .example-box {
-            background: #f0fdf4;
-            border-left: 4px solid var(--good);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-
-        .example-box strong {
-            color: var(--good);
-        }
-
-        .reference {
-            background: #f8fafc;
-            border-left: 4px solid var(--border);
-            padding: 12px;
-            margin: 10px 0;
-            font-size: 0.9rem;
-            color: var(--text-2);
         }
 
         .nav-links {
@@ -224,6 +259,12 @@
             h2 {
                 font-size: 1.2rem;
             }
+            table {
+                font-size: 0.85rem;
+            }
+            table th, table td {
+                padding: 8px;
+            }
         }
     </style>
 </head>
@@ -231,13 +272,37 @@
     <div class="container">
         <header>
             <h1>CVR (İçerik Geçerliliği Oranı) Nedir?</h1>
-            <p class="meta">Lawshe'nin formülü, minimum eşikler, madde geçerliliği değerlendirmesi</p>
+            <p class="meta">Lawshe'nin formülü, minimum eşikler, madde geçerliliği değerlendirmesi ve uygulamalar</p>
         </header>
 
         <main>
-            <p><strong>CVR (Content Validity Ratio)</strong>, ölçek geliştirme ve araştırmada maddelerin içerik geçerliliğini değerlendirmek için kullanılan bir istatistiksel göstergedir. Uzman panelinin puanlarına dayanarak, bir maddenin ne kadar "gerekli" veya "geçerli" olduğunu sayısal olarak ifade eder.</p>
+            <h2>CVR Nedir?</h2>
 
-            <h2>CVR Formülü</h2>
+            <p><strong>CVR (Content Validity Ratio)</strong>, ölçek geliştirme ve araştırmada maddelerin içerik geçerliliğini değerlendirmek için kullanılan istatistiksel bir göstergedir. 1975 yılında <strong>C. H. Lawshe</strong> tarafından geliştirilen bu yöntem, uzman panelinin puanlarına dayanarak, bir maddenin ne kadar "gerekli" veya "geçerli" olduğunu sayısal olarak ifade eder ve madde-ölçek uyumunu ölçer.</p>
+
+            <p><strong>CVR yaygın olarak şu alanlarda kullanılır:</strong></p>
+            <ul>
+                <li><strong>Hemşirelik ve Sağlık Alanı:</strong> Hemşirelik ölçekleri, hasta değerlendirme araçları ve yeterlik ölçümleri</li>
+                <li><strong>Eğitim Alanı:</strong> Ders değerlendirme formları, öğrenci başarı ölçekleri, müfredatın geçerliliği</li>
+                <li><strong>Psikoloji:</strong> Kişilik testleri, anksiyete/depresyon ölçekleri, ruh sağlığı araçları</li>
+                <li><strong>İşletme:</strong> Iş değerlendirme formları, yeterlilik testleri, performans ölçümleri</li>
+                <li><strong>İnsan Kaynakları:</strong> Seçim testleri, sertifikasyon sınavları, iş tanımı geçerliliği</li>
+                <li><strong>Araştırma:</strong> Anket ve yargılama formları, envanter geliştirme, kontent analizi</li>
+            </ul>
+
+            <h2>CVR Neden Önemlidir?</h2>
+
+            <p>Yeni bir ölçek veya anket geliştirirken, her maddenin gerçekten ölçülmek istenen özelliği/konuyu yansıtıp yansıtmadığı sorgulanmalıdır. CVR, bu soruya cevap vermede kritik rol oynar:</p>
+
+            <ul>
+                <li><strong>Uzman Görüşünü Nicelleştirir:</strong> Nitel uzman yargılarını sayısal bir göstergede birleştirir</li>
+                <li><strong>Tutarlılığı Sağlar:</strong> Farklı araştırmalarda karşılaştırılabilir sonuçlar verir</li>
+                <li><strong>Veri Kalitesini Artırır:</strong> Geçerli olmayan maddeleri erkenden belirlemeyi sağlar</li>
+                <li><strong>Kaynak Tasarrufu:</strong> Gereksiz soruların veri toplamadan çıkarılmasını sağlar</li>
+                <li><strong>İstatistiksel Temelli:</strong> Rastgele anlaşmaya karşı koruma sağlar (istatistiksel anlamlılık testi)</li>
+            </ul>
+
+            <h2>CVR Formülü ve Hesaplama</h2>
 
             <div class="formula-box">
                 <code>CVR = (ne − N/2) / (N/2)</code>
@@ -246,65 +311,264 @@
             <div class="formula-explain">
                 <p><strong>ne:</strong> Maddeyi "gerekli" olarak puanlayan uzman sayısı</p>
                 <p><strong>N:</strong> Maddeyi puanlayan toplam uzman sayısı</p>
+                <p><strong>N/2:</strong> Toplam uzman sayısının yarısı (rastgele anlaşma noktası)</p>
             </div>
 
-            <p>Bu formül 1975 yılında <strong>C. H. Lawshe</strong> tarafından geliştirilmiştir. Sonuç −1 ile +1 arasında değişir:</p>
+            <p><strong>Formülün Mantığı:</strong> Lawshe formülü basit ve elegandır. Payda (N/2), şans eseri ne kadar çok uzmanın "gerekli" diyebileceğini temsil eder. Pay ise, bu şanssal beklentinin ötesinde kaç uzmanın daha "gerekli" dediğini gösterir. Sonuç −1 ile +1 arasında değişir:</p>
+
             <ul>
-                <li><strong>+1:</strong> Tüm uzmanlar maddeyi gerekli sayıyor</li>
-                <li><strong>0:</strong> Uzmanların yarısı gerekli diyor, yarısı değil</li>
-                <li><strong>−1:</strong> Hiç kimse maddeyi gerekli sayımıyor</li>
+                <li><strong>+1:</strong> Tüm uzmanlar maddeyi gerekli sayıyor (mükemmel uzlaşma)</li>
+                <li><strong>0 ile +0,99 arasında:</strong> Çoğunluk maddeyi gerekli görüyor (kısmi uzlaşma)</li>
+                <li><strong>0:</strong> Uzmanların tam yarısı gerekli diyor, yarısı değil (fikir birliği yok)</li>
+                <li><strong>−1 ile 0 arasında:</strong> Çoğunluk maddeyi gerekli görmüyor (düşük ilgi)</li>
+                <li><strong>−1:</strong> Hiç kimse maddeyi gerekli sayımıyor (çıkarılması önerilir)</li>
             </ul>
 
             <h2>Lawshe'nin Minimum CVR Eşikleri</h2>
 
-            <p>Bir maddenin geçerli sayılabilmesi için CVR değerinin, uzman sayısına bağlı olarak minimum bir eşiğe ulaşması gerekir. Aşağıdaki tablo Lawshe'nin önerdiği eşikler göstermektedir:</p>
+            <p>Bir maddenin geçerli sayılabilmesi için CVR değerinin, uzman sayısına bağlı olarak <strong>minimum bir eşiğe</strong> ulaşması gerekir. Bu eşikler, istatistiksel anlamlılık (p &lt; 0.05) düzeyinde hesaplanmıştır:</p>
 
             <table>
                 <thead>
                     <tr>
-                        <th>Uzman Sayısı</th>
+                        <th>Uzman Sayısı (N)</th>
                         <th>Minimum CVR Eşiği</th>
+                        <th>Gereken Gerekli Sayısı</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>5</td><td>0.99</td></tr>
-                    <tr><td>6</td><td>0.99</td></tr>
-                    <tr><td>7</td><td>0.99</td></tr>
-                    <tr><td>8</td><td>0.75</td></tr>
-                    <tr><td>9</td><td>0.78</td></tr>
-                    <tr><td>10</td><td>0.62</td></tr>
-                    <tr><td>11</td><td>0.59</td></tr>
-                    <tr><td>12</td><td>0.56</td></tr>
-                    <tr><td>13</td><td>0.54</td></tr>
-                    <tr><td>14</td><td>0.51</td></tr>
-                    <tr><td>15</td><td>0.49</td></tr>
-                    <tr><td>20</td><td>0.42</td></tr>
-                    <tr><td>25</td><td>0.37</td></tr>
-                    <tr><td>30</td><td>0.33</td></tr>
+                    <tr><td>5</td><td>0.99</td><td>5 (tümü)</td></tr>
+                    <tr><td>6</td><td>0.99</td><td>6 (tümü)</td></tr>
+                    <tr><td>7</td><td>0.99</td><td>7 (tümü)</td></tr>
+                    <tr><td>8</td><td>0.75</td><td>7 veya 8</td></tr>
+                    <tr><td>9</td><td>0.78</td><td>8 veya 9</td></tr>
+                    <tr><td>10</td><td>0.62</td><td>8, 9 veya 10</td></tr>
+                    <tr><td>11</td><td>0.59</td><td>8, 9, 10 veya 11</td></tr>
+                    <tr><td>12</td><td>0.56</td><td>8, 9, 10, 11 veya 12</td></tr>
+                    <tr><td>13</td><td>0.54</td><td>9 ve üzeri</td></tr>
+                    <tr><td>14</td><td>0.51</td><td>9 ve üzeri</td></tr>
+                    <tr><td>15</td><td>0.49</td><td>8 ve üzeri</td></tr>
+                    <tr><td>20</td><td>0.42</td><td>12 ve üzeri</td></tr>
+                    <tr><td>25</td><td>0.37</td><td>14 ve üzeri</td></tr>
+                    <tr><td>30</td><td>0.33</td><td>15 ve üzeri</td></tr>
+                    <tr><td>40</td><td>0.29</td><td>18 ve üzeri</td></tr>
                 </tbody>
             </table>
 
-            <h2>Örnek Hesaplama</h2>
+            <h3>Eşikler Neden Değişir?</h3>
+
+            <p>Az sayıda uzman (5-7) olduğunda eşik çok yüksektir (0.99), çünkü <strong>neredeyse mükemmel anlaşma</strong> gerekir. Uzman sayısı arttıkça eşik düşer, çünkü daha fazla veri noktası ile istatistiksel anlamlılık sağlanması daha kolaydır. 40 uzmanla, hatta 0.29 bile istatistiksel olarak anlamlı kabul edilir.</p>
+
+            <h2>Pratik Örnekler</h2>
+
+            <h3>Örnek 1: Hemşirelik Ölçeği (10 Uzman)</h3>
 
             <div class="example-box">
-                <p><strong>Senaryo:</strong> 10 uzmanın bir maddeyi puanlaması halinde:</p>
+                <p><strong>Senaryo:</strong> Bir araştırma grubu, hasta bakım yeterliklerini ölçen 12 maddelik bir ölçek geliştirmiştir. 10 hemşirelik uzmanından maddelerin "gerekli" olup olmadığını 3 dereceli ölçek (1=Gerekli, 2=Yararlı fakat gerekli değil, 3=Gerekli değil) ile puanlaması istenmiştir.</p>
+
+                <p><strong>Madde 1 Sonuçları:</strong></p>
                 <ul>
                     <li>8 uzman: "Gerekli" (1)</li>
-                    <li>2 uzman: "Gerekli değil" (3)</li>
+                    <li>2 uzman: "Gerekli değil" (2 veya 3)</li>
                 </ul>
-                <p><strong>Hesaplama:</strong></p>
-                <p>CVR = (8 − 10/2) / (10/2) = (8 − 5) / 5 = 3 / 5 = <strong>0.60</strong></p>
-                <p><strong>Sonuç:</strong> Minimum eşik 0.62 olduğundan (10 uzman için), bu maddenin CVR değeri (0.60) eşiğin altındadır. Madde revizyon gerektirir veya çıkarılmalıdır.</p>
+
+                <p><strong>Hesaplama Adımı Adım:</strong></p>
+                <ul>
+                    <li>ne = 8 (gerekli diyen)</li>
+                    <li>N = 10 (toplam)</li>
+                    <li>N/2 = 5 (beklenen rastgele anlaşma)</li>
+                    <li>CVR = (8 − 5) / 5 = 3 / 5 = <strong>0.60</strong></li>
+                </ul>
+
+                <p><strong>Sonuç:</strong> 10 uzman için minimum eşik 0.62'dir. Bu maddenin CVR değeri (0.60) eşiğin <strong>0.02 puan altında</strong>dır. Madde ya <strong>revize edilmeli</strong> (daha net ifadeler) veya <strong>çıkarılmalı</strong>dır.</p>
+
+                <p><strong>Daha İyi Senaryo:</strong> 9 uzman "gerekli" deseydi:</p>
+                <ul style="background: #e8f5e9; padding: 10px; border-radius: 4px; margin: 10px 0;">
+                    <li>CVR = (9 − 5) / 5 = 4 / 5 = <strong>0.80</strong> ✓ <strong>GEÇERLI</strong> (0.62 &gt; 0.80)</li>
+                </ul>
             </div>
 
-            <h2>CVR'nin Yorumlanması</h2>
+            <h3>Örnek 2: Depresyon Ölçeği (15 Uzman)</h3>
 
+            <div class="example-box">
+                <p><strong>Senaryo:</strong> Bir psikoloji araştırma grubu, depresyon semptomlarını ölçen 20 maddelik bir ölçek hazırladı. 15 klinik psikolog ve psikiyatrist maddeleri değerlendirecektir.</p>
+
+                <p><strong>Madde "Enerji Kaybı" İçin Sonuçlar:</strong></p>
+                <ul>
+                    <li>13 uzman: "Gerekli"</li>
+                    <li>2 uzman: "Gerekli değil"</li>
+                </ul>
+
+                <p><strong>Hesaplama:</strong></p>
+                <ul>
+                    <li>CVR = (13 − 7.5) / 7.5 = 5.5 / 7.5 = <strong>0.73</strong></li>
+                    <li>Minimum eşik (15 uzman): 0.49</li>
+                    <li><strong>Sonuç:</strong> 0.73 &gt; 0.49 → <strong>GEÇERLI VE KUVVETLI UZLAŞMA</strong></li>
+                </ul>
+
+                <p>Bu maddenin CVR değeri eşiğin önemli ölçüde üzerindedir ve ölçeğe mutlaka dahil edilmelidir.</p>
+            </div>
+
+            <h3>Örnek 3: Eğitim Ölçeği (20 Uzman)</h3>
+
+            <div class="example-box">
+                <p><strong>Senaryo:</strong> Öğretmen yeterliği ölçeği için 20 eğitim uzmanı değerlendirme yapıyor.</p>
+
+                <p><strong>Madde: "Sınıf Yönetimi Becerisi"</strong></p>
+                <ul>
+                    <li>18 uzman: "Gerekli"</li>
+                    <li>2 uzman: "Gerekli değil"</li>
+                </ul>
+
+                <p><strong>Hesaplama:</strong></p>
+                <ul>
+                    <li>CVR = (18 − 10) / 10 = 8 / 10 = <strong>0.80</strong></li>
+                    <li>Minimum eşik (20 uzman): 0.42</li>
+                    <li><strong>Sonuç:</strong> 0.80 &gt; 0.42 → <strong>GÜÇLÜ GEÇERLILIK</strong></li>
+                </ul>
+
+                <p>Bu madde kesinlikle ölçeğe dahil edilmeli ve raporlamada "mükemmel uzlaşma" olarak gösterilmelidir.</p>
+            </div>
+
+            <h2>CVR'nin Yorumlanması ve Rehberi</h2>
+
+            <h3>Geçerli Maddeler (CVR ≥ Eşik)</h3>
+
+            <p>CVR değeri eşiğe eşit veya eşikten yüksek olan maddeler <strong>geçerli</strong> kabul edilir. Bu maddeler:</p>
             <ul>
-                <li><strong>CVR ≥ Eşik:</strong> Madde geçerli; ölçeğe dahil edilebilir</li>
-                <li><strong>CVR &lt; Eşik:</strong> Madde geçersiz; revizyon veya çıkarılması önerilir</li>
+                <li>Ölçeğe ön seçimden geçer</li>
+                <li>Pilot test aşamasına gider</li>
+                <li>Sonraki geçerlilik ve güvenirlilik testlerine katılır</li>
             </ul>
 
-            <p>CVR değeri ne kadar yüksekse, uzman panelinin madde hakkında o kadar fikir birliğine vardığını gösterir.</p>
+            <h3>Revizyon Gerektiren Maddeler (CVR Eşiğin Hemen Altında)</h3>
+
+            <p>CVR değeri eşiğin hemen yakınında olan maddeler (örneğin, eşik 0.62 ise CVR=0.58 gibi) dikkatlice gözden geçirilmelidir:</p>
+            <ul>
+                <li><strong>Maddeyi Yeniden Yazın:</strong> Daha net, anlaşılır ifadeler kullanın</li>
+                <li><strong>Uzmanlardan Geri Bildirim Alın:</strong> Maddenin neden anlaşılmadığını sorun</li>
+                <li><strong>Terminolojiyi Değiştirin:</strong> Teknik jargon yerine daha basit ifadeler tercih edin</li>
+                <li><strong>Tekrar Test Edin:</strong> Revize edilen maddeyi aynı veya yeni uzman paneline sunun</li>
+            </ul>
+
+            <h3>Geçersiz Maddeler (CVR Eşiğin Çok Altında)</h3>
+
+            <p>CVR değeri eşiğin önemli ölçüde altında olan maddeler (örneğin, CVR=0.20) <strong>çıkarılmalı</strong>dır:</p>
+            <ul>
+                <li>Bu maddeler ölçülmek istenen yapıyı yansıtmıyor</li>
+                <li>Uzman fikir birliği yok</li>
+                <li>Ölçeğe tutarlılık sorunları getiriyor</li>
+            </ul>
+
+            <h2>CVR'nin Avantajları</h2>
+
+            <ul>
+                <li><strong>Basitlik:</strong> Formülü anlamak ve hesaplamak kolaydır</li>
+                <li><strong>Uzlaşmayı Nicelleştirir:</strong> Nitel yargıyı tek sayıya dönüştürür</li>
+                <li><strong>Yaygın Kabul:</strong> Ölçek geliştirme araştırmalarında standart yöntemdir</li>
+                <li><strong>Esneklik:</strong> Herhangi bir uzman sayısı ile çalışır (en az 5 önerilir)</li>
+                <li><strong>İstatistiksel Temel:</strong> Eşikler istatistiksel anlamlılık testlerine dayanır</li>
+                <li><strong>Şeffaflık:</strong> Sonuçlar kolay raporlanır ve yorumlanır</li>
+            </ul>
+
+            <h2>CVR'nin Sınırlamaları</h2>
+
+            <ul>
+                <li><strong>Şiddet Farkını Görmez:</strong> "Gerekli" puanını veren 5 uzman ile 100 uzmanı aynı şekilde değerlendirir</li>
+                <li><strong>Uygun Uzman Panel Gerekli:</strong> En az 5 uzman tavsiye edilir; 40+ olabilir</li>
+                <li><strong>Madde Düzeyinde:</strong> Ölçek genelinde tek bir geçerlilik puanı vermez (bunun için CVI veya S-CVI/Ave kullanılır)</li>
+                <li><strong>Negatifleri Dikkate Almaz:</strong> Neden eksik kaldığı hakkında bilgi vermez</li>
+                <li><strong>Bağımsız Değildir:</strong> Diğer geçerlilik çalışmaları (yapı geçerliliği, yordayıcı geçerlilik) ile tamamlanmalıdır</li>
+            </ul>
+
+            <h2>CVR vs. Diğer Geçerlilik Ölçütleri</h2>
+
+            <p><strong>CVR tek başına yeterli değildir.</strong> Kapsamlı bir ölçek geliştirme sürecinde, şu diğer metrikler birlikte kullanılmalıdır:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metrik</th>
+                        <th>Ölçü Nedir?</th>
+                        <th>En İyi Kullanım Alanı</th>
+                        <th>Formül</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CVR</strong></td>
+                        <td>Madde düzeyinde uzman uzlaşması</td>
+                        <td>İlk madde seçimi ve eleme</td>
+                        <td>(ne − N/2) / (N/2)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>I-CVI</strong></td>
+                        <td>Madde düzeyinde uzman anlaşması oranı</td>
+                        <td>Detaylı madde değerlendirmesi</td>
+                        <td>Gerekli diyen / Toplam</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CVI</strong></td>
+                        <td>Tüm CVR değerlerinin ortalaması</td>
+                        <td>Hızlı ölçek özeti</td>
+                        <td>Σ CVR / Madde sayısı</td>
+                    </tr>
+                    <tr>
+                        <td><strong>S-CVI/Ave</strong></td>
+                        <td>Tüm I-CVI değerlerinin ortalaması</td>
+                        <td>En güvenilir ölçek geçerliliği</td>
+                        <td>Σ I-CVI / Madde sayısı</td>
+                    </tr>
+                    <tr>
+                        <td><strong>S-CVI/UA</strong></td>
+                        <td>Evrensel uzlaşma yüzdesi</td>
+                        <td>Katı geçerlilik standardı</td>
+                        <td>Evrensel anlaşma % / 100</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Hangi Metriği Ne Zaman Kullanmalı?</h3>
+
+            <ul>
+                <li><strong>CVR:</strong> Geliştirilmiş ölçekten düşük puanlar alan maddeleri hızlı belirlemek için</li>
+                <li><strong>I-CVI:</strong> Her maddenin ayrıntılı değerlendirmesini yapmak isteyenler için</li>
+                <li><strong>CVI:</strong> Araştırma makalesinde ölçek geçerliliğinin hızlı özetini vermek için</li>
+                <li><strong>S-CVI/Ave:</strong> Ölçek geliştirilmesi için en güvenilir ve tavsiye edilen metrik</li>
+                <li><strong>S-CVI/UA:</strong> Çok katı geçerlilik standartları gereken uygulamalarda (tıbbi alet onayı, sertifikasyon vb.)</li>
+            </ul>
+
+            <h2>Yaygın Hatalar ve Kaçınılması Gerekenler</h2>
+
+            <h3>1. Hata: Çok Az Uzman Paneli Kullanmak</h3>
+
+            <p><strong>Problem:</strong> 3-4 uzman ile CVR hesaplamak istatistiksel geçerliliği azaltır.</p>
+            <p><strong>Çözüm:</strong> En az 5, daha iyi ise 10-20 uzman kullanın.</p>
+
+            <h3>2. Hata: Uzman Niteliklerine Dikkat Etmemek</h3>
+
+            <p><strong>Problem:</strong> Alanında gerçek uzman olmayan insanları panele almak sonuçları geçersiz kılar.</p>
+            <p><strong>Çözüm:</strong> Açık bir "uzman" tanımı yapın (örn. "5+ yıl deneyim, doktora derecesi, yayınlanmış araştırmaları var").</p>
+
+            <h3>3. Hata: Talimatları Açık Sunmamak</h3>
+
+            <p><strong>Problem:</strong> Uzmanlar "gerekli" tanımının ne olduğunu anlamazsa, değerlendirmeler tutarsız olur.</p>
+            <p><strong>Çözüm:</strong> Açık tanımlar ve örnekler sağlayın. Pilot test yapın.</p>
+
+            <h3>4. Hata: CVR Eşiğini Yanlış Uygulamak</h3>
+
+            <p><strong>Problem:</strong> Örneğin 15 uzman için eşik 0.49 iken, 0.50'yi geçmek yeterliymiş gibi davranmak.</p>
+            <p><strong>Çözüm:</strong> Her zaman doğru uzman sayısı için doğru eşiği kullanın.</p>
+
+            <h3>5. Hata: Düşük CVR Maddeleri İçerde Tutmak</h3>
+
+            <p><strong>Problem:</strong> "Çok çalıştık, maddeleri silmeyelim" diyerek geçersiz maddeler ölçekte kalmış olabilir.</p>
+            <p><strong>Çözüm:</strong> Bilimsel standartlara sadık kalın. Geçersiz maddeler pilot test'te zaten sorun yaratacaktır.</p>
+
+            <h3>6. Hata: CVR'yi Tek Başına Raporlamak</h3>
+
+            <p><strong>Problem:</strong> Sadece CVR değerlerini sunmak, diğer geçerlilik göstergelerinin eksikliğini ortaya koyar.</p>
+            <p><strong>Çözüm:</strong> CVR, I-CVI, S-CVI/Ave ve S-CVI/UA birlikte raporlayın.</p>
 
             <h2>Kaynaklar</h2>
 
@@ -320,14 +584,23 @@
                 <strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.
             </div>
 
-            <h2>Ilişkili Kavramlar</h2>
+            <div class="reference">
+                <strong>Wilson, F. R., Pan, W., & Schumsky, D. A. (2012).</strong> Recalculation of the critical values for Lawshe's content validity ratio. <em>Measurement and Evaluation in Counseling and Development, 45</em>(3), 197-210.
+            </div>
+
+            <div class="reference">
+                <strong>CVpsy.com (2021).</strong> Content Validity Ratio (CVR) Calculator. Retrieved from comprehensive validity assessment resources.
+            </div>
+
+            <h2>İlişkili Kavramlar</h2>
 
             <p>CVR genellikle diğer geçerlilik göstergeleriyle birlikte kullanılır:</p>
             <ul>
-                <li><strong>I-CVI (Item-level Content Validity Index):</strong> Madde düzeyinde uzman anlaşması oranı</li>
-                <li><strong>CVI (Content Validity Index):</strong> Tüm CVR değerlerinin ortalaması</li>
-                <li><strong>S-CVI/Ave (Scale-level CVI/Average):</strong> Ölçek düzeyinde I-CVI ortalaması</li>
-                <li><strong>S-CVI/UA (Scale-level CVI/Universal Agreement):</strong> Evrensel uzlaşma yüzdesi</li>
+                <li><strong>I-CVI (Item-level Content Validity Index):</strong> Madde düzeyinde uzman anlaşması oranı. Gerekli diyen uzman sayısının toplam uzman sayısına oranı.</li>
+                <li><strong>CVI (Content Validity Index):</strong> Tüm CVR değerlerinin basit ortalaması. Ölçek geneli için hızlı bir özet sağlar.</li>
+                <li><strong>S-CVI/Ave (Scale-level CVI/Average):</strong> Tüm I-CVI değerlerinin ortalaması. Ölçek düzeyinde en güvenilir geçerlilik göstergesi.</li>
+                <li><strong>S-CVI/UA (Scale-level CVI/Universal Agreement):</strong> Tüm uzmanların hemfikir olduğu madde yüzdesinin 100'e bölümü. Çok katı bir standart.</li>
+                <li><strong>Yapı Geçerliliği:</strong> Ölçeğin nihai formuyla pilot test yapılır, faktör analizi ile kontrol edilir.</li>
             </ul>
 
             <div class="nav-links">
