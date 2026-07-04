@@ -4,152 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What is CVR? Content Validity Ratio Formula and Lawshe Thresholds</title>
-
     <meta name="description" content="What is CVR (Content Validity Ratio)? Lawshe's formula, minimum thresholds table, how to calculate and interpret item validity. Scale development methodology.">
     <meta name="keywords" content="CVR, content validity ratio, Lawshe formula, threshold, item validity, scale development, expert panel">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cvrindex.pro/what-is-cvr.html">
     <link rel="alternate" hreflang="en" href="https://cvrindex.pro/what-is-cvr.html">
     <link rel="alternate" hreflang="tr" href="https://cvrindex.pro/cvr-orani-nedir.html">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "What is CVR? Content Validity Ratio Formula and Lawshe Thresholds",
-        "url": "https://cvrindex.pro/what-is-cvr.html",
-        "datePublished": "2026-07-04",
-        "inLanguage": "en"
-    }
+    {"@context": "https://schema.org", "@type": "Article", "headline": "What is CVR? Content Validity Ratio Formula and Lawshe Thresholds", "url": "https://cvrindex.pro/what-is-cvr.html", "datePublished": "2026-07-04", "inLanguage": "en"}
     </script>
-
     <style>
-        :root {
-            --bg: #f3f5f9;
-            --surface: #ffffff;
-            --text: #16213a;
-            --text-2: #4b5768;
-            --text-3: #8b96a8;
-            --accent: #3457d5;
-            --good: #177a3d;
-            --border: #e2e8f0;
-        }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--surface);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08);
-        }
-        header {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--border);
-        }
-        h1 { font-size: 2rem; font-weight: 700; margin: 0 0 10px 0; }
-        h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; margin-bottom: 12px; }
-        p { margin: 0 0 16px 0; color: var(--text-2); }
-        .meta { color: var(--text-3); font-size: 0.9rem; }
-        .formula-box {
-            background: #f8f9ff;
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        .formula-box code {
-            font-size: 1.3rem;
-            font-family: 'Courier New', monospace;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95rem;
-        }
-        table th, table td {
-            border: 1px solid var(--border);
-            padding: 12px;
-            text-align: center;
-        }
-        table th {
-            background: var(--accent);
-            color: white;
-            font-weight: 600;
-        }
-        table tr:nth-child(even) td {
-            background: #f8fafc;
-        }
-        .example-box {
-            background: #f0fdf4;
-            border-left: 4px solid var(--good);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: opacity 0.2s;
-        }
-        .nav-links a:hover {
-            opacity: 0.9;
-        }
-        .calc-link {
-            background: var(--good);
-        }
-        @media (max-width: 640px) {
-            .container {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.2rem;
-            }
-        }
+        :root { --bg: #f3f5f9; --surface: #ffffff; --text: #16213a; --text-2: #4b5768; --accent: #3457d5; --good: #177a3d; --border: #e2e8f0; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: var(--surface); padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08); }
+        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; margin-bottom: 15px; }
+        h3 { font-size: 1.1rem; font-weight: 600; margin-top: 20px; margin-bottom: 10px; }
+        p { color: var(--text-2); margin-bottom: 16px; }
+        li { color: var(--text-2); margin-bottom: 10px; }
+        .formula-box { background: #f8f9ff; border: 2px solid var(--accent); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; }
+        .formula-box code { font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: 700; color: var(--accent); }
+        .note-box { background: #f0fdf4; border-left: 4px solid var(--good); padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .note-box strong { color: var(--good); }
+        .example-box { background: #fef2f2; border-left: 4px solid #c0392b; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+        table th, table td { border: 1px solid var(--border); padding: 12px; text-align: center; }
+        table th { background: var(--accent); color: white; }
+        table tr:nth-child(even) td { background: #f8fafc; }
+        .nav-links { display: flex; gap: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+        .nav-links a { padding: 10px 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; }
+        .calc-link { background: var(--good); }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>What is CVR? Content Validity Ratio Formula</h1>
-            <p class="meta">Lawshe's formula, minimum thresholds, and interpretation guide for scale development</p>
+        <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
+            <h1>What is CVR?</h1>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Content Validity Ratio formula, Lawshe's thresholds, practical calculation, and interpretation</p>
         </header>
-
         <main>
-            <p><strong>CVR (Content Validity Ratio)</strong> is a statistical measure used in scale development to evaluate how well individual items on a measurement instrument measure the intended construct. It quantifies expert panel agreement about whether each item is "essential" to include on the scale.</p>
+            <p><strong>CVR (Content Validity Ratio)</strong> is a statistical measure used in scale development and instrument validation to evaluate how well individual items on a measurement instrument represent the intended construct. Developed by <strong>C. H. Lawshe in 1975</strong>, CVR quantifies expert panel agreement about whether each item is "essential" to include on the scale.</p>
+
+            <p>CVR is commonly used in:</p>
+            <ul>
+                <li>Developing and validating questionnaires and surveys</li>
+                <li>Creating competency assessment tools</li>
+                <li>Building certification exam content</li>
+                <li>Evaluating educational curriculum relevance</li>
+                <li>Assessing job task lists and performance indicators</li>
+            </ul>
 
             <h2>CVR Formula</h2>
 
@@ -157,28 +62,27 @@
                 <code>CVR = (ne − N/2) / (N/2)</code>
             </div>
 
-            <div class="formula-explain" style="background: #f0f9ff; border-left: 4px solid var(--accent); padding: 15px; margin: 15px 0; border-radius: 4px;">
-                <p><strong>ne:</strong> Number of experts rating the item as "essential"</p>
-                <p><strong>N:</strong> Total number of experts rating the item</p>
-            </div>
+            <p style="background: #f0f9ff; border-left: 4px solid var(--accent); padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>ne:</strong> Number of experts rating the item as "essential"<br>
+                <strong>N:</strong> Total number of experts rating the item
+            </p>
 
-            <p>Developed by <strong>C. H. Lawshe (1975)</strong>, this formula produces values between −1 and +1:</p>
+            <p>This formula produces values between <strong>−1 and +1</strong>:</p>
             <ul>
-                <li><strong>+1:</strong> All experts agree the item is essential</li>
-                <li><strong>0:</strong> Half the experts say essential, half say not</li>
-                <li><strong>−1:</strong> No experts consider it essential</li>
+                <li><strong>+1:</strong> All experts agree the item is essential (perfect agreement)</li>
+                <li><strong>0 to +0.99:</strong> Majority of experts agree it's essential (partial agreement)</li>
+                <li><strong>0:</strong> Exactly half the experts say essential, half say not (no consensus)</li>
+                <li><strong>−1 to 0:</strong> Majority of experts say not essential (low relevance)</li>
+                <li><strong>−1:</strong> No experts consider it essential (should be removed)</li>
             </ul>
 
             <h2>Lawshe's Minimum CVR Thresholds</h2>
 
-            <p>For an item to be considered valid, its CVR must meet or exceed the minimum threshold corresponding to the number of experts:</p>
+            <p>For an item to be considered valid, its CVR must meet or exceed the minimum threshold corresponding to the number of experts on the panel. These thresholds ensure that the agreement is statistically significant at the <strong>p &lt; 0.05</strong> level:</p>
 
             <table>
                 <thead>
-                    <tr>
-                        <th>Number of Experts</th>
-                        <th>Minimum CVR Threshold</th>
-                    </tr>
+                    <tr><th>Number of Experts</th><th>Minimum CVR Threshold</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>5</td><td>0.99</td></tr>
@@ -189,33 +93,91 @@
                     <tr><td>10</td><td>0.62</td></tr>
                     <tr><td>15</td><td>0.49</td></tr>
                     <tr><td>20</td><td>0.42</td></tr>
+                    <tr><td>25</td><td>0.37</td></tr>
+                    <tr><td>30</td><td>0.33</td></tr>
+                    <tr><td>40</td><td>0.29</td></tr>
                 </tbody>
             </table>
 
-            <h2>Calculation Example</h2>
+            <h3>Why These Thresholds?</h3>
+            <p>When you have fewer experts (5-7), the threshold is very high (0.99) because you need nearly perfect agreement. As the expert panel grows, the threshold drops because statistical significance is easier to achieve with more data points. With 40 experts, even 0.29 is considered statistically significant agreement.</p>
+
+            <h2>Practical Example</h2>
 
             <div class="example-box">
-                <p><strong>Scenario:</strong> 10 experts rate an item:</p>
+                <h3 style="margin-top: 0;">Scenario: Testing a new survey</h3>
+                <p><strong>Situation:</strong> A research team develops a 10-item depression scale and asks 10 experts to rate how "essential" each item is using a 3-point Lawshe scale (1=Essential, 2=Useful but not essential, 3=Not necessary).</p>
+
+                <p><strong>Item 1 Results:</strong></p>
                 <ul>
-                    <li>8 experts: "Essential" (1)</li>
-                    <li>2 experts: "Not essential" (3)</li>
+                    <li>8 experts rate it as "Essential" (1)</li>
+                    <li>2 experts rate it as "Useful but not essential" (2 or 3)</li>
                 </ul>
-                <p><strong>Calculation:</strong></p>
-                <p>CVR = (8 − 10/2) / (10/2) = (8 − 5) / 5 = 3 / 5 = <strong>0.60</strong></p>
-                <p><strong>Result:</strong> With minimum threshold 0.62, this item (0.60) falls below the cutoff and should be revised or removed.</p>
+
+                <p><strong>Calculation for Item 1:</strong></p>
+                <p style="text-align: center; font-family: 'Courier New', monospace; font-weight: bold; background: #fff3e0; padding: 10px; border-radius: 4px;">
+                    CVR = (8 − 10/2) / (10/2) = (8 − 5) / 5 = 3 / 5 = <strong style="color: #c0392b;">0.60</strong>
+                </p>
+
+                <p><strong>Interpretation:</strong> With 10 experts, the minimum CVR threshold is 0.62. This item's CVR of 0.60 falls <strong>below the cutoff</strong>, so it should be revised or removed from the scale.</p>
+
+                <p><strong>What if 9 experts had rated it essential?</strong></p>
+                <p style="text-align: center; font-family: 'Courier New', monospace; font-weight: bold; background: #e8f5e9; padding: 10px; border-radius: 4px;">
+                    CVR = (9 − 5) / 5 = 4 / 5 = <strong style="color: var(--good);">0.80</strong> ✓ Valid
+                </p>
             </div>
 
-            <h2>How to Interpret CVR</h2>
+            <h2>Interpretation Guide</h2>
 
+            <h3>Valid Items (CVR ≥ Threshold)</h3>
+            <p>Items with CVR values meeting or exceeding the threshold demonstrate significant expert agreement. These items should be retained on the scale.</p>
+
+            <h3>Items Needing Revision (CVR just below Threshold)</h3>
+            <p>If an item is close to the threshold, consider:</p>
             <ul>
-                <li><strong>CVR ≥ Threshold:</strong> Item is valid and can be retained</li>
-                <li><strong>CVR &lt; Threshold:</strong> Item is invalid; revision or removal is recommended</li>
+                <li>Rewording the item for clarity</li>
+                <li>Consulting with experts who disagreed about why</li>
+                <li>Gathering feedback on how to improve it</li>
             </ul>
 
-            <h2>References</h2>
+            <h3>Invalid Items (CVR significantly below Threshold)</h3>
+            <p>Items with very low CVR values (e.g., 0.20 or lower) should be removed entirely, as they lack expert consensus.</p>
 
+            <h2>Key Advantages of CVR</h2>
+            <ul>
+                <li><strong>Simplicity:</strong> Easy to understand and calculate</li>
+                <li><strong>Quantifies consensus:</strong> Provides a single number representing expert agreement</li>
+                <li><strong>Widely accepted:</strong> Standard method in scale development research</li>
+                <li><strong>Flexible:</strong> Works with any number of experts (5+)</li>
+                <li><strong>Statistically sound:</strong> Thresholds are based on statistical significance tests</li>
+            </ul>
+
+            <h2>Limitations</h2>
+            <ul>
+                <li><strong>Doesn't account for intensity:</strong> Treats a rating of "Essential" the same whether given by 5 or 100 experts</li>
+                <li><strong>Requires adequate expert panel:</strong> Minimum 5 experts recommended</li>
+                <li><strong>Only item-level:</strong> Doesn't provide a single scale-level validity score (use CVI or S-CVI/Ave for that)</li>
+            </ul>
+
+            <h2>CVR vs. Other Validity Measures</h2>
+
+            <table>
+                <thead>
+                    <tr><th>Metric</th><th>What It Measures</th><th>Best For</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>CVR</strong></td><td>Item-level expert consensus</td><td>Initial item screening</td></tr>
+                    <tr><td><strong>I-CVI</strong></td><td>Item-level expert agreement ratio</td><td>Detailed item evaluation</td></tr>
+                    <tr><td><strong>CVI</strong></td><td>Average of all CVR values</td><td>Quick scale-level summary</td></tr>
+                    <tr><td><strong>S-CVI/Ave</strong></td><td>Average of all I-CVI values</td><td>Most reliable scale validity</td></tr>
+                    <tr><td><strong>S-CVI/UA</strong></td><td>% of items with unanimous agreement</td><td>Stringent validity standard</td></tr>
+                </tbody>
+            </table>
+
+            <h2>References</h2>
             <p><strong>Lawshe, C. H. (1975).</strong> A quantitative approach to content validity. <em>Personnel Psychology, 28</em>(4), 563-575.</p>
             <p><strong>Polit, D. F., & Beck, C. T. (2006).</strong> The content validity index: Are you sure you know what's being reported? <em>Research in Nursing & Health, 29</em>(5), 489-497.</p>
+            <p><strong>Wilson, F. R., Pan, W., & Schumsky, D. A. (2012).</strong> Recalculation of the critical values for Lawshe's content validity ratio. <em>Measurement and Evaluation in Counseling and Development, 45</em>(3), 197-210.</p>
 
             <div class="nav-links">
                 <a href="/" class="calc-link">← Back to Calculator</a>

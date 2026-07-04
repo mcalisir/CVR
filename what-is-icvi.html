@@ -19,9 +19,12 @@
         .container { max-width: 800px; margin: 0 auto; background: var(--surface); padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08); }
         h1 { font-size: 2rem; font-weight: 700; }
         h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; }
+        h3 { font-size: 1.1rem; font-weight: 600; margin-top: 20px; }
         p { color: var(--text-2); margin-bottom: 16px; }
+        li { color: var(--text-2); margin-bottom: 10px; }
         .formula-box { background: #f8f9ff; border: 2px solid var(--accent); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; }
         .formula-box code { font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: 700; color: var(--accent); }
+        .note-box { background: #f0fdf4; border-left: 4px solid var(--good); padding: 15px; margin: 15px 0; border-radius: 4px; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
         table th, table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
         table th { background: var(--accent); color: white; text-align: center; }
@@ -34,28 +37,99 @@
     <div class="container">
         <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
             <h1>What is I-CVI?</h1>
-            <p style="color: #8b96a8; font-size: 0.9rem;">Item-level Content Validity Index: expert agreement ratio, formulas, and interpretation</p>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Item-level Content Validity Index: measures expert agreement on individual item relevance</p>
         </header>
         <main>
-            <p><strong>I-CVI (Item-level Content Validity Index)</strong> measures expert agreement about whether a specific item on a measurement instrument is relevant and should be retained. It represents the proportion of experts who rate an item as essential.</p>
+            <p><strong>I-CVI (Item-level Content Validity Index)</strong> is a validity metric that measures the proportion of experts who agree that a specific item on a measurement instrument is relevant and should be retained. Unlike CVR, I-CVI provides a straightforward probability-based measure ranging from 0 to 1.</p>
+
+            <p>I-CVI is particularly useful because it:</p>
+            <ul>
+                <li>Is easier to interpret than CVR (ranges from 0 to 1)</li>
+                <li>Directly represents the proportion of expert agreement</li>
+                <li>Has well-established evaluation criteria from multiple sources</li>
+                <li>Works well with both small and large expert panels</li>
+            </ul>
 
             <h2>I-CVI Formula</h2>
             <div class="formula-box">
                 <code>I-CVI = Number rating item as essential / Total number of experts</code>
             </div>
 
+            <h3>Interpretation</h3>
+            <p>I-CVI directly represents the <strong>proportion of experts</strong> who rated the item as essential:</p>
+            <ul>
+                <li><strong>I-CVI = 1.0:</strong> 100% of experts agree item is essential</li>
+                <li><strong>I-CVI = 0.8:</strong> 80% of experts agree item is essential</li>
+                <li><strong>I-CVI = 0.5:</strong> 50% of experts agree (no consensus)</li>
+                <li><strong>I-CVI = 0.0:</strong> 0% of experts agree (should definitely be removed)</li>
+            </ul>
+
             <h2>Acceptable I-CVI Thresholds</h2>
+            <p>Different evaluation criteria apply depending on the number of experts on your panel. The most commonly cited standards are from <strong>Lynn (1986)</strong> and <strong>Polit & Beck (2006)</strong>:</p>
+
             <table>
                 <thead>
-                    <tr><th>Experts</th><th>Criterion</th><th>Status</th></tr>
+                    <tr><th>Experts</th><th>Criterion</th><th>Status</th><th>Action</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>1-2</td><td>I-CVI = 1.0</td><td>Valid ✓</td></tr>
-                    <tr><td>3+</td><td>I-CVI ≥ 0.78</td><td>Valid ✓</td></tr>
-                    <tr><td>3+</td><td>0.70 to 0.78</td><td>Needs revision</td></tr>
-                    <tr><td>3+</td><td>I-CVI < 0.70</td><td>Remove item</td></tr>
+                    <tr><td><strong>1-2</strong></td><td>I-CVI = 1.0</td><td>Valid ✓</td><td>Retain item</td></tr>
+                    <tr><td><strong>3+</strong></td><td>I-CVI ≥ 0.78</td><td>Valid ✓</td><td>Retain item</td></tr>
+                    <tr><td><strong>3+</strong></td><td>0.70 to 0.78</td><td>Questionable</td><td>Revise or gather more data</td></tr>
+                    <tr><td><strong>3+</strong></td><td>I-CVI < 0.70</td><td>Invalid</td><td>Remove or substantially revise</td></tr>
                 </tbody>
             </table>
+
+            <h3>Why These Thresholds?</h3>
+            <p>With 1-2 experts, you need perfect agreement (1.0) because the expert panel is so small. With 3+ experts, 0.78 is considered the minimum threshold because this represents statistically significant agreement. The research shows that items rated essential by 78% of experts are consistently validated in later testing.</p>
+
+            <h2>Practical Example</h2>
+
+            <div style="background: #fef2f2; border-left: 4px solid #c0392b; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <h3 style="margin-top: 0; color: #c0392b;">Example: Nursing competency scale</h3>
+                <p><strong>Situation:</strong> A nursing board develops a competency assessment with 5 experts reviewing a patient care item.</p>
+
+                <p><strong>Ratings received:</strong></p>
+                <ul>
+                    <li>Expert 1: Essential</li>
+                    <li>Expert 2: Essential</li>
+                    <li>Expert 3: Useful but not essential</li>
+                    <li>Expert 4: Essential</li>
+                    <li>Expert 5: Essential</li>
+                </ul>
+
+                <p><strong>Calculation:</strong></p>
+                <p style="text-align: center; font-family: 'Courier New', monospace; font-weight: bold; background: #e8f5e9; padding: 10px; border-radius: 4px;">
+                    I-CVI = 4 / 5 = <strong style="color: var(--good);">0.80</strong> ✓ Valid
+                </p>
+
+                <p><strong>Interpretation:</strong> With 5 experts and minimum threshold 0.78, this item's I-CVI of 0.80 is valid. The item should be retained.</p>
+            </div>
+
+            <h2>I-CVI vs CVR</h2>
+            <table>
+                <thead>
+                    <tr><th>Feature</th><th>I-CVI</th><th>CVR</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Range</td><td>0 to 1</td><td>-1 to +1</td></tr>
+                    <tr><td>Interpretation</td><td>Proportion of experts</td><td>Proportion difference from chance</td></tr>
+                    <tr><td>Ease of understanding</td><td>Very intuitive</td><td>Less intuitive</td></tr>
+                    <tr><td>Threshold depends on</td><td>Number of experts</td><td>Number of experts</td></tr>
+                    <tr><td>Best used when</td><td>You want simplicity</td><td>You want statistical rigor</td></tr>
+                </tbody>
+            </table>
+
+            <div class="note-box">
+                <strong>Note:</strong> I-CVI is increasingly preferred in modern research because it's easier to interpret and explain to stakeholders. Many researchers now report both I-CVI and CVR for transparency.
+            </div>
+
+            <h2>Common Mistakes to Avoid</h2>
+            <ul>
+                <li><strong>Forgetting to adjust threshold:</strong> Don't use 0.78 with 1-2 experts — use 1.0 instead</li>
+                <li><strong>Mixing rating systems:</strong> Ensure all experts use the same rating scale (1-3 or yes/no)</li>
+                <li><strong>Treating "Useful" as "Essential":</strong> Only count "Essential" ratings in the numerator</li>
+                <li><strong>Small expert panel:</strong> Using fewer than 3-5 experts reduces statistical power</li>
+            </ul>
 
             <h2>References</h2>
             <p><strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.</p>

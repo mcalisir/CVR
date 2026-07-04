@@ -16,10 +16,16 @@
         .container { max-width: 800px; margin: 0 auto; background: var(--surface); padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08); }
         h1 { font-size: 2rem; font-weight: 700; }
         h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; }
+        h3 { font-size: 1.1rem; font-weight: 600; margin-top: 20px; }
         p { color: var(--text-2); margin-bottom: 16px; }
+        li { color: var(--text-2); margin-bottom: 10px; }
         .formula-box { background: #f8f9ff; border: 2px solid var(--accent); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; }
         .formula-box code { font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: 700; color: var(--accent); }
         .highlight { background: #f0fdf4; border-left: 4px solid var(--good); padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .highlight strong { color: var(--good); }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+        table th, table td { border: 1px solid var(--border); padding: 12px; text-align: center; }
+        table th { background: var(--accent); color: white; }
         .nav-links { display: flex; gap: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); flex-wrap: wrap; }
         .nav-links a { padding: 10px 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; }
         .calc-link { background: var(--good); }
@@ -32,28 +38,130 @@
             <p style="color: #8b96a8; font-size: 0.9rem;">Scale-level CVI Universal Agreement: strict consensus-based validity measure</p>
         </header>
         <main>
-            <p><strong>S-CVI/UA (Scale-level Content Validity Index/Universal Agreement)</strong> measures the proportion of items on which all experts unanimously agreed the item is essential. It is a stricter criterion than S-CVI/Ave.</p>
+            <p><strong>S-CVI/UA (Scale-level Content Validity Index/Universal Agreement)</strong> measures the proportion of items on which <strong>all experts unanimously agreed</strong> the item is essential. It is a more stringent validity criterion than S-CVI/Ave, requiring 100% expert consensus rather than just a high average.</p>
+
+            <p>S-CVI/UA is particularly useful when:</p>
+            <ul>
+                <li>You need a high-stakes instrument (certification exams, safety-critical assessments)</li>
+                <li>Expert consensus is critically important</li>
+                <li>You want to complement S-CVI/Ave with a stricter measure</li>
+                <li>You're developing instruments for sensitive domains</li>
+            </ul>
 
             <h2>S-CVI/UA Formula</h2>
             <div class="formula-box">
-                <code>S-CVI/UA = Items with universal agreement / Total items</code>
+                <code>S-CVI/UA = Items with I-CVI of 1.0 / Total number of items</code>
             </div>
 
+            <h3>In Plain English</h3>
+            <p>S-CVI/UA is simply the <strong>percentage of items that were rated "essential" by every single expert</strong> on your panel, with no exceptions.</p>
+
+            <h3>Example Calculation</h3>
+            <p style="background: #fef2f2; border-left: 4px solid #c0392b; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                A 10-item scale with expert ratings (5 experts per item):<br>
+                <br>
+                Items with unanimous agreement (I-CVI = 1.0): 1, 2, 4, 7, 8<br>
+                Items WITHOUT unanimous agreement (I-CVI < 1.0): 3, 5, 6, 9, 10<br>
+                <br>
+                <strong>S-CVI/UA = 5 unanimous items / 10 total items = 0.50 or 50%</strong>
+            </p>
+
             <h2>Validity Threshold</h2>
+
             <div class="highlight">
                 <p><strong>S-CVI/UA ≥ 0.80:</strong> Excellent validity ✓</p>
-                <p style="margin: 0;">At least 80% of items have 100% expert agreement.</p>
+                <p style="margin: 0; font-size: 0.95rem;">At least 80% of items achieved perfect expert consensus. This is considered excellent.</p>
+            </div>
+
+            <div style="background: #fff3e0; border-left: 4px solid #a05a09; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <p><strong>S-CVI/UA 0.60–0.79:</strong> Acceptable, but not excellent</p>
+                <p style="margin: 0; font-size: 0.95rem;">Some items lack unanimous agreement. Consider revising items with lower I-CVI values.</p>
+            </div>
+
+            <div style="background: #fef2f2; border-left: 4px solid #c0392b; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <p><strong>S-CVI/UA < 0.60:</strong> Needs improvement</p>
+                <p style="margin: 0; font-size: 0.95rem;">More than 40% of items lack unanimous agreement. Revision needed.</p>
             </div>
 
             <h2>S-CVI/Ave vs S-CVI/UA</h2>
+
+            <p>These two metrics measure different things and are often reported together:</p>
+
+            <table>
+                <thead>
+                    <tr><th>Metric</th><th>Definition</th><th>Threshold</th><th>Focus</th><th>Stringency</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>S-CVI/Ave</strong></td><td>Average of all I-CVI values</td><td>≥ 0.90</td><td>Overall item agreement</td><td>Moderate</td></tr>
+                    <tr><td><strong>S-CVI/UA</strong></td><td>% of items with I-CVI = 1.0</td><td>≥ 0.80</td><td>Unanimous agreement</td><td>Strict</td></tr>
+                </tbody>
+            </table>
+
+            <h3>What They Reveal Together</h3>
+
+            <p><strong>Scenario 1:</strong> S-CVI/Ave = 0.92, S-CVI/UA = 0.85</p>
+            <p>✓ Excellent! Experts generally agreed items were essential, AND 85% of items had perfect consensus. This is ideal.</p>
+
+            <p><strong>Scenario 2:</strong> S-CVI/Ave = 0.90, S-CVI/UA = 0.50</p>
+            <p>⚠ Good average agreement, but experts disagreed on half the items. Those low-consensus items should be revised.</p>
+
+            <p><strong>Scenario 3:</strong> S-CVI/Ave = 0.88, S-CVI/UA = 0.90</p>
+            <p>✓ Surprising but positive: Nearly all items had unanimous agreement, but a few low-agreement items dragged down the average. Consider removing those few items for a higher S-CVI/Ave.</p>
+
+            <h2>When to Use S-CVI/UA vs S-CVI/Ave</h2>
+
+            <h3>Use S-CVI/Ave When:</h3>
             <ul>
-                <li><strong>S-CVI/Ave:</strong> Average agreement per item (more lenient)</li>
-                <li><strong>S-CVI/UA:</strong> Unanimous agreement count (more stringent)</li>
-                <li>Both ≥ 0.80 together indicates excellent validity</li>
+                <li>You want the most commonly accepted validity measure</li>
+                <li>Your scale can tolerate some items with less-than-perfect consensus</li>
+                <li>You're following modern research standards</li>
+                <li>You need a 0.90 threshold that's easier to achieve</li>
             </ul>
+
+            <h3>Use S-CVI/UA When:</h3>
+            <ul>
+                <li>You need exceptional, high-stakes validity (certification, safety)</li>
+                <li>Consensus is paramount</li>
+                <li>You want to identify which items have universal support</li>
+                <li>You're supplementing S-CVI/Ave for added rigor</li>
+            </ul>
+
+            <h2>Practical Interpretation</h2>
+
+            <h3>If S-CVI/UA = 0.90</h3>
+            <p>✓ Excellent! 90% of your items have perfect expert consensus. Your scale is ready for empirical testing. This is a strong indicator of content validity.</p>
+
+            <h3>If S-CVI/UA = 0.75</h3>
+            <p>⚠ Acceptable but not excellent. 75% of items have perfect consensus, but 25% need refinement. Review items with I-CVI < 1.0 and consider revisions.</p>
+
+            <h3>If S-CVI/UA = 0.45</h3>
+            <p>✗ Too many items lack unanimous agreement. This suggests either (a) your items need better wording, (b) your expert panel wasn't well-selected, or (c) your scale needs fundamental revision.</p>
+
+            <h2>The "Agreement Paradox"</h2>
+
+            <p><strong>Important insight:</strong> An item can have high I-CVI (0.85) but not achieve I-CVI of 1.0 for S-CVI/UA purposes. This means:</p>
+            <ul>
+                <li>85% of experts said "essential"</li>
+                <li>But 15% said "useful but not essential" or "not necessary"</li>
+                <li>It counts toward S-CVI/Ave but not S-CVI/UA</li>
+            </ul>
+
+            <p>This is why some scales have lower S-CVI/UA but still-acceptable S-CVI/Ave — they have items with strong but not perfect consensus.</p>
+
+            <h2>Combining Both Metrics</h2>
+
+            <div class="highlight">
+                <p><strong>Best Practice:</strong> Report both S-CVI/Ave (≥ 0.90) AND S-CVI/UA (≥ 0.80) to show that your scale has:</p>
+                <ol style="margin: 10px 0 0 0;">
+                    <li>Strong average expert agreement</li>
+                    <li>Substantial items with perfect consensus</li>
+                </ol>
+            </div>
 
             <h2>References</h2>
             <p><strong>Davis, L. L. (1992).</strong> Instrument review: Getting the most from a panel of experts. <em>Applied Nursing Research, 5</em>(4), 194-197.</p>
+            <p><strong>Shi, J., Mo, X., & Sun, Z. (2012).</strong> Content validity index in scale development. <em>Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37</em>(2), 152-155.</p>
+            <p><strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.</p>
 
             <div class="nav-links">
                 <a href="/" class="calc-link">← Back to Calculator</a>

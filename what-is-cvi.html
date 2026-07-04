@@ -16,7 +16,9 @@
         .container { max-width: 800px; margin: 0 auto; background: var(--surface); padding: 40px; border-radius: 10px; box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08); }
         h1 { font-size: 2rem; font-weight: 700; }
         h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; }
+        h3 { font-size: 1.1rem; font-weight: 600; margin-top: 20px; }
         p { color: var(--text-2); margin-bottom: 16px; }
+        li { color: var(--text-2); margin-bottom: 10px; }
         .formula-box { background: #f8f9ff; border: 2px solid var(--accent); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; }
         .formula-box code { font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: 700; color: var(--accent); }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
@@ -32,32 +34,104 @@
     <div class="container">
         <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
             <h1>What is CVI?</h1>
-            <p style="color: #8b96a8; font-size: 0.9rem;">Content Validity Index: average of all CVR values for scale-level validity</p>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Content Validity Index: scale-level summary of all item CVR values</p>
         </header>
         <main>
-            <p><strong>CVI (Content Validity Index)</strong> is the average of all individual item CVR values, providing a single validity estimate for the entire scale.</p>
+            <p><strong>CVI (Content Validity Index)</strong> is the average of all individual item CVR values, providing a single validity estimate for the entire scale or instrument. While CVR evaluates individual items, CVI gives you a quick overview of overall scale validity by averaging all the CVR values together.</p>
+
+            <p>CVI is useful for:</p>
+            <ul>
+                <li>Getting a quick scale-level validity summary</li>
+                <li>Comparing validity across different scales</li>
+                <li>Communicating results to non-technical audiences</li>
+                <li>Making pass/fail decisions about scale validity</li>
+            </ul>
 
             <h2>CVI Formula</h2>
             <div class="formula-box">
                 <code>CVI = Sum of all CVR values / Number of items</code>
             </div>
 
+            <h3>How to Calculate CVI</h3>
+            <p><strong>Step 1:</strong> Calculate CVR for each item (using the CVR formula)</p>
+            <p><strong>Step 2:</strong> Add all CVR values together</p>
+            <p><strong>Step 3:</strong> Divide by the number of items</p>
+
+            <h3>Example Calculation</h3>
+            <p style="background: #fef2f2; border-left: 4px solid #c0392b; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                Suppose you have a 4-item scale with these CVR values:<br>
+                Item 1: CVR = 0.80<br>
+                Item 2: CVR = 0.60<br>
+                Item 3: CVR = 0.90<br>
+                Item 4: CVR = 0.85<br>
+                <br>
+                <strong>CVI = (0.80 + 0.60 + 0.90 + 0.85) / 4 = 3.15 / 4 = 0.79</strong>
+            </p>
+
             <h2>Acceptable CVI Thresholds</h2>
+            <p>Different researchers recommend different minimum CVI values depending on the number of experts:</p>
+
             <table>
                 <thead>
-                    <tr><th>Experts</th><th>Min CVI Threshold</th><th>Source</th></tr>
+                    <tr><th>Experts</th><th>Min CVI Threshold</th><th>Source</th><th>Interpretation</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>2</td><td>0.80</td><td>Davis (1992)</td></tr>
-                    <tr><td>3-5</td><td>1.0</td><td>Polit & Beck</td></tr>
-                    <tr><td>6-8</td><td>0.83</td><td>Lynn (1986)</td></tr>
-                    <tr><td>9+</td><td>0.78</td><td>Lynn (1986)</td></tr>
+                    <tr><td>2</td><td>0.80</td><td>Davis (1992)</td><td>Acceptable validity</td></tr>
+                    <tr><td>3-5</td><td>1.0</td><td>Polit & Beck (2006)</td><td>Perfect agreement needed</td></tr>
+                    <tr><td>6-8</td><td>0.83</td><td>Lynn (1986)</td><td>Good validity</td></tr>
+                    <tr><td>9+</td><td>0.78</td><td>Lynn (1986)</td><td>Acceptable validity</td></tr>
                 </tbody>
             </table>
+
+            <h3>Why Do Thresholds Vary?</h3>
+            <p>With fewer experts (2-5), the standard is stricter because each expert's opinion carries more weight. As your expert panel grows, the threshold becomes more lenient because you have more data to show statistical consensus.</p>
+
+            <h2>CVI Limitations and Alternatives</h2>
+
+            <p><strong>Why CVI is being replaced:</strong></p>
+            <ul>
+                <li><strong>Loss of information:</strong> Averaging hides problems with individual items. A 0.79 CVI could hide that one item was rated 0.20 by experts.</li>
+                <li><strong>No item details:</strong> You don't see which specific items need revision</li>
+                <li><strong>Doesn't account for item-by-item variability:</strong> Different expert patterns produce same CVI</li>
+            </ul>
+
+            <p><strong>Preferred alternatives:</strong></p>
+            <ul>
+                <li><strong>S-CVI/Ave:</strong> Average of I-CVI values (more modern, recommended)</li>
+                <li><strong>S-CVI/UA:</strong> Percentage of items with universal expert agreement</li>
+            </ul>
+
+            <div style="background: #f0fdf4; border-left: 4px solid var(--good); padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>Best Practice:</strong> Report CVI for compatibility with older research, but also report S-CVI/Ave as the primary scale validity measure. This gives you the best of both worlds.
+            </div>
+
+            <h2>CVI vs S-CVI/Ave</h2>
+
+            <table>
+                <thead>
+                    <tr><th>Metric</th><th>Formula</th><th>Interpretation</th><th>Threshold</th><th>Modern Use</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>CVI</strong></td><td>Mean of CVR values</td><td>Scale validity (rough)</td><td>0.78-1.0</td><td>Legacy/reference</td></tr>
+                    <tr><td><strong>S-CVI/Ave</strong></td><td>Mean of I-CVI values</td><td>Scale validity (precise)</td><td>≥ 0.90</td><td>Current standard</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Practical Interpretation</h2>
+
+            <h3>If CVI = 0.90</h3>
+            <p>✓ Your scale has excellent content validity. Proceed with confidence to the next phase of validation (e.g., pilot testing, reliability analysis).</p>
+
+            <h3>If CVI = 0.78-0.89</h3>
+            <p>⚠ Your scale has acceptable validity, but there may be room for improvement. Consider revising items with lower individual CVR values before proceeding.</p>
+
+            <h3>If CVI < 0.78</h3>
+            <p>✗ Your scale needs more work. Review the CVR for each item, revise low-scoring items, and consider another expert panel review.</p>
 
             <h2>References</h2>
             <p><strong>Davis, L. L. (1992).</strong> Instrument review: Getting the most from a panel of experts. <em>Applied Nursing Research, 5</em>(4), 194-197.</p>
             <p><strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.</p>
+            <p><strong>Polit, D. F., Beck, C. T., & Owen, S. V. (2007).</strong> Is the CVI an acceptable indicator of content validity? Appraisal and recommendations. <em>Research in Nursing & Health, 30</em>(4), 459-467.</p>
 
             <div class="nav-links">
                 <a href="/" class="calc-link">← Back to Calculator</a>
