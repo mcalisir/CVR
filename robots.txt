@@ -1,15 +1,34 @@
-User-agent: *
-Allow: /
-
 # Sitemap
 Sitemap: https://mcalisir.github.io/CVR/sitemap.xml
 
-# Crawl-delay
+# All crawlers
+User-agent: *
+Allow: /
+Allow: /*.html$
+Allow: /*.css$
+Allow: /*.js$
+Allow: /index.html
+Allow: /index-tr.html
+
+# Crawl-delay for all bots
 Crawl-delay: 1
 
-# Disallow specific files
+# Disallow specific files and directories
 Disallow: /README.md
 Disallow: /README-TR.md
 Disallow: /CONTRIBUTING.md
 Disallow: /LICENSE
 Disallow: /.gitignore
+Disallow: /.git*
+Disallow: /.*/
+Disallow: /*stackdump
+
+# Block low-value bot crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
