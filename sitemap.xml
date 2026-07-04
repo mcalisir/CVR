@@ -19,4 +19,44 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://mcalisir.github.io/CVR/" />
     </url>
+    <url>
+        <loc>https://mcalisir.github.io/CVR/cvr-orani-nedir.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/cvr-orani-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-cvr.html" />
+    </url>
+    <url>
+        <loc>https://mcalisir.github.io/CVR/icvi-nedir.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/icvi-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-icvi.html" />
+    </url>
+    <url>
+        <loc>https://mcalisir.github.io/CVR/cvi-nedir.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/cvi-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-cvi.html" />
+    </url>
+    <url>
+        <loc>https://mcalisir.github.io/CVR/scvi-ave-nedir.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/scvi-ave-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-scvi-ave.html" />
+    </url>
+    <url>
+        <loc>https://mcalisir.github.io/CVR/scvi-ua-nedir.html</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/scvi-ua-nedir.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-scvi-ua.html" />
+    </url>
 </urlset>

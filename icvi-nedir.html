@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir? Formülü ve Eşikleri</title>
+
+    <meta name="description" content="I-CVI (Item-level Content Validity Index) nedir, nasıl hesaplanır? Formülü, kabul edilebilir eşikler (1-2 uzman, 3+ uzman), örnekler. Lynn ve Polit & Beck kriterleri.">
+    <meta name="keywords" content="I-CVI, item-level content validity index, madde geçerliliği, uzman anlaşması, formülü, eşik, Lynn, Polit Beck">
+    <meta name="author" content="CVR Calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mcalisir.github.io/CVR/icvi-nedir.html">
+    <link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/what-is-icvi.html">
+
+    <meta property="og:title" content="I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir?">
+    <meta property="og:description" content="I-CVI formülü, kabul eşikleri, Lynn ve Polit criteria. Madde geçerliliği değerlendirmesi.">
+    <meta property="og:type" content="article">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir?",
+        "url": "https://mcalisir.github.io/CVR/icvi-nedir.html",
+        "datePublished": "2026-07-04",
+        "inLanguage": "tr"
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #f3f5f9;
+            --surface: #ffffff;
+            --text: #16213a;
+            --text-2: #4b5768;
+            --accent: #3457d5;
+            --good: #177a3d;
+            --warn: #a05a09;
+            --bad: #c0392b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08);
+        }
+
+        header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            color: var(--text-2);
+        }
+
+        .formula-box {
+            background: #f8f9ff;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box code {
+            font-size: 1.2rem;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .criteria-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .color-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .green { background: #dcfce7; color: var(--good); }
+        .orange { background: #fef3c7; color: var(--warn); }
+        .red { background: #fef2f2; color: var(--bad); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        table th, table td {
+            border: 1px solid var(--border);
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: var(--accent);
+            color: white;
+            text-align: center;
+        }
+
+        .example-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--good);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .calc-link {
+            background: var(--good);
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>I-CVI (Madde Düzeyinde İçerik Geçerliliği İndeksi) Nedir?</h1>
+            <p class="meta">Formülü, Lynn ve Polit & Beck eşikleri, uzman anlaşması</p>
+        </header>
+
+        <main>
+            <p><strong>I-CVI (Item-level Content Validity Index)</strong>, uzman panelinin belirli bir madde hakkında ne kadar hemfikir olduğunu gösteren bir göstergedir. Maddeyi "gerekli" olarak puanlayan uzmanların oranını temsil eder.</p>
+
+            <h2>I-CVI Formülü</h2>
+
+            <div class="formula-box">
+                <code>I-CVI = Maddeyi "gerekli" puanlayan uzman sayısı / Toplam uzman sayısı</code>
+            </div>
+
+            <p>Sonuç 0 ile 1 arasında değişir. Örneğin, 10 uzmanın 8'i bir maddeyi gerekli derse, I-CVI = 8/10 = 0.80 olur.</p>
+
+            <h2>Kabul Edilebilir I-CVI Eşikleri</h2>
+
+            <p>I-CVI'nin kabul edilebilir olup olmadığı, uzman sayısına bağlıdır. Lynn (1986) ve Polit & Beck (2006) tarafından önerilen eşikler:</p>
+
+            <div class="criteria-box">
+                <h3 style="margin: 0 0 10px 0;">1-2 Uzman İçin</h3>
+                <p><strong>I-CVI = 1.0 olmalıdır</strong> <span class="color-badge green">Geçerli</span></p>
+                <p style="margin: 0;">Yani, her iki uzman da maddeyi mutlaka gerekli saymalıdır.</p>
+            </div>
+
+            <div class="criteria-box">
+                <h3 style="margin: 0 0 10px 0;">3 ve Üzeri Uzman İçin</h3>
+                <ul style="margin: 10px 0 0 0;">
+                    <li><strong>I-CVI ≥ 0.78:</strong> <span class="color-badge green">Geçerli</span> — Madde tutulabilir</li>
+                    <li><strong>0.70 ≤ I-CVI &lt; 0.78:</strong> <span class="color-badge orange">Revizyon Gerekli</span> — Madde iyileştirilmeli</li>
+                    <li><strong>I-CVI &lt; 0.70:</strong> <span class="color-badge red">Geçersiz</span> — Madde çıkarılmalı</li>
+                </ul>
+            </div>
+
+            <h2>Örnek Hesaplamalar</h2>
+
+            <div class="example-box">
+                <h3 style="margin: 0 0 10px 0; color: var(--good);">Örnek 1: 6 Uzman</h3>
+                <p><strong>Puanlar:</strong> 5 uzman "Gerekli", 1 uzman "Gerekli değil"</p>
+                <p><strong>Hesaplama:</strong> I-CVI = 5 / 6 = 0.833</p>
+                <p><strong>Sonuç:</strong> <span class="color-badge green">Geçerli</span> (0.833 ≥ 0.78)</p>
+            </div>
+
+            <div class="example-box">
+                <h3 style="margin: 0 0 10px 0; color: var(--good);">Örnek 2: 8 Uzman</h3>
+                <p><strong>Puanlar:</strong> 6 uzman "Gerekli", 2 uzman "Gerekli değil"</p>
+                <p><strong>Hesaplama:</strong> I-CVI = 6 / 8 = 0.75</p>
+                <p><strong>Sonuç:</strong> <span class="color-badge orange">Revizyon Gerekli</span> (0.70 ≤ 0.75 &lt; 0.78)</p>
+            </div>
+
+            <h2>CVR ile Farkı Nedir?</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kriter</th>
+                        <th>I-CVI</th>
+                        <th>CVR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hesaplama</strong></td>
+                        <td>Oran (0-1)</td>
+                        <td>Fark-tabanlı (-1 ile +1)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yorumlama</strong></td>
+                        <td>Uzman anlaşması yüzdesi</td>
+                        <td>Uzmanlar arasındaki farklılık</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kullanım</strong></td>
+                        <td>Madde seçme kararında</td>
+                        <td>Madde seçme ve Lawshe tablosu</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Kaynaklar</h2>
+
+            <p><strong>Lynn, M. R. (1986).</strong> Determination and quantification of content validity. <em>Nursing Research, 35</em>(6), 382-385.</p>
+
+            <p><strong>Polit, D. F., & Beck, C. T. (2006).</strong> The content validity index: Are you sure you know what's being reported? <em>Research in Nursing & Health, 29</em>(5), 489-497.</p>
+
+            <div class="nav-links">
+                <a href="index-tr.html" class="calc-link">← CVR Hesaplayıcı'ya Dön</a>
+                <a href="cvr-orani-nedir.html">← CVR Nedir?</a>
+                <a href="cvi-nedir.html">CVI Nedir? →</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

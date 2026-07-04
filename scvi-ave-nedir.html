@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama) Nedir? Formülü ve Eşikleri</title>
+
+    <meta name="description" content="S-CVI/Ave (Scale-level CVI/Average) nedir? Tüm I-CVI değerlerinin ortalaması, formülü, geçerlilik eşikleri (0.90). Ölçek düzeyinde geçerliliğin en güvenilir göstergesi.">
+    <meta name="keywords" content="S-CVI/Ave, scale-level CVI, ölçek geçerliliği, I-CVI ortalaması, formülü, 0.90 eşiği, mükemmel geçerlilik">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mcalisir.github.io/CVR/scvi-ave-nedir.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama) Nedir?",
+        "url": "https://mcalisir.github.io/CVR/scvi-ave-nedir.html",
+        "datePublished": "2026-07-04",
+        "inLanguage": "tr"
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #f3f5f9;
+            --surface: #ffffff;
+            --text: #16213a;
+            --text-2: #4b5768;
+            --accent: #3457d5;
+            --good: #177a3d;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(22, 33, 58, 0.08);
+        }
+        h1 { font-size: 2rem; font-weight: 700; }
+        h2 { font-size: 1.4rem; font-weight: 700; margin-top: 30px; }
+        p { color: var(--text-2); margin-bottom: 16px; }
+        .formula-box {
+            background: #f8f9ff;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .formula-box code {
+            font-size: 1.2rem;
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .highlight-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--good);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            padding: 10px 16px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .calc-link { background: var(--good); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border);">
+            <h1>S-CVI/Ave (Ölçek Düzeyinde CVI/Ortalama) Nedir?</h1>
+            <p style="color: #8b96a8; font-size: 0.9rem;">Tüm I-CVI değerlerinin ortalaması, mükemmel geçerlilik göstergesi, formülü ve eşikleri</p>
+        </header>
+
+        <main>
+            <p><strong>S-CVI/Ave (Scale-level Content Validity Index/Average)</strong>, bütün ölçeğin geçerliliğini değerlendirmek için <strong>tüm maddelerin I-CVI değerlerinin ortalaması</strong>nı alan en güvenilir göstergedir. Araştırmacılar tarafından ölçek düzeyinde geçerliliğin en çok kullanılan ölçütüdür.</p>
+
+            <h2>S-CVI/Ave Formülü</h2>
+
+            <div class="formula-box">
+                <code>S-CVI/Ave = Tüm I-CVI değerlerinin toplamı / Madde sayısı</code>
+            </div>
+
+            <p>Örneğin, bir ölçeğin 8 maddesinin I-CVI değerleri:</p>
+            <p>1.0, 0.83, 0.67, 0.67, 0.17, 1.0, 1.0, 0.83</p>
+            <p><strong>S-CVI/Ave = (1.0 + 0.83 + 0.67 + 0.67 + 0.17 + 1.0 + 1.0 + 0.83) / 8 = 0.604</strong></p>
+
+            <h2>Geçerlilik Eşikleri</h2>
+
+            <div class="highlight-box">
+                <p><strong>S-CVI/Ave ≥ 0.90:</strong> <span style="background: #dcfce7; padding: 2px 8px; border-radius: 3px; color: var(--good);">Mükemmel Geçerlilik</span></p>
+                <p style="margin: 0;">Ölçek yüksek düzeyde geçerli; güvenle kullanılabilir.</p>
+            </div>
+
+            <div class="highlight-box" style="background: #fef2f2; border-left-color: #c0392b;">
+                <p><strong>S-CVI/Ave &lt; 0.90:</strong> <span style="background: #fef2f2; padding: 2px 8px; border-radius: 3px; color: #c0392b;">Yetersiz Geçerlilik</span></p>
+                <p style="margin: 0;">Ölçek maddeleri revize edilmeli veya çıkarılmalıdır.</p>
+            </div>
+
+            <h2>CVI ile Farkı Nedir?</h2>
+
+            <ul>
+                <li><strong>S-CVI/Ave:</strong> Tüm I-CVI'lerin ortalaması — her maddenin uzman anlaşması ağırlıklı</li>
+                <li><strong>CVI:</strong> Tüm CVR'lerin ortalaması — Lawshe eşikleri ağırlıklı</li>
+            </ul>
+
+            <p>S-CVI/Ave, CVI'den daha hassas bir göstergedir ve modern araştırmada daha çok tercih edilir.</p>
+
+            <h2>Kaynaklar</h2>
+
+            <p><strong>Waltz, C. F., Strickland, O. L., & Lenz, E. R. (2005).</strong> Measurement in nursing and health research. Springer Publishing Company.</p>
+            <p><strong>Shi, J., Mo, X., & Sun, Z. (2012).</strong> Content validity index in scale development. <em>Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37</em>(2), 152-155.</p>
+
+            <div class="nav-links">
+                <a href="index-tr.html" class="calc-link">← CVR Hesaplayıcı'ya Dön</a>
+                <a href="cvi-nedir.html">← CVI Nedir?</a>
+                <a href="scvi-ua-nedir.html">S-CVI/UA Nedir? →</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
