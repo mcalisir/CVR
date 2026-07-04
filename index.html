@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Validity CVR Calculator (English) | CVR, CVI, I-CVI, S-CVI Tool</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="English CVR calculator for Content Validity Ratio (CVR), I-CVI, CVI, S-CVI/Ave and S-CVI/UA. Free web tool with an Excel-like interface for scale development studies.">
     <meta name="keywords" content="CVR calculator, content validity ratio, I-CVI, CVI, S-CVI, Lawshe CVR, scale development, instrument validation, research methods">
@@ -12,7 +12,7 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Content Validity CVR Calculator (English)">
     <meta property="og:description" content="Calculate CVR, I-CVI, CVI and S-CVI with an English interface. Free tool for content validity and scale development research.">
@@ -21,26 +21,27 @@
     <meta property="og:site_name" content="Content Validity CVR Calculator">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="tr_TR">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Content Validity CVR Calculator (English)">
     <meta name="twitter:description" content="Free English CVR, I-CVI, CVI and S-CVI calculator for content validity studies.">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mcalisir.github.io/CVR/">
     <link rel="alternate" hreflang="en" href="https://mcalisir.github.io/CVR/">
     <link rel="alternate" hreflang="tr" href="https://mcalisir.github.io/CVR/index-tr.html">
     <link rel="alternate" hreflang="x-default" href="https://mcalisir.github.io/CVR/">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-    
+
     <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -65,7 +66,7 @@
         "keywords": "CVR, content validity, CVI, I-CVI, S-CVI, Lawshe, research, academic tools"
     }
     </script>
-    
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBWQSEEM55"></script>
     <script>
@@ -77,338 +78,357 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Main Header -->
-        <header class="main-header compact-header">
-            <div class="topbar">
-                <h1>Content Validity CVR Calculator</h1>
-                <div class="language-selector">
-                    <a href="index-tr.html" class="lang-btn">🇹🇷 Türkçe</a>
-                    <a href="index.html" class="lang-btn active">🇺🇸 English</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-6"/></svg>
+                </span>
+                <span class="brand-name">CVR Calculator</span>
+            </a>
+            <nav class="lang-switch" aria-label="Language selection">
+                <a href="index-tr.html" class="lang-btn">Türkçe</a>
+                <a href="index.html" class="lang-btn active" aria-current="page">English</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-intro">
+            <h1>Content Validity Calculator</h1>
+            <p class="lead">Enter your expert panel's ratings and get <strong>CVR</strong>, <strong>I-CVI</strong>, <strong>CVI</strong>, <strong>S-CVI/Ave</strong> and <strong>S-CVI/UA</strong> instantly.</p>
+        </section>
+
+        <!-- Toolbar -->
+        <section class="card toolbar-card" aria-label="Table controls">
+            <div class="toolbar">
+                <div class="toolbar-group steppers">
+                    <div class="stepper">
+                        <span class="group-label">Items</span>
+                        <div class="stepper-controls">
+                            <button type="button" id="removeRow" class="stepper-btn" title="Remove last item" aria-label="Remove item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>
+                            </button>
+                            <span class="stepper-count" id="rowCount">5</span>
+                            <button type="button" id="addRow" class="stepper-btn" title="Add item" aria-label="Add item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stepper">
+                        <span class="group-label">Experts</span>
+                        <div class="stepper-controls">
+                            <button type="button" id="removeColumn" class="stepper-btn" title="Remove last expert" aria-label="Remove expert">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>
+                            </button>
+                            <span class="stepper-count" id="colCount">5</span>
+                            <button type="button" id="addColumn" class="stepper-btn" title="Add expert" aria-label="Add expert">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toolbar-group">
+                    <span class="group-label">Evaluation model</span>
+                    <div class="segmented" role="group" aria-label="Evaluation model">
+                        <button type="button" id="modelStrict" class="seg-btn active" aria-pressed="true">
+                            Strict
+                            <small>only 1 → relevant</small>
+                        </button>
+                        <button type="button" id="modelLenient" class="seg-btn" aria-pressed="false">
+                            Lenient
+                            <small>1 and 2 → relevant</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="toolbar-group actions">
+                    <button type="button" id="loadExample" class="btn" title="Fill the table with example data">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.7L20 10.5l-6.1 1.8L12 18l-1.9-5.7L4 10.5l6.1-1.8z"/></svg>
+                        Load Example
+                    </button>
+                    <button type="button" id="pasteData" class="btn" title="Import data copied from Excel">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+                        Paste from Excel
+                    </button>
+                    <button type="button" id="copyData" class="btn" title="Copy the table and results to the clipboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        Copy to Excel
+                    </button>
+                    <button type="button" id="clearTable" class="btn btn-danger" title="Clear all ratings (can be undone)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M6 6l1 14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-14"/></svg>
+                        Clear
+                    </button>
                 </div>
             </div>
-        </header>
 
-        <main class="main-content">
-            <div class="workspace-layout">
-                <aside class="workspace-sidebar">
-                    <!-- Control Panel (Primary) -->
-                    <div class="card control-panel">
-                        <p class="quick-tip-line"><strong>How to use:</strong> Add items/experts, enter 0-1-2-3 ratings, choose model.</p>
-                        <div class="control-buttons">
-                            <button id="addRow" class="btn-control">
-                                <i class="fas fa-plus"></i>
-                                Add Item
-                            </button>
-                            <button id="removeRow" class="btn-control btn-remove">
-                                <i class="fas fa-minus"></i>
-                                Remove Item
-                            </button>
-                            <button id="addColumn" class="btn-control">
-                                <i class="fas fa-plus"></i>
-                                Add Expert
-                            </button>
-                            <button id="removeColumn" class="btn-control btn-remove">
-                                <i class="fas fa-minus"></i>
-                                Remove Expert
-                            </button>
-                            <button id="clearTable" class="btn-clear">
-                                <i class="fas fa-trash"></i>
-                                Clear Table
-                            </button>
-                            <button id="pasteData" class="btn-paste">
-                                <i class="fas fa-paste"></i>
-                                Paste from Excel
-                            </button>
-                            <button id="copyData" class="btn-copy">
-                                <i class="fas fa-copy"></i>
-                                Copy to Excel
-                            </button>
-                        </div>
-                        
-                        <!-- Model Selection -->
-                        <div class="model-selection">
-                            <label for="evaluationModel" class="model-label">
-                                <i class="fas fa-cogs"></i>
-                                Evaluation Model:
-                            </label>
-                            <select id="evaluationModel" class="model-select">
-                                <option value="strict">Strict Model (1→1, 2,3→0)</option>
-                                <option value="lenient">Lenient Model (1,2→1, 3→0)</option>
-                            </select>
-                            <div class="model-info">
-                                <div class="model-desc" id="modelDescription">
-                                    <strong>Strict Model:</strong> Only value 1 is considered "relevant". Values 2 and 3 are evaluated as "not relevant".
-                                </div>
-                            </div>
+            <div class="rating-legend">
+                <span class="legend-caption">Rating scale (Lawshe):</span>
+                <span class="legend-chip" data-val="1"><b>1</b> Essential</span>
+                <span class="legend-chip" data-val="2"><b>2</b> Useful but not essential</span>
+                <span class="legend-chip" data-val="3"><b>3</b> Not necessary</span>
+                <span class="model-hint" id="modelHint"></span>
+            </div>
+        </section>
+
+        <!-- Table -->
+        <section class="card table-card" aria-label="Rating table">
+            <div class="hint-bar" id="onboardHint">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4.9 12c.6.6.9 1.3.9 2h8c0-.7.3-1.4.9-2A7 7 0 0 0 12 2z"/></svg>
+                <span>Click a cell and enter a rating between <strong>1–3</strong> (1 Essential, 2 Useful but not essential, 3 Not necessary). Navigate with the arrow keys, or paste a block copied from Excel directly into any cell. Your data is saved automatically in your browser.</span>
+            </div>
+
+            <div class="table-scroll">
+                <table class="cvr-table" id="cvrTable">
+                    <thead>
+                        <tr id="headRow"></tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+
+                <div class="empty-state" id="emptyState" hidden>
+                    <span class="empty-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16M15 4v16"/></svg>
+                    </span>
+                    <h2>The table is empty</h2>
+                    <p>To get started, create a ready-made table, explore the example data, or paste your data from Excel.</p>
+                    <div class="empty-actions">
+                        <button type="button" id="emptyCreate" class="btn btn-primary">Create 5 items × 5 experts</button>
+                        <button type="button" id="emptyExample" class="btn">Load example data</button>
+                        <button type="button" id="emptyPaste" class="btn">Paste from Excel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-foot">
+                <p class="lawshe-note" id="lawsheNote"></p>
+                <div class="summary-grid" aria-live="polite">
+                    <div class="summary-tile">
+                        <span class="summary-name">CVI <small>Content Validity Index (mean of CVR values)</small></span>
+                        <div class="summary-bottom">
+                            <span class="summary-value" id="cviValue">–</span>
+                            <span class="summary-badge" id="cviBadge" hidden></span>
                         </div>
                     </div>
-
-                    <!-- Quick Guide (Secondary) -->
-                    <div class="card quick-guide-card">
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion('instructions')">
-                                <h3>How to Use</h3>
-                                <i class="fas fa-chevron-down accordion-icon" id="instructions-icon"></i>
-                            </div>
-                            <div class="accordion-content" id="instructions-content">
-                                <div class="instructions-content">
-                                    <p><strong>1. Add experts and items:</strong> Use the buttons above.</p>
-                                    <p><strong>2. Enter ratings:</strong> Use values 0, 1, 2, or 3 in each cell.</p>
-                                    <ul>
-                                        <li><strong>0:</strong> Completely invalid</li>
-                                        <li><strong>1:</strong> Relevant</li>
-                                        <li><strong>2:</strong> Partially relevant (Lenient model)</li>
-                                        <li><strong>3:</strong> Not relevant</li>
-                                    </ul>
-                                    <p><strong>3. Select model:</strong> Strict or Lenient.</p>
-                                    <p><strong>4. Paste/Copy:</strong> Import from Excel or export results.</p>
-                                </div>
-                            </div>
+                    <div class="summary-tile">
+                        <span class="summary-name">S-CVI/Ave <small>Scale-level CVI (mean of I-CVI values)</small></span>
+                        <div class="summary-bottom">
+                            <span class="summary-value" id="scviAveValue">–</span>
+                            <span class="summary-badge" id="scviAveBadge" hidden></span>
                         </div>
                     </div>
-                </aside>
+                    <div class="summary-tile">
+                        <span class="summary-name">S-CVI/UA <small>Scale-level CVI (universal agreement)</small></span>
+                        <div class="summary-bottom">
+                            <span class="summary-value" id="scviUAValue">–</span>
+                            <span class="summary-badge" id="scviUABadge" hidden></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <section class="workspace-main">
+        <!-- Explanations -->
+        <section class="card explanations-card" aria-label="Calculation explanations">
+            <h2>Guide &amp; Calculation Explanations</h2>
 
-            <!-- Main Table -->
-            <div class="card table-card">
-                <div class="table-container">
-                    <table id="cvrTable" class="excel-table">
+            <details class="exp-item">
+                <summary>How to use</summary>
+                <div class="exp-body">
+                    <ol>
+                        <li><strong>Set the dimensions:</strong> Use the <em>Items</em> and <em>Experts</em> steppers above to size the table. Hover over a row or column header and click the <strong>×</strong> button to delete a specific item/expert.</li>
+                        <li><strong>Enter the ratings:</strong> Type each expert's rating using Lawshe's 3-point scale: <strong>1</strong> Essential, <strong>2</strong> Useful but not essential, <strong>3</strong> Not necessary. Values shown in green count as "relevant" under the selected model; cells with an orange background mark missing ratings in a partially filled row.</li>
+                        <li><strong>Choose a model:</strong> The <em>Strict</em> model counts only 1 as "relevant"; the <em>Lenient</em> model counts 1 and 2.</li>
+                        <li><strong>Read the results:</strong> CVR and I-CVI appear at the end of each row; CVI, S-CVI/Ave and S-CVI/UA update automatically below the table.</li>
+                        <li><strong>Work with Excel:</strong> Paste a block copied from Excel directly into any cell, use the "Paste from Excel" dialog, or copy the whole table with its results to the clipboard.</li>
+                    </ol>
+                    <h4>Keyboard shortcuts</h4>
+                    <ul>
+                        <li><kbd>1</kbd>–<kbd>3</kbd> enters the rating and moves to the next cell</li>
+                        <li><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> navigate between cells</li>
+                        <li><kbd>Enter</kbd> moves down one cell, <kbd>Backspace</kbd> clears the cell</li>
+                    </ul>
+                    <p>Your data is stored automatically in your browser, so you can close the page and pick up where you left off.</p>
+                </div>
+            </details>
+
+            <details class="exp-item">
+                <summary>CVR (Content Validity Ratio)</summary>
+                <div class="exp-body">
+                    <div class="formula">CVR = (ne − N/2) / (N/2)</div>
+                    <p><strong>ne:</strong> Number of experts rating the item as "relevant"<br>
+                    <strong>N:</strong> Total number of experts rating the item</p>
+
+                    <h4>Lawshe's minimum CVR values</h4>
+                    <table class="ref-table">
                         <thead>
                             <tr>
-                                <th class="row-header">Item</th>
-                                <th class="expert-header" colspan="0">Experts</th>
-                                <th class="result-header">CVR</th>
-                                <th class="result-header">I-CVI</th>
-                            </tr>
-                            <tr>
-                                <th class="row-header">#</th>
-                                <!-- Expert columns will be added by JavaScript -->
-                                <th class="result-header">Value</th>
-                                <th class="result-header">Value</th>
+                                <th>Number of Experts</th>
+                                <th>Minimum CVR</th>
                             </tr>
                         </thead>
-                        <tbody id="tableBody">
-                            <!-- Rows will be added by JavaScript -->
+                        <tbody>
+                            <tr><td>5</td><td>0.99</td></tr>
+                            <tr><td>6</td><td>0.99</td></tr>
+                            <tr><td>7</td><td>0.99</td></tr>
+                            <tr><td>8</td><td>0.75</td></tr>
+                            <tr><td>9</td><td>0.78</td></tr>
+                            <tr><td>10</td><td>0.62</td></tr>
+                            <tr><td>11</td><td>0.59</td></tr>
+                            <tr><td>12</td><td>0.56</td></tr>
+                            <tr><td>13</td><td>0.54</td></tr>
+                            <tr><td>14</td><td>0.51</td></tr>
+                            <tr><td>15</td><td>0.49</td></tr>
+                            <tr><td>20</td><td>0.42</td></tr>
+                            <tr><td>25</td><td>0.37</td></tr>
+                            <tr><td>30</td><td>0.33</td></tr>
+                            <tr><td>35</td><td>0.31</td></tr>
+                            <tr><td>40</td><td>0.29</td></tr>
                         </tbody>
                     </table>
-                </div>
-                
-                <!-- CVI Summary Section -->
-                <div class="cvi-summary">
-                    <div class="summary-row">
-                        <div class="summary-item">
-                            <span class="summary-label">CVI (Content Validity Index):</span>
-                            <span class="summary-value" id="cviValue">-</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">S-CVI/Ave (Scale-level CVI/Average):</span>
-                            <span class="summary-value" id="scviAveValue">-</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">S-CVI/UA (Scale-level CVI/Universal Agreement):</span>
-                            <span class="summary-value" id="scviUAValue">-</span>
-                        </div>
+
+                    <div class="source-reference">
+                        <strong>Source:</strong> Lawshe, C. H. (1975). A quantitative approach to content validity. Personnel Psychology, 28(4), 563-575.
                     </div>
                 </div>
+            </details>
+
+            <details class="exp-item">
+                <summary>I-CVI (Item-level Content Validity Index)</summary>
+                <div class="exp-body">
+                    <div class="formula">I-CVI = Number of experts rating the item as "relevant" / Total number of experts</div>
+
+                    <h4>Evaluation criteria</h4>
+                    <ul>
+                        <li><strong>1-2 experts:</strong> I-CVI must be 1.0 (green)</li>
+                        <li><strong>3+ experts:</strong>
+                            <ul>
+                                <li>I-CVI ≥ 0.78: Valid (green)</li>
+                                <li>I-CVI 0.70–0.78: Needs revision (orange)</li>
+                                <li>I-CVI &lt; 0.70: Should be eliminated (red)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>Note:</strong> Values range from 0 to 1. An I-CVI of 0.79 or more indicates the item is relevant, 0.70 to 0.79 indicates the item needs revision, and less than 0.70 suggests the item should be eliminated. With more than five experts, the acceptable value for I-CVI is 0.78.</p>
+
+                    <div class="source-reference">
+                        <strong>Sources:</strong><br>
+                        Lynn MR. Determination and quantification of content validity. Nurs Res. 1986;35(6):382–5. doi: 10.1097/00006199-198611000-00017.<br>
+                        Polit DF, Beck CT. The content validity index: are you sure you know what's being reported? Critique and recommendations. Res Nurs Health. 2006;29(5):489–97. doi: 10.1002/nur.20147.
+                    </div>
+                </div>
+            </details>
+
+            <details class="exp-item">
+                <summary>CVI (Content Validity Index)</summary>
+                <div class="exp-body">
+                    <div class="formula">CVI = Average of all CVR values</div>
+
+                    <h4>Acceptable CVI values</h4>
+                    <table class="ref-table">
+                        <thead>
+                            <tr>
+                                <th>Number of Experts</th>
+                                <th>Acceptable CVI</th>
+                                <th>Source of Recommendation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2</td><td>At least 0.8</td><td>Davis (1992)</td></tr>
+                            <tr><td>3-5</td><td>Should be 1</td><td>Polit &amp; Beck (2006), Polit et al. (2007)</td></tr>
+                            <tr><td>At least 6</td><td>At least 0.83</td><td>Polit &amp; Beck (2006), Polit et al. (2007)</td></tr>
+                            <tr><td>6-8</td><td>At least 0.83</td><td>Lynn (1986)</td></tr>
+                            <tr><td>At least 9</td><td>At least 0.78</td><td>Lynn (1986)</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="source-reference">
+                        <strong>Sources:</strong><br>
+                        Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
+                        Lynn, M. R. (1986). Determination and quantification of content validity. Nursing Research, 35(6), 382-385.<br>
+                        Polit, D. F., &amp; Beck, C. T. (2006). The content validity index: are you sure you know what's being reported? Research in Nursing &amp; Health, 29(5), 489-497.<br>
+                        Polit, D. F., Beck, C. T., &amp; Owen, S. V. (2007). Is the CVI an acceptable indicator of content validity? Appraisal and recommendations. Research in Nursing &amp; Health, 30(4), 459-467.
+                    </div>
+                </div>
+            </details>
+
+            <details class="exp-item">
+                <summary>S-CVI/Ave (Scale-level CVI / Average)</summary>
+                <div class="exp-body">
+                    <div class="formula">S-CVI/Ave = Average of all I-CVI values</div>
+
+                    <h4>Validity criteria</h4>
+                    <ul>
+                        <li><strong>Excellent content validity:</strong> S-CVI/Ave ≥ 0.90</li>
+                        <li><strong>Insufficient:</strong> S-CVI/Ave &lt; 0.90</li>
+                    </ul>
+
+                    <p><strong>Note:</strong> To determine the validity of S-CVI, researchers also use the CVI ≥ 0.8 criterion: if S-CVI ≥ 0.8, the scale is considered valid.</p>
+
+                    <div class="source-reference">
+                        <strong>Sources:</strong><br>
+                        Waltz, C. F., Strickland, O. L., &amp; Lenz, E. R. (2005). Measurement in nursing and health research. Springer Publishing Company.<br>
+                        Shi, J., Mo, X., &amp; Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
+                    </div>
+                </div>
+            </details>
+
+            <details class="exp-item">
+                <summary>S-CVI/UA (Scale-level CVI / Universal Agreement)</summary>
+                <div class="exp-body">
+                    <div class="formula">S-CVI/UA = Items rated "relevant" by all experts / Total number of items</div>
+
+                    <h4>Validity criteria</h4>
+                    <ul>
+                        <li><strong>Excellent content validity:</strong> S-CVI/UA ≥ 0.80</li>
+                        <li><strong>Insufficient:</strong> S-CVI/UA &lt; 0.80</li>
+                    </ul>
+
+                    <p><strong>Note:</strong> S-CVI/UA and S-CVI/Ave are both scale-level CVI values computed with different formulas. Researchers recommend that a scale with excellent content validity should be composed of I-CVIs of 0.78 or higher, with S-CVI/UA of 0.8 or higher and S-CVI/Ave of 0.9 or higher.</p>
+
+                    <div class="source-reference">
+                        <strong>Sources:</strong><br>
+                        Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
+                        Shi, J., Mo, X., &amp; Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
+                    </div>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>&copy; 2025 mcalisir &middot; MIT License</span>
+            <span>
+                <a href="https://github.com/mcalisir/CVR" target="_blank" rel="noopener">GitHub</a>
+                &nbsp;&middot;&nbsp;
+                <a href="mailto:mcalisir52@gmail.com">mcalisir52@gmail.com</a>
+            </span>
+        </div>
+    </footer>
+
+    <!-- Paste from Excel dialog -->
+    <div class="modal-backdrop" id="pasteModal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pasteTitle">
+            <h2 id="pasteTitle">Paste from Excel</h2>
+            <p class="modal-desc">Select and copy your rating cells in Excel (<kbd>Ctrl</kbd>+<kbd>C</kbd>), then paste them below (<kbd>Ctrl</kbd>+<kbd>V</kbd>). Each row is one item, each column one expert. This replaces the current table.</p>
+            <textarea id="pasteInput" spellcheck="false" placeholder="1&#9;1&#9;2&#10;1&#9;3&#9;1&#10;2&#9;1&#9;1"></textarea>
+            <div class="paste-preview" id="pastePreview"></div>
+            <div class="modal-actions">
+                <button type="button" id="pasteCancel" class="btn">Cancel</button>
+                <button type="button" id="pasteConfirm" class="btn btn-primary" disabled>Import</button>
             </div>
+        </div>
+    </div>
 
-            <!-- Explanations Section -->
-            <div class="card explanations-card">
-                <h3 class="explanations-title">
-                    <i class="fas fa-info-circle"></i>
-                    Calculation Explanations
-                </h3>
-                
-                <!-- CVR Explanation -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('cvr-accordion')">
-                        <h4>CVR (Content Validity Ratio)</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="cvr-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="cvr-accordion-content">
-                        <div class="formula-display">
-                            <div class="math-formula">CVR = (ne - N/2) / (N/2)</div>
-                            <p><strong>ne:</strong> Number of experts rating the item as "relevant"</p>
-                            <p><strong>N:</strong> Total number of experts</p>
-                        </div>
-                        
-                        <h5>Lawshe's Minimum CVR Values:</h5>
-                        <table class="min-cvr-table">
-                            <thead>
-                                <tr>
-                                    <th>Number of Experts</th>
-                                    <th>Minimum CVR</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>5</td><td>0.99</td></tr>
-                                <tr><td>6</td><td>0.99</td></tr>
-                                <tr><td>7</td><td>0.99</td></tr>
-                                <tr><td>8</td><td>0.75</td></tr>
-                                <tr><td>9</td><td>0.78</td></tr>
-                                <tr><td>10</td><td>0.62</td></tr>
-                                <tr><td>11</td><td>0.59</td></tr>
-                                <tr><td>12</td><td>0.56</td></tr>
-                                <tr><td>13</td><td>0.54</td></tr>
-                                <tr><td>14</td><td>0.51</td></tr>
-                                <tr><td>15</td><td>0.49</td></tr>
-                                <tr><td>20</td><td>0.42</td></tr>
-                                <tr><td>25</td><td>0.37</td></tr>
-                                <tr><td>30</td><td>0.33</td></tr>
-                                <tr><td>35</td><td>0.31</td></tr>
-                                <tr><td>40</td><td>0.29</td></tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="source-reference">
-                            <strong>Source:</strong> Lawshe, C. H. (1975). A quantitative approach to content validity. Personnel Psychology, 28(4), 563-575.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- I-CVI Explanation -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('icvi-accordion')">
-                        <h4>I-CVI (Item-level Content Validity Index)</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="icvi-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="icvi-accordion-content">
-                        <div class="formula-display">
-                            <div class="math-formula">I-CVI = Number of experts rating item as relevant / Total number of experts</div>
-                        </div>
-                        
-                        <h5>Evaluation Criteria:</h5>
-                        <ul>
-                            <li><strong>1-2 Experts:</strong> I-CVI must be 1.0 (green)</li>
-                            <li><strong>3+ Experts:</strong> 
-                                <ul>
-                                    <li>I-CVI ≥ 0.78: Valid (green)</li>
-                                    <li>I-CVI 0.70-0.78: Needs revision (orange)</li>
-                                    <li>I-CVI < 0.70: Should be eliminated (red)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                        <p><strong>Note:</strong> Values can range from 0 to 1. The calculated I-CVI of 0.79 or more indicates the items are relevant, and 0.70 to 0.79 indicates the item needs revisions. In contrast, less than 0.70 suggests that items need to be eliminated. With more than five experts, the acceptable value for I-CVI is 0.78.</p>
-                        
-                        <div class="source-reference">
-                            <strong>Sources:</strong><br>
-                            Lynn MR. Determination and quantification of content validity. Nurs Res. 1986;35(6):382–5. doi: 10.1097/00006199-198611000-00017.<br>
-                            Polit DF, Beck CT. The content validity index: are you sure you know what's being reported? Critique and recommendations. Res Nurs Health. 2006;29(5):489–97. doi: 10.1002/nur.20147.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CVI Explanation -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('cvi-accordion')">
-                        <h4>CVI (Content Validity Index)</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="cvi-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="cvi-accordion-content">
-                        <div class="formula-display">
-                            <div class="math-formula">CVI = Average of all CVR values</div>
-                        </div>
-                        
-                        <h5>Acceptable CVI Values:</h5>
-                        <table class="min-cvr-table">
-                            <thead>
-                                <tr>
-                                    <th>Number of Experts</th>
-                                    <th>Acceptable CVI Values</th>
-                                    <th>Source of Recommendation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>2</td><td>At least 0.8</td><td>Davis (1992)</td></tr>
-                                <tr><td>3-5</td><td>Should be 1</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
-                                <tr><td>At least 6</td><td>At least 0.83</td><td>Polit & Beck (2006), Polit et al. (2007)</td></tr>
-                                <tr><td>6-8</td><td>At least 0.83</td><td>Lynn (1986)</td></tr>
-                                <tr><td>At least 9</td><td>At least 0.78</td><td>Lynn (1986)</td></tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="source-reference">
-                            <strong>Sources:</strong><br>
-                            Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
-                            Lynn, M. R. (1986). Determination and quantification of content validity. Nursing Research, 35(6), 382-385.<br>
-                            Polit, D. F., & Beck, C. T. (2006). The content validity index: are you sure you know what's being reported? Research in Nursing & Health, 29(5), 489-497.<br>
-                            Polit, D. F., Beck, C. T., & Owen, S. V. (2007). Is the CVI an acceptable indicator of content validity? Appraisal and recommendations. Research in Nursing & Health, 30(4), 459-467.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- S-CVI/Ave Explanation -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('scvi-ave-accordion')">
-                        <h4>S-CVI/Ave (Scale-level CVI/Average)</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="scvi-ave-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="scvi-ave-accordion-content">
-                        <div class="formula-display">
-                            <div class="math-formula">S-CVI/Ave = Average of all I-CVI values</div>
-                        </div>
-                        
-                        <h5>Validity Criteria:</h5>
-                        <ul>
-                            <li><strong>Excellent Content Validity:</strong> S-CVI/Ave ≥ 0.90</li>
-                            <li><strong>Invalid:</strong> S-CVI/Ave < 0.90</li>
-                        </ul>
-                        
-                        <p><strong>Note:</strong> To determine the validity of S-CVI, researchers still use the CVI value ≥ 0.8. So, If S-CVI ≥ 0.8, the category is Valid and if S-CVI < 0.78, the category is Invalid.</p>
-                        
-                        <div class="source-reference">
-                            <strong>Sources:</strong><br>
-                            Waltz, C. F., Strickland, O. L., & Lenz, E. R. (2005). Measurement in nursing and health research. Springer Publishing Company.<br>
-                            Shi, J., Mo, X., & Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- S-CVI/UA Explanation -->
-                <div class="accordion">
-                    <div class="accordion-header" onclick="toggleAccordion('scvi-ua-accordion')">
-                        <h4>S-CVI/UA (Scale-level CVI/Universal Agreement)</h4>
-                        <i class="fas fa-chevron-down accordion-icon" id="scvi-ua-accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content" id="scvi-ua-accordion-content">
-                        <div class="formula-display">
-                            <div class="math-formula">S-CVI/UA = Items with Universal Agreement / Total Items</div>
-                        </div>
-                        
-                        <h5>Validity Criteria:</h5>
-                        <ul>
-                            <li><strong>Excellent Content Validity:</strong> S-CVI/UA ≥ 0.80</li>
-                            <li><strong>Invalid:</strong> S-CVI/UA < 0.80</li>
-                        </ul>
-                        
-                        <p><strong>Note:</strong> S-CVI/UA and S-CVI/Ave are both scale level CVI with different formulas. Researchers recommend that a scale with excellent content validity should be composed of I-CVIs of 0.78 or higher and S-CVI/UA and S-CVI/Ave of 0.8 and 0.9 or higher, respectively.</p>
-                        
-                        <div class="source-reference">
-                            <strong>Sources:</strong><br>
-                            Davis, L. L. (1992). Instrument review: Getting the most from a panel of experts. Applied Nursing Research, 5(4), 194-197.<br>
-                            Shi, J., Mo, X., & Sun, Z. (2012). Content validity index in scale development. Zhong Nan Da Xue Xue Bao Yi Xue Ban, 37(2), 152-155.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-                </section>
-            </div>
-        </main>
+    <!-- Notification -->
+    <div class="toast" id="toast" hidden role="status">
+        <span id="toastMsg"></span>
+        <button type="button" id="toastAction" class="toast-action" hidden></button>
     </div>
 
     <script src="script-unified.js"></script>
-    
-    <!-- Footer Information -->
-    <footer class="footer-info">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 - Developed by mcalisir. Licensed under MIT License. https://github.com/mcalisir/CVR - mcalisir52@gmail.com</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>

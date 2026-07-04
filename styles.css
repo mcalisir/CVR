@@ -1,1346 +1,44 @@
-/* Reset ve temel stiller */
+/* =========================================================
+   CVR Hesaplayıcı — tasarım sistemi
+   ========================================================= */
+
+:root {
+    /* Renk paleti */
+    --bg: #f3f5f9;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --surface-3: #eef2f7;
+    --border: #e2e8f0;
+    --border-strong: #c9d4e3;
+    --text: #16213a;
+    --text-2: #4b5768;
+    --text-3: #8b96a8;
+
+    --accent: #3457d5;
+    --accent-hover: #2a46b8;
+    --accent-soft: #eef2fd;
+    --accent-border: #b9c8f5;
+
+    --good: #177a3d;
+    --good-bg: #e6f5eb;
+    --warn: #a05a09;
+    --warn-bg: #fdf3e0;
+    --bad: #c0392b;
+    --bad-bg: #fdecea;
+
+    --radius: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 1px 2px rgba(22, 33, 58, 0.06);
+    --shadow-md: 0 4px 16px rgba(22, 33, 58, 0.08);
+    --shadow-lg: 0 16px 48px rgba(22, 33, 58, 0.18);
+
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #2c3e50;
-    background: #f8f9fa;
-    min-height: 100vh;
-    padding-bottom: 30px;
-}
-
-/* Main Header */
-.main-header {
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e9ecef;
-}
-
-.main-header h1 {
-    color: #2c3e50;
-    font-size: 2em;
-    font-weight: 700;
-    margin: 0 0 15px 0;
-}
-
-/* Language Selector */
-.language-selector {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    gap: 8px;
-}
-
-.lang-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    background: white;
-    color: #2c3e50;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.lang-btn:hover {
-    background: #f8f9fa;
-    border-color: #007bff;
-    color: #007bff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.lang-btn.active {
-    background: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-
-/* Header Controls */
-.header-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 15px;
-    gap: 15px;
-}
-
-.header-controls .language-selector {
-    flex-shrink: 0;
-    margin: 0;
-}
-
-/* Instructions Section */
-.instructions-section {
-    flex: 1;
-    max-width: 600px;
-}
-
-.instructions-section .accordion-item {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e9ecef;
-    overflow: hidden;
-}
-
-.instructions-section .accordion-header {
-    background: #f8f9fa;
-    color: #2c3e50;
-    padding: 12px 16px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.instructions-section .accordion-header:hover {
-    background: #e9ecef;
-}
-
-.instructions-section .accordion-header h3 {
-    margin: 0;
-    font-size: 1em;
-    font-weight: 600;
-}
-
-.instructions-section .accordion-icon {
-    transition: transform 0.3s ease;
-}
-
-.instructions-section .accordion-content {
-    display: none;
-    padding: 20px;
-    background: white;
-}
-
-.instructions-section .accordion-content.show {
-    display: block;
-}
-
-.instructions-section .instructions-content {
-    color: #495057;
-    line-height: 1.6;
-}
-
-.instructions-section .instructions-content p {
-    margin-bottom: 10px;
-}
-
-.instructions-section .instructions-content ul {
-    margin: 10px 0 15px 20px;
-}
-
-.instructions-section .instructions-content li {
-    margin-bottom: 5px;
-}
-
-/* Footer */
-.footer-info {
-    background: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-    margin-top: 40px;
-    padding: 20px 0;
-}
-
-.footer-bottom {
-    text-align: center;
-    color: #6c757d;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-header h1 {
-        font-size: 1.5em;
-    }
-    
-    .main-header {
-        padding: 15px;
-    }
-    
-    .header-controls {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .header-controls .language-selector {
-        align-self: center;
-    }
-    
-    .instructions-section {
-        max-width: 100%;
-    }
-    
-    .summary-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
-.header {
-    text-align: center;
-    margin-bottom: 30px;
-    color: white;
-}
-
-.header-content i {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    display: block;
-    opacity: 0.9;
-}
-
-.header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    font-weight: 300;
-}
-
-/* Card */
-.card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    border: 1px solid #e9ecef;
-    transition: box-shadow 0.2s ease;
-}
-
-.card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card-header {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    color: white;
-    padding: 20px 25px;
-}
-
-.card-header h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Kontrol Paneli */
-.control-panel {
-    margin-bottom: 20px;
-}
-
-.control-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 20px 25px;
-    background: #f8fafc;
-}
-
-.btn-control, .btn-calculate, .btn-clear, .btn-export {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 140px;
-    justify-content: center;
-}
-
-.btn-control {
-    background: #007bff;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
-}
-
-.btn-control:hover {
-    background: #0056b3;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-}
-
-.btn-remove {
-    background: #ef4444 !important;
-    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
-}
-
-.btn-remove:hover {
-    background: #dc2626 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4) !important;
-}
-
-.btn-remove:disabled {
-    background: #9ca3af !important;
-    cursor: not-allowed;
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-.btn-calculate {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: white;
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
-}
-
-.btn-calculate:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-}
-
-.btn-clear {
-    background: #ef4444;
-    color: white;
-    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
-}
-
-.btn-clear:hover {
-    background: #dc2626;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
-}
-
-.btn-paste {
-    background: #8b5cf6;
-    color: white;
-    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
-}
-
-.btn-paste:hover {
-    background: #7c3aed;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
-}
-
-.btn-copy {
-    background: #06b6d4;
-    color: white;
-    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);
-}
-
-.btn-copy:hover {
-    background: #0891b2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
-}
-
-.btn-export {
-    background: #f59e0b;
-    color: white;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-}
-
-.btn-export:hover {
-    background: #d97706;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
-}
-
-.btn-import {
-    background: #84cc16;
-    color: white;
-    box-shadow: 0 2px 8px rgba(132, 204, 22, 0.3);
-}
-
-.btn-import:hover {
-    background: #65a30d;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(132, 204, 22, 0.4);
-}
-
-/* Model Seçimi */
-.model-selection {
-    margin: 20px 0;
-    padding: 15px;
-    background: #f8fafc;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-}
-
-.model-label {
-    display: block;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-}
-
-.model-label i {
-    margin-right: 8px;
-    color: #6366f1;
-}
-
-.model-select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 2px solid #d1d5db;
-    border-radius: 6px;
-    background: white;
-    font-size: 0.9rem;
-    color: #374151;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.model-select:focus {
-    outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-}
-
-.model-info {
-    margin-top: 10px;
-}
-
-.model-desc {
-    font-size: 0.85rem;
-    color: #6b7280;
-    line-height: 1.4;
-    padding: 8px 12px;
-    background: white;
-    border-radius: 4px;
-    border-left: 3px solid #6366f1;
-}
-
-/* Tablo Kartı */
-.table-card {
-    margin-bottom: 25px;
-}
-
-.table-container {
-    overflow-x: auto;
-    max-height: 600px;
-    overflow-y: auto;
-    border-radius: 0 0 12px 12px;
-}
-
-/* Excel Benzeri Tablo */
-.excel-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    font-size: 0.9rem;
-    min-width: 800px;
-}
-
-/* ContentEditable tablo stilleri */
-.excel-table[contenteditable="true"] {
-    outline: none;
-}
-
-.excel-table[contenteditable="true"] td {
-    position: relative;
-}
-
-.excel-table[contenteditable="true"] td:focus {
-    outline: 2px solid #3b82f6;
-    outline-offset: -2px;
-    background: #eff6ff !important;
-}
-
-.excel-table[contenteditable="true"] td:empty:before {
-    content: attr(data-placeholder);
-    color: #9ca3af;
-    font-style: italic;
-}
-
-/* Excel benzeri seçim */
-.excel-table[contenteditable="true"] td::selection {
-    background: #3b82f6;
-    color: white;
-}
-
-/* Boş hücre rengi */
-.excel-table td.editable-cell:empty,
-.excel-table td.editable-cell.empty-cell {
-    background-color: #fef2f2 !important;
-    border-color: #fca5a5 !important;
-}
-
-.excel-table td.editable-cell:empty:before,
-.excel-table td.editable-cell.empty-cell:before {
-    color: #dc2626 !important;
-    font-weight: 500;
-}
-
-.excel-table th {
-    background: #f1f5f9;
-    color: #374151;
-    font-weight: 600;
-    padding: 12px 8px;
-    text-align: center;
-    border: 1px solid #e2e8f0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.excel-table td {
-    padding: 8px;
-    border: 1px solid #e2e8f0;
-    text-align: center;
-    background: white;
-    transition: background-color 0.2s ease;
-}
-
-.excel-table td:hover {
-    background: #f8fafc;
-}
-
-/* Satır ve Sütun Başlıkları */
-.row-header {
-    background: #e2e8f0 !important;
-    font-weight: 700;
-    color: #1f2937;
-    min-width: 60px;
-    position: sticky;
-    left: 0;
-    z-index: 5;
-}
-
-.expert-header {
-    background: #dbeafe !important;
-    color: #1e40af;
-    min-width: 50px;
-}
-
-.result-header {
-    background: #fef3c7 !important;
-    color: #92400e;
-    min-width: 80px;
-}
-
-/* CVI satırı */
-.cvi-row {
-    background: #f0f9ff !important;
-    border-top: 2px solid #0ea5e9;
-}
-
-.cvi-row td {
-    background: #f0f9ff !important;
-    color: #0c4a6e !important;
-    font-weight: 700 !important;
-    border: 1px solid #0ea5e9 !important;
-}
-
-.cvi-row .row-number {
-    background: #e0f2fe !important;
-    color: #0c4a6e !important;
-    font-weight: 700 !important;
-}
-
-.cvi-value {
-    font-weight: 700;
-    font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
-}
-
-.cvi-status {
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-
-/* CVI Özet Bölümü */
-.cvi-summary {
-    background: #f8fafc;
-    border-top: 2px solid #e2e8f0;
-    padding: 20px;
-}
-
-.summary-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.summary-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    border-left: 4px solid #6366f1;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.summary-label {
-    font-weight: 600;
-    color: #374151;
-    font-size: 0.9rem;
-}
-
-.summary-value {
-    font-weight: 700;
-    font-family: 'Courier New', monospace;
-    font-size: 1.2rem;
-    color: #1f2937;
-}
-
-.summary-status {
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    padding: 4px 8px;
-    border-radius: 12px;
-    display: inline-block;
-    width: fit-content;
-}
-
-/* Hücre Düzenleme */
-.cell-input {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: transparent;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 4px;
-    outline: none;
-}
-
-.cell-input:focus {
-    background: #fef3c7;
-    border: 2px solid #f59e0b;
-    border-radius: 4px;
-}
-
-/* CVR Sonuç Hücreleri */
-.cvr-value {
-    font-weight: 600;
-    font-family: 'Courier New', monospace;
-}
-
-.cvr-status {
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
-
-.cvr-status.valid {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.cvr-status.borderline {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.cvr-status.invalid {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-/* Satır Numaraları */
-.row-number {
-    background: #f1f5f9 !important;
-    font-weight: 600;
-    color: #6b7280;
-    user-select: none;
-}
-
-/* Özet Kartı */
-.summary-card {
-    margin-bottom: 25px;
-}
-
-.summary-content {
-    padding: 25px;
-}
-
-.summary-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.stat-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #f8fafc;
-    border-radius: 8px;
-    border-left: 4px solid #6366f1;
-}
-
-.stat-label {
-    font-weight: 500;
-    color: #374151;
-}
-
-.stat-value {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #1f2937;
-}
-
-.stat-value.valid {
-    color: #166534;
-}
-
-.stat-value.borderline {
-    color: #d97706;
-}
-
-.stat-value.invalid {
-    color: #dc2626;
-}
-
-/* Bilgi Kartı */
-.info-card {
-    margin-bottom: 25px;
-}
-
-.info-content {
-    padding: 25px;
-}
-
-.info-section {
-    margin-bottom: 25px;
-}
-
-.info-section h3 {
-    color: #374151;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.info-section ol, .info-section ul {
-    padding-left: 20px;
-    color: #6b7280;
-}
-
-.info-section li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-}
-
-.status-legend {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.legend-item {
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.legend-item.valid {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.legend-item.borderline {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.legend-item.invalid {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    color: white;
-    margin-top: 40px;
-    opacity: 0.8;
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .control-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .btn-control, .btn-calculate, .btn-clear, .btn-export {
-        min-width: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
-    }
-    
-    .card-header {
-        padding: 15px 20px;
-    }
-    
-    .card-header h2 {
-        font-size: 1.2rem;
-    }
-    
-    .summary-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .excel-table {
-        font-size: 0.8rem;
-    }
-    
-    .excel-table th,
-    .excel-table td {
-        padding: 6px 4px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.8rem;
-    }
-    
-    .control-buttons {
-        padding: 15px;
-    }
-    
-    .btn-control, .btn-calculate, .btn-clear, .btn-export {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-}
-
-/* Animasyonlar */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.card {
-    animation: fadeIn 0.5s ease-out;
-}
-
-/* Scrollbar özelleştirme */
-.table-container::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.table-container::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 4px;
-}
-
-.table-container::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
-}
-
-.table-container::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
-
-/* Hücre seçimi */
-.cell-selected {
-    background: #dbeafe !important;
-    border: 2px solid #3b82f6 !important;
-}
-
-/* Tablo satır hover */
-.excel-table tbody tr:hover {
-    background: #f8fafc;
-}
-
-.excel-table tbody tr:hover td {
-    background: #f8fafc;
-}
-
-/* Boş hücre stili */
-.cell-empty {
-    color: #9ca3af;
-    font-style: italic;
-}
-
-/* Değer girişi animasyonu */
-@keyframes cellUpdate {
-    0% {
-        background: #fef3c7;
-    }
-    100% {
-        background: white;
-    }
-}
-
-.cell-updated {
-    animation: cellUpdate 0.5s ease-out;
-}
-
-/* Hesaplama formülleri stilleri */
-.formula-box {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px 0;
-    border-left: 4px solid #3b82f6;
-}
-
-.formula-box strong {
-    color: #1e40af;
-    font-size: 1.1rem;
-    font-family: 'Courier New', monospace;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.formula-box ul {
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-.formula-box li {
-    margin: 8px 0;
-    color: #374151;
-}
-
-.formula-box li strong {
-    color: #1f2937;
-    font-size: 0.95rem;
-    font-family: inherit;
-    display: inline;
-}
-
-.process-box {
-    background: #f0f9ff;
-    border: 1px solid #bae6fd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px 0;
-    border-left: 4px solid #0ea5e9;
-}
-
-.process-box ol {
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-.process-box li {
-    margin: 12px 0;
-    color: #374151;
-    line-height: 1.6;
-}
-
-.process-box li strong {
-    color: #0c4a6e;
-    font-weight: 600;
-}
-
-.min-cvr-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 10px 0;
-    background: white;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    font-size: 0.85rem;
-}
-
-.min-cvr-table th,
-.min-cvr-table td {
-    padding: 6px 8px;
-    text-align: center;
-    border: 1px solid #e2e8f0;
-    font-size: 0.85rem;
-}
-
-.min-cvr-table th {
-    background: #3b82f6;
-    color: white;
-    font-weight: 600;
-}
-
-.min-cvr-table tr:nth-child(even) {
-    background: #f8fafc;
-}
-
-.min-cvr-table tr:hover {
-    background: #eff6ff;
-}
-
-.source-reference {
-    margin-top: 15px;
-    padding: 12px;
-    background: #f1f5f9;
-    border-left: 4px solid #3b82f6;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: #475569;
-}
-
-.source-reference strong {
-    color: #1e293b;
-    font-weight: 600;
-}
-
-.source-reference a {
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.source-reference a:hover {
-    text-decoration: underline;
-    color: #1d4ed8;
-}
-
-/* Accordion Styles */
-.accordion-item {
-    margin-bottom: 15px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.accordion-header {
-    padding: 20px;
-    background: #f8fafc;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.accordion-header:hover {
-    background: #f1f5f9;
-}
-
-.accordion-header h3 {
-    margin: 0;
-    color: #1e293b;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.accordion-icon {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #6366f1;
-    transition: transform 0.3s ease;
-    user-select: none;
-}
-
-.accordion-item.active .accordion-icon {
-    transform: rotate(45deg);
-}
-
-.accordion-content {
-    display: none;
-    background: white;
-    padding: 20px;
-    border-top: 1px solid #e0e0e0;
-}
-
-.accordion-content.show {
-    display: block;
-}
-
-.accordion-content ul,
-.accordion-content ol {
-    margin: 20px;
-    padding-left: 20px;
-}
-
-.accordion-content li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-    color: #475569;
-}
-
-.accordion-content h4 {
-    margin: 20px 20px 15px 20px;
-    color: #1e293b;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.accordion-content .min-cvr-table {
-    margin: 15px 20px;
-    width: calc(100% - 40px);
-}
-
-.accordion-content .source-reference {
-    margin: 20px;
-}
-
-/* Formula Display Styles */
-.formula-display {
-    margin: 20px;
-    padding: 15px;
-    background: #f8fafc;
-    border-radius: 8px;
-    border-left: 4px solid #3b82f6;
-}
-
-.formula-display h4 {
-    margin: 0 0 10px 0;
-    color: #1e293b;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.math-formula {
-    font-family: 'Courier New', monospace;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1e40af;
-    text-align: center;
-    padding: 10px;
-    background: white;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-/* Renk kodlaması sınıfları */
-.color-green {
-    color: #059669 !important;
-    font-weight: 600;
-}
-
-.color-orange {
-    color: #d97706 !important;
-    font-weight: 600;
-}
-
-.color-red {
-    color: #dc2626 !important;
-    font-weight: 600;
-}
-
-/* Layout improvements */
-.compact-header {
-    padding: 10px 14px;
-    margin-bottom: 12px;
-}
-
-.compact-header .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.compact-header h1 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.compact-header .language-selector {
-    margin: 0;
-    justify-content: flex-end;
-}
-
-.workspace-layout {
-    display: grid;
-    grid-template-columns: 320px minmax(0, 1fr);
-    gap: 18px;
-    align-items: start;
-}
-
-.workspace-sidebar {
-    position: sticky;
-    top: 12px;
-}
-
-.workspace-main {
-    min-width: 0;
-}
-
-.quick-guide-card {
-    margin-bottom: 14px;
-}
-
-.quick-guide-card .accordion-item {
-    margin-bottom: 0;
-    border: none;
-    box-shadow: none;
-}
-
-.quick-guide-card .accordion-header {
-    padding: 14px 16px;
-}
-
-.quick-guide-card .accordion-header h3 {
-    font-size: 1rem;
-}
-
-.quick-guide-card .accordion-content {
-    padding: 12px 14px;
-}
-
-.quick-guide-card .instructions-content p {
-    margin-bottom: 8px;
-    font-size: 0.92rem;
-}
-
-.quick-guide-card .instructions-content ul {
-    margin: 8px 0 10px 18px;
-}
-
-.quick-guide-card .instructions-content li {
-    margin-bottom: 4px;
-    font-size: 0.9rem;
-}
-
-.control-panel .control-buttons {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 14px;
-    background: #ffffff;
-}
-
-.control-panel .btn-control,
-.control-panel .btn-clear,
-.control-panel .btn-paste,
-.control-panel .btn-copy {
-    width: 100%;
-    min-width: 0;
-    justify-content: flex-start;
-    padding: 10px 12px;
-}
-
-.control-panel .model-selection {
-    margin: 0;
-    border-top: 1px solid #dbe3f0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-    border-radius: 0 0 8px 8px;
-}
-
-.control-panel {
-    border: 1px solid #c7d7ee;
-    box-shadow: 0 8px 18px rgba(16, 52, 110, 0.08);
-}
-
-.quick-tip-line {
-    margin: 0;
-    padding: 10px 12px;
-    background: #eef6ff;
-    border-bottom: 1px solid #d9e9ff;
-    color: #1f3a5f;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-.quick-guide-card {
-    opacity: 0.94;
-}
-
-@media (max-width: 1024px) {
-    .workspace-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .workspace-sidebar {
-        position: static;
-    }
-
-    .control-panel .control-buttons {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .control-panel .btn-control,
-    .control-panel .btn-clear,
-    .control-panel .btn-paste,
-    .control-panel .btn-copy {
-        justify-content: center;
-    }
-
-    .compact-header .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .compact-header .language-selector {
-        justify-content: flex-start;
-    }
-}
-
-@media (max-width: 640px) {
-    .control-panel .control-buttons {
-        grid-template-columns: 1fr;
-    }
-
-    .compact-header h1 {
-        font-size: 1.05rem;
-    }
-}
-
-/* Responsive hardening for wider device coverage */
-:root {
-    --page-pad: clamp(10px, 2vw, 24px);
-    --card-gap: clamp(12px, 1.6vw, 20px);
-    --sidebar-w: clamp(260px, 28vw, 360px);
-    --control-font: clamp(0.88rem, 0.24vw + 0.82rem, 0.98rem);
 }
 
 html {
@@ -1349,139 +47,1146 @@ html {
 }
 
 body {
-    overflow-x: hidden;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
-    width: min(100%, 1440px);
-    padding-inline: var(--page-pad);
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding-inline: clamp(14px, 3vw, 28px);
 }
 
-.workspace-layout {
-    gap: var(--card-gap);
-    grid-template-columns: minmax(0, var(--sidebar-w)) minmax(0, 1fr);
+button {
+    font-family: inherit;
+    cursor: pointer;
 }
 
-.workspace-main,
-.workspace-sidebar,
-.card,
-.table-container {
-    min-width: 0;
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
-.btn-control,
-.btn-clear,
-.btn-paste,
-.btn-copy {
-    min-height: 44px;
-    font-size: var(--control-font);
-    touch-action: manipulation;
+/* =========================================================
+   Üst bar
+   ========================================================= */
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 12px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.brand-mark svg {
+    width: 18px;
+    height: 18px;
+}
+
+.lang-switch {
+    display: inline-flex;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
 }
 
 .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-2);
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-btn:hover {
+    color: var(--text);
+}
+
+.lang-btn.active {
+    background: var(--surface);
+    color: var(--accent);
+    box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   Giriş bölümü
+   ========================================================= */
+
+.page-intro {
+    padding-block: clamp(22px, 4vw, 36px) clamp(14px, 2.5vw, 22px);
+    max-width: 760px;
+}
+
+.page-intro h1 {
+    font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.page-intro .lead {
+    color: var(--text-2);
+    font-size: 0.98rem;
+}
+
+.page-intro .lead strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* =========================================================
+   Kartlar
+   ========================================================= */
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+
+/* =========================================================
+   Araç çubuğu
+   ========================================================= */
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 18px 26px;
+    padding: 16px 20px;
+}
+
+.toolbar-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.group-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-3);
+}
+
+.steppers {
+    flex-direction: row;
+    gap: 14px;
+}
+
+.stepper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stepper-controls {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+}
+
+.stepper-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: none;
+    background: transparent;
+    color: var(--text-2);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.stepper-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+.stepper-btn:hover:not(:disabled) {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.stepper-btn:disabled {
+    color: var(--border-strong);
+    cursor: not-allowed;
+}
+
+.stepper-count {
+    min-width: 42px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    border-inline: 1px solid var(--border);
+    padding-block: 6px;
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Model seçimi (segmented) */
+
+.segmented {
+    display: inline-flex;
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 3px;
+    gap: 3px;
+}
+
+.seg-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-2);
+    line-height: 1.25;
+    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.seg-btn small {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-3);
+}
+
+.seg-btn:hover {
+    color: var(--text);
+}
+
+.seg-btn.active {
+    background: var(--surface);
+    border-color: var(--accent-border);
+    color: var(--accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.seg-btn.active small {
+    color: var(--accent);
+    opacity: 0.75;
+}
+
+/* Eylem butonları */
+
+.actions {
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text-2);
+    font-size: 0.88rem;
+    font-weight: 600;
     min-height: 40px;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    touch-action: manipulation;
 }
 
-.table-container {
-    max-height: min(62dvh, 760px);
+.btn svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
 }
 
-.excel-table {
-    min-width: 720px;
+.btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
 }
 
-.excel-table th,
-.excel-table td {
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    border-color: var(--bad);
+    color: var(--bad);
+    background: var(--bad-bg);
+}
+
+/* Puan lejantı */
+
+.rating-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    padding: 12px 20px;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-2);
+}
+
+.legend-caption {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.legend-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px 12px 3px 4px;
+}
+
+.legend-chip b {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: var(--surface-3);
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+.legend-chip.rel b {
+    background: var(--good-bg);
+    color: var(--good);
+}
+
+.legend-chip.notrel b {
+    background: var(--bad-bg);
+    color: var(--bad);
+}
+
+.model-hint {
+    flex-basis: 100%;
+    font-size: 0.82rem;
+    color: var(--text-3);
+}
+
+.model-hint strong {
+    color: var(--text-2);
+}
+
+/* =========================================================
+   Tablo
+   ========================================================= */
+
+.hint-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 20px;
+    background: var(--accent-soft);
+    border-bottom: 1px solid var(--border);
+    color: #2c3e6b;
+    font-size: 0.88rem;
+}
+
+.hint-bar svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--accent);
+}
+
+.table-scroll {
+    overflow: auto;
+    max-height: min(64dvh, 720px);
+}
+
+.cvr-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.92rem;
+}
+
+.cvr-table th,
+.cvr-table td {
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    text-align: center;
     white-space: nowrap;
 }
 
-.summary-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+.cvr-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface-2);
+    color: var(--text-2);
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-strong);
 }
 
-@media (max-width: 1280px) {
-    .workspace-layout {
-        grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+.th-item {
+    position: sticky;
+    left: 0;
+    z-index: 11 !important;
+    min-width: 72px;
+}
+
+.th-expert {
+    min-width: 56px;
+    position: relative;
+}
+
+.th-expert .th-cap {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-3);
+    line-height: 1.1;
+}
+
+.th-expert .th-num {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.th-result {
+    min-width: 78px;
+    background: var(--surface-3) !important;
+    color: var(--text) !important;
+}
+
+/* Sütun/satır silme düğmeleri (üzerine gelince görünür) */
+
+.col-del,
+.row-del {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 999px;
+    background: var(--bad-bg);
+    color: var(--bad);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.12s ease;
+}
+
+.col-del {
+    top: 3px;
+    right: 3px;
+}
+
+.row-del {
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+}
+
+.th-expert:hover .col-del,
+.cvr-table tbody tr:hover .row-del {
+    opacity: 1;
+}
+
+.col-del:hover,
+.row-del:hover {
+    background: var(--bad);
+    color: #fff;
+}
+
+/* Satır numarası */
+
+.td-item {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    background: var(--surface-2);
+    color: var(--text-3);
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 0 10px;
+    user-select: none;
+}
+
+/* Veri hücreleri */
+
+.cell {
+    min-width: 56px;
+    height: 42px;
+    padding: 0 8px;
+    background: var(--surface);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    caret-color: var(--accent);
+    transition: background 0.12s ease;
+}
+
+.cell:hover {
+    background: var(--surface-2);
+}
+
+.cell:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+    background: var(--accent-soft);
+}
+
+.cell:empty::before {
+    content: '–';
+    color: var(--border-strong);
+    font-weight: 400;
+}
+
+.cell:focus:empty::before {
+    content: '';
+}
+
+/* Model dönüşümüne göre değer rengi: yeşil = "gerekli" sayılır */
+
+.cell.cell-rel {
+    color: var(--good);
+}
+
+.cell.cell-not {
+    color: var(--bad);
+}
+
+/* Satır kısmen doluyken boş kalan hücreler */
+
+.cell.cell-missing {
+    background: var(--warn-bg);
+}
+
+.cell.cell-missing::before {
+    color: var(--warn);
+    opacity: 0.6;
+}
+
+/* Sonuç hücreleri */
+
+.td-result {
+    background: var(--surface-2);
+    padding: 0 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+.pill {
+    display: inline-block;
+    min-width: 58px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.pill.good {
+    background: var(--good-bg);
+    color: var(--good);
+}
+
+.pill.warn {
+    background: var(--warn-bg);
+    color: var(--warn);
+}
+
+.pill.bad {
+    background: var(--bad-bg);
+    color: var(--bad);
+}
+
+.pill.none {
+    background: transparent;
+    color: var(--text-3);
+    font-weight: 500;
+}
+
+/* Boş durum */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 56px 24px 64px;
+    gap: 6px;
+}
+
+.empty-state[hidden] {
+    display: none;
+}
+
+.empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.empty-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.empty-state h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.empty-state p {
+    color: var(--text-2);
+    max-width: 460px;
+    font-size: 0.92rem;
+}
+
+.empty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+/* Tablo altı: Lawshe notu + özet */
+
+.table-foot {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding: 14px 20px 18px;
+}
+
+.lawshe-note {
+    font-size: 0.84rem;
+    color: var(--text-2);
+    margin-bottom: 12px;
+}
+
+.lawshe-note strong {
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.summary-tile {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.summary-name {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.summary-name small {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--text-3);
+}
+
+.summary-bottom {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+}
+
+.summary-value.good { color: var(--good); }
+.summary-value.bad { color: var(--bad); }
+
+.summary-badge {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.summary-badge.good {
+    background: var(--good-bg);
+    color: var(--good);
+}
+
+.summary-badge.bad {
+    background: var(--bad-bg);
+    color: var(--bad);
+}
+
+/* =========================================================
+   Açıklamalar (accordion → details)
+   ========================================================= */
+
+.explanations-card {
+    padding: 8px 0;
+}
+
+.explanations-card > h2 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    padding: 14px 20px 8px;
+}
+
+.exp-item {
+    border-top: 1px solid var(--border);
+}
+
+.exp-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    list-style: none;
+    transition: background 0.15s ease;
+}
+
+.exp-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.exp-item summary:hover {
+    background: var(--surface-2);
+}
+
+.exp-item summary::after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid var(--text-3);
+    border-bottom: 2px solid var(--text-3);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-right: 4px;
+}
+
+.exp-item[open] summary::after {
+    transform: rotate(-135deg);
+}
+
+.exp-body {
+    padding: 4px 20px 20px;
+    color: var(--text-2);
+    font-size: 0.92rem;
+}
+
+.exp-body p {
+    margin-bottom: 10px;
+}
+
+.exp-body ul,
+.exp-body ol {
+    margin: 8px 0 12px 22px;
+}
+
+.exp-body li {
+    margin-bottom: 5px;
+}
+
+.exp-body h4 {
+    color: var(--text);
+    font-size: 0.92rem;
+    margin: 14px 0 8px;
+}
+
+.formula {
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    text-align: center;
+    margin: 10px 0 12px;
+    overflow-x: auto;
+}
+
+.ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin: 10px 0 14px;
+}
+
+.ref-table th,
+.ref-table td {
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    text-align: center;
+}
+
+.ref-table th {
+    background: var(--surface-2);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.ref-table tr:nth-child(even) td {
+    background: var(--surface-2);
+}
+
+.source-reference {
+    background: var(--surface-2);
+    border-left: 3px solid var(--border-strong);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--text-2);
+    margin-top: 12px;
+}
+
+.source-reference strong {
+    color: var(--text);
+}
+
+/* Klavye kısayolu görünümü */
+
+kbd {
+    display: inline-block;
+    padding: 1px 7px;
+    border: 1px solid var(--border-strong);
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* =========================================================
+   Modal (Excel'den yapıştır)
+   ========================================================= */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.45);
+    padding: 18px;
+}
+
+.modal-backdrop[hidden] {
+    display: none;
+}
+
+.modal {
+    width: min(100%, 560px);
+    max-height: 90dvh;
+    overflow: auto;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 22px;
+}
+
+.modal h2 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.modal .modal-desc {
+    color: var(--text-2);
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+}
+
+.modal textarea {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.88rem;
+    color: var(--text);
+    background: var(--surface-2);
+}
+
+.modal textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: -1px;
+    background: var(--surface);
+}
+
+.paste-preview {
+    min-height: 22px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-2);
+}
+
+.paste-preview .ok {
+    color: var(--good);
+    font-weight: 600;
+}
+
+.paste-preview .warn {
+    color: var(--warn);
+    font-weight: 600;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+/* =========================================================
+   Toast
+   ========================================================= */
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #1e293b;
+    color: #f1f5f9;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: min(92vw, 520px);
+    animation: toast-in 0.22s ease-out;
+}
+
+.toast[hidden] {
+    display: none;
+}
+
+.toast-action {
+    border: none;
+    background: transparent;
+    color: #8ab4ff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+.toast-action:hover {
+    text-decoration: underline;
+}
+
+@keyframes toast-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 8px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
     }
 }
 
-@media (max-width: 1100px) {
-    .workspace-layout {
+/* =========================================================
+   Alt bilgi
+   ========================================================= */
+
+.site-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding: 18px 0;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.84rem;
+    color: var(--text-3);
+}
+
+.footer-inner a {
+    color: var(--text-2);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-inner a:hover {
+    color: var(--accent);
+}
+
+/* =========================================================
+   Duyarlılık
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .actions {
+        margin-left: 0;
+    }
+
+    .summary-grid {
         grid-template-columns: 1fr;
     }
 
-    .workspace-sidebar {
-        position: static;
-    }
-
-    .control-panel .control-buttons {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .quick-guide-card .accordion-content {
-        padding: 12px;
+    .table-scroll {
+        max-height: min(58dvh, 560px);
     }
 }
 
-@media (max-width: 900px) {
-    .compact-header {
-        padding: 10px;
-    }
-
-    .compact-header .topbar {
+@media (max-width: 560px) {
+    .steppers {
         flex-wrap: wrap;
     }
 
-    .summary-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 640px) {
-    .control-panel .control-buttons {
-        grid-template-columns: 1fr;
+    .actions .btn {
+        flex: 1 1 calc(50% - 8px);
+        justify-content: center;
     }
 
-    .model-selection {
-        padding: 12px;
+    .segmented {
+        width: 100%;
     }
 
-    .table-container {
-        max-height: min(56dvh, 540px);
+    .seg-btn {
+        flex: 1;
     }
 
-    .excel-table {
-        font-size: 0.82rem;
-        min-width: 640px;
-    }
-}
-
-@media (max-width: 420px) {
-    .compact-header h1 {
-        font-size: 1rem;
+    .cvr-table {
+        font-size: 0.86rem;
     }
 
-    .lang-btn {
-        padding: 8px 12px;
-        font-size: 0.82rem;
-    }
-
-    .cvi-summary {
-        padding: 12px;
-    }
-
-    .summary-item {
-        padding: 10px;
+    .cell {
+        min-width: 48px;
+        height: 40px;
     }
 }
 
 @media (hover: none) and (pointer: coarse) {
-    .btn-control:hover,
-    .btn-clear:hover,
-    .btn-paste:hover,
-    .btn-copy:hover,
-    .lang-btn:hover {
-        transform: none;
+    .col-del,
+    .row-del {
+        opacity: 1;
     }
 }
 
@@ -1492,5 +1197,33 @@ body {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
+    }
+}
+
+@media print {
+    .site-header,
+    .toolbar-card,
+    .hint-bar,
+    .explanations-card,
+    .site-footer,
+    .toast,
+    .modal-backdrop,
+    .row-del,
+    .col-del {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .card {
+        border: none;
+        box-shadow: none;
+    }
+
+    .table-scroll {
+        max-height: none;
+        overflow: visible;
     }
 }

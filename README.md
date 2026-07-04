@@ -4,15 +4,17 @@ A modern, Excel-like web application for calculating Content Validity Ratio (CVR
 
 ## 🌟 Features
 
-- **Excel-like Interface**: Familiar spreadsheet experience with contentEditable cells
+- **Excel-like Interface**: Keyboard navigation (arrow keys, Enter), auto-advance while typing ratings, paste blocks directly into any cell
 - **Dual Evaluation Models**: 
   - **Strict Model**: Only "1" values are considered relevant
   - **Lenient Model**: Both "1" and "2" values are considered relevant
 - **Automatic Calculations**: Real-time CVR, I-CVI, CVI, S-CVI/Ave, and S-CVI/UA calculations
-- **Excel Integration**: Copy/paste data directly from Excel
-- **Visual Feedback**: Color-coded results based on validity thresholds
+- **Excel Integration**: Import dialog with live preview, tab-separated (TSV) clipboard export including results
+- **Visual Feedback**: Color-coded results based on validity thresholds; ratings and legend colored by the selected model
+- **Autosave**: Data persists in the browser across sessions; Clear can be undone
+- **Instant Guidance**: Lawshe threshold note, example data loader, and an empty-state screen with clear next steps
 - **Responsive Design**: Works on desktop and mobile devices
-- **Comprehensive Documentation**: Built-in accordion explanations of all formulas
+- **Comprehensive Documentation**: Built-in explanations of all formulas with references
 
 ## 📊 Calculated Indices
 
@@ -56,27 +58,32 @@ A modern, Excel-like web application for calculating Content Validity Ratio (CVR
    - No server setup required!
 
 3. **Start calculating**:
-   - Add experts and items using the control buttons
-   - Enter data (0, 1, 2, 3) in the cells
+   - Add experts and items using the steppers
+   - Enter ratings (1, 2, 3) in the cells
    - Choose your evaluation model (Strict/Lenient)
    - View real-time calculations
 
 ## 📖 Usage Guide
 
+### Rating Scale (Lawshe)
+- **1**: Essential
+- **2**: Useful but not essential
+- **3**: Not necessary
+
 ### Adding Data
-- **Manual Entry**: Click on cells and type values (0, 1, 2, 3)
-- **Excel Import**: Use "Paste from Excel" button to import data
-- **Excel Export**: Use "Copy to Excel" button to export results
+- **Manual Entry**: Click on cells and type ratings (1, 2, 3)
+- **Excel Import**: Use "Paste from Excel" (with live preview), or paste a copied block directly into any cell
+- **Excel Export**: Use "Copy to Excel" to export the table with results (tab-separated)
 
 ### Evaluation Models
-- **Strict Model**: Only "1" values count as relevant (0, 2, 3 = not relevant)
-- **Lenient Model**: "1" and "2" values count as relevant (0, 3 = not relevant)
+- **Strict Model**: Only "1" counts as relevant (2, 3 = not relevant)
+- **Lenient Model**: "1" and "2" count as relevant (3 = not relevant)
 
 ### Understanding Results
 - **Green**: Values meet validity criteria
 - **Orange**: Values need revision
 - **Red**: Values are invalid or need elimination
-- **Red Cells**: Empty cells that need data
+- **Orange Cells**: Missing ratings in a partially filled row
 
 ## 🛠️ Technical Details
 

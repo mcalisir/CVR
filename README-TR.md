@@ -4,15 +4,17 @@
 
 ## 🌟 Özellikler
 
-- **Excel Benzeri Arayüz**: Tanıdık elektronik tablo deneyimi, doğrudan düzenlenebilir hücreler
+- **Excel Benzeri Arayüz**: Klavye ile gezinme (ok tuşları, Enter), puan yazınca otomatik ilerleme, hücreye doğrudan blok yapıştırma
 - **İkili Değerlendirme Modeli**: 
-  - **Sert Model**: Sadece "1" değerleri geçerli kabul edilir
-  - **Rahat Model**: "1" ve "2" değerleri geçerli kabul edilir
+  - **Katı Model**: Sadece "1" değerleri geçerli kabul edilir
+  - **Esnek Model**: "1" ve "2" değerleri geçerli kabul edilir
 - **Otomatik Hesaplamalar**: Gerçek zamanlı CVR, I-CVI, CVI, S-CVI/Ave ve S-CVI/UA hesaplamaları
-- **Excel Entegrasyonu**: Excel'den doğrudan veri kopyala/yapıştır
-- **Görsel Geri Bildirim**: Geçerlilik eşiklerine göre renk kodlu sonuçlar
+- **Excel Entegrasyonu**: Önizlemeli içe aktarma penceresi, sonuçlarla birlikte sekmeli (TSV) panoya kopyalama
+- **Görsel Geri Bildirim**: Geçerlilik eşiklerine göre renk kodlu sonuçlar; seçili modele göre renklenen puanlar ve lejant
+- **Otomatik Kayıt**: Veriler tarayıcıda saklanır, sayfa kapansa da kaybolmaz; Temizle işlemi geri alınabilir
+- **Anlık Rehberlik**: Lawshe eşiği notu, örnek veri yükleme, boş tablo için yönlendirme ekranı
 - **Duyarlı Tasarım**: Masaüstü ve mobil cihazlarda çalışır
-- **Kapsamlı Dokümantasyon**: Tüm formüllerin yerleşik akordeon açıklamaları
+- **Kapsamlı Dokümantasyon**: Tüm formüllerin yerleşik açıklamaları ve kaynakçaları
 
 ## 📊 Hesaplanan İndeksler
 
@@ -56,27 +58,32 @@
    - Sunucu kurulumu gerekmez!
 
 3. **Hesaplamaya başlayın**:
-   - Kontrol butonlarını kullanarak uzman ve madde ekleyin
-   - Hücrelere veri girin (0, 1, 2, 3)
-   - Değerlendirme modelinizi seçin (Sert/Rahat)
+   - Sayaçları kullanarak uzman ve madde ekleyin
+   - Hücrelere puanları girin (1, 2, 3)
+   - Değerlendirme modelinizi seçin (Katı/Esnek)
    - Gerçek zamanlı hesaplamaları görün
 
 ## 📖 Kullanım Kılavuzu
 
+### Puanlama Ölçeği (Lawshe)
+- **1**: Gerekli
+- **2**: Yararlı ama gerekli değil
+- **3**: Gerekli değil
+
 ### Veri Ekleme
-- **Manuel Giriş**: Hücrelere tıklayın ve değerleri yazın (0, 1, 2, 3)
-- **Excel İçe Aktarma**: "Excel'den Yapıştır" butonunu kullanarak veri içe aktarın
-- **Excel Dışa Aktarma**: "Excel'e Kopyala" butonunu kullanarak sonuçları dışa aktarın
+- **Manuel Giriş**: Hücrelere tıklayın ve puanları yazın (1, 2, 3)
+- **Excel İçe Aktarma**: Canlı önizlemeli "Excel'den Yapıştır" penceresini kullanın veya kopyaladığınız bloğu doğrudan bir hücreye yapıştırın
+- **Excel Dışa Aktarma**: "Excel'e Kopyala" ile tabloyu sonuçlarıyla birlikte (sekmeyle ayrılmış) panoya aktarın
 
 ### Değerlendirme Modelleri
-- **Sert Model**: Sadece "1" değerleri geçerli sayılır (0, 2, 3 = geçersiz)
-- **Rahat Model**: "1" ve "2" değerleri geçerli sayılır (0, 3 = geçersiz)
+- **Katı Model**: Sadece "1" değeri gerekli sayılır (2, 3 = gerekli değil)
+- **Esnek Model**: "1" ve "2" değerleri gerekli sayılır (3 = gerekli değil)
 
 ### Sonuçları Anlama
 - **Yeşil**: Değerler geçerlilik kriterlerini karşılar
 - **Turuncu**: Değerler revizyon gerektirir
 - **Kırmızı**: Değerler geçersiz veya elimine edilmelidir
-- **Kırmızı Hücreler**: Veri gerektiren boş hücreler
+- **Turuncu Hücreler**: Kısmen doldurulmuş satırda eksik kalan puanlar
 
 ## 🛠️ Teknik Detaylar
 
